@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockOperationSnapshotUnprotectRequest"/>
+    <run name="Success">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Success"/>
+    </run>
+    <run name="GetSnapIdMissing">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GetSnapIdMissing"/>
+    </run>
+    <run name="IsSnapUnprotectedError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="IsSnapUnprotectedError"/>
+    </run>
+    <run name="SnapAlreadyUnprotected">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapAlreadyUnprotected"/>
+    </run>
+    <run name="SetProtectionStatusError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SetProtectionStatusError"/>
+    </run>
+    <run name="ChildrenExist">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ChildrenExist"/>
+    </run>
+  </session>
+</package>

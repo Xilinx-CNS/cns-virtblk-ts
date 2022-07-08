@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session track_conf="silent">
+    <arg name="gtest_bin" value="ceph_test_librbd"/>
+    <run>
+      <package name="TestDeepCopy" src="package.TestDeepCopy.xml"/>
+    </run>
+    <run>
+      <package name="TestInternal" src="package.TestInternal.xml"/>
+    </run>
+    <run>
+      <package name="TestGroup" src="package.TestGroup.xml"/>
+    </run>
+    <run>
+      <package name="TestMigration" src="package.TestMigration.xml"/>
+    </run>
+    <run>
+      <package name="TestObjectMap" src="package.TestObjectMap.xml"/>
+    </run>
+    <run>
+      <package name="TestMirroringWatcher" src="package.TestMirroringWatcher.xml"/>
+    </run>
+    <run>
+      <package name="TestOperations" src="package.TestOperations.xml"/>
+    </run>
+    <run>
+      <package name="TestTrash" src="package.TestTrash.xml"/>
+    </run>
+    <run>
+      <package name="TestJournalReplay" src="package.TestJournalReplay.xml"/>
+    </run>
+    <run>
+      <package name="TestMirroring" src="package.TestMirroring.xml"/>
+    </run>
+    <run>
+      <package name="TestJournalEntries" src="package.TestJournalEntries.xml"/>
+    </run>
+    <run>
+      <package name="TestImageWatcher" src="package.TestImageWatcher.xml"/>
+    </run>
+    <run>
+      <package name="TestLibRBD" src="package.TestLibRBD.xml"/>
+    </run>
+  </session>
+</package>

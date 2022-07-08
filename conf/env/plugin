@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+export TE_ENABLE_PLUGIN=true
+export TE_PLUGIN_PATH=${TE_PLUGIN_PATH:-/home/xce-ci-virtblk/virtblk-testing/plugins/latest_plugin_build}
+
+if test -L "$TE_PLUGIN_PATH" ; then
+    export TE_PLUGIN_PATH=$(realpath $TE_PLUGIN_PATH)
+    echo "Path to the plugin is a symbolic link, the resolved path will be used instead."
+fi
+
+export TE_PLUGIN_NAME=$(basename ${TE_PLUGIN_PATH})
+
+PLUGIN_VERSION="$(echo "${TE_PLUGIN_PATH}" | sed -e 's/.*[^0-9]\([0-9]\+\)[^0-9]*$/\1/')"
+TE_EXTRA_OPTS="${TE_EXTRA_OPTS} --trc-tag=plugin_version:${PLUGIN_VERSION}"

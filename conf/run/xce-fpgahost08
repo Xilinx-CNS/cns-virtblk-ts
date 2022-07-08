@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+--script=scripts/common
+--script=env/xce-fpgahost08
+--script=env/uart_logger
+--script=env/agents_cpu_affinity
+--script=scripts/mc-fw-flash
+--script=env/u26z

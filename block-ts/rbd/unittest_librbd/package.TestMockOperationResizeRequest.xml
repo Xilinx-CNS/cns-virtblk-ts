@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockOperationResizeRequest"/>
+    <run name="NoOpSuccess">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoOpSuccess"/>
+    </run>
+    <run name="GrowSuccess">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GrowSuccess"/>
+    </run>
+    <run name="ShrinkSuccess">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ShrinkSuccess"/>
+    </run>
+    <run name="ShrinkError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ShrinkError"/>
+    </run>
+    <run name="PreBlockWritesError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PreBlockWritesError"/>
+    </run>
+    <run name="TrimError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrimError"/>
+    </run>
+    <run name="FlushCacheError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushCacheError"/>
+    </run>
+    <run name="InvalidateCacheError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="InvalidateCacheError"/>
+    </run>
+    <run name="PostBlockWritesError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PostBlockWritesError"/>
+    </run>
+    <run name="UpdateHeaderError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdateHeaderError"/>
+    </run>
+    <run name="JournalAppendError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="JournalAppendError"/>
+    </run>
+    <run name="JournalDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="JournalDisabled"/>
+    </run>
+  </session>
+</package>

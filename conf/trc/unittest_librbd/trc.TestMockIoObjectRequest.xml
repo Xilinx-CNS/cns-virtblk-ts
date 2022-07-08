@@ -1,0 +1,225 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockIoObjectRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="Read" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Read"/>
+      </iter>
+    </test>
+    <test name="SparseReadThreshold" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SparseReadThreshold"/>
+      </iter>
+    </test>
+    <test name="ReadError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReadError"/>
+      </iter>
+    </test>
+    <test name="ParentRead" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ParentRead"/>
+      </iter>
+    </test>
+    <test name="ParentReadError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ParentReadError"/>
+      </iter>
+    </test>
+    <test name="CopyOnRead" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CopyOnRead"/>
+      </iter>
+    </test>
+    <test name="Write" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Write"/>
+      </iter>
+    </test>
+    <test name="WriteFull" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="WriteFull"/>
+      </iter>
+    </test>
+    <test name="WriteObjectMap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="WriteObjectMap"/>
+      </iter>
+    </test>
+    <test name="WriteError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="WriteError"/>
+      </iter>
+    </test>
+    <test name="Copyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Copyup"/>
+      </iter>
+    </test>
+    <test name="CopyupRestart" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CopyupRestart"/>
+      </iter>
+    </test>
+    <test name="CopyupOptimization" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CopyupOptimization"/>
+      </iter>
+    </test>
+    <test name="CopyupError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CopyupError"/>
+      </iter>
+    </test>
+    <test name="DiscardRemove" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardRemove"/>
+      </iter>
+    </test>
+    <test name="DiscardRemoveTruncate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardRemoveTruncate"/>
+      </iter>
+    </test>
+    <test name="DiscardTruncateAssertExists" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardTruncateAssertExists"/>
+      </iter>
+    </test>
+    <test name="DiscardTruncate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardTruncate"/>
+      </iter>
+    </test>
+    <test name="DiscardZero" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardZero"/>
+      </iter>
+    </test>
+    <test name="DiscardDisableObjectMapUpdate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardDisableObjectMapUpdate"/>
+      </iter>
+    </test>
+    <test name="DiscardNoOp" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardNoOp"/>
+      </iter>
+    </test>
+    <test name="WriteSame" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="WriteSame"/>
+      </iter>
+    </test>
+    <test name="CompareAndWrite" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CompareAndWrite"/>
+      </iter>
+    </test>
+    <test name="CompareAndWriteFull" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CompareAndWriteFull"/>
+      </iter>
+    </test>
+    <test name="CompareAndWriteCopyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CompareAndWriteCopyup"/>
+      </iter>
+    </test>
+    <test name="CompareAndWriteMismatch" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CompareAndWriteMismatch"/>
+      </iter>
+    </test>
+    <test name="ObjectMapError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ObjectMapError"/>
+      </iter>
+    </test>
+  </iter>
+</test>

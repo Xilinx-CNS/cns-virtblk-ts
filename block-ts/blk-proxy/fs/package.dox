@@ -1,0 +1,13 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy-fs FS test suite
+@ingroup virtblk-blk-proxy
+@{
+    Test suite which tests a filesystem created on a block device.
+    It is inspired by Phoronix Test Suite's
+    <a href="https://openbenchmarking.org/suite/pts/disk">Disk Test Suite</a>.
+@}
+
+*/

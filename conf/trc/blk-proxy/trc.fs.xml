@@ -1,0 +1,50 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="fs" type="package">
+    <objective/>
+    <iter result="PASSED">
+
+        <test name="prologue">
+            <objective/>
+            <iter result="PASSED"/>
+        </test>
+
+        <test name="epilogue">
+            <objective/>
+            <iter result="PASSED"/>
+        </test>
+
+        <test name="compilebench">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="initial_dirs"/>
+                <arg name="runs"/>
+                <arg name="makej"/>
+            </iter>
+        </test>
+
+        <test name="dbench">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="numclients"/>
+            </iter>
+        </test>
+
+        <test name="fsmark">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="numfiles"/>
+                <arg name="file_size"/>
+            </iter>
+        </test>
+
+        <test name="iozone">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="record_size"/>
+                <arg name="file_size"/>
+            </iter>
+        </test>
+
+    </iter>
+</test>

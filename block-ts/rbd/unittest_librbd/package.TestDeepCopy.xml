@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestDeepCopy"/>
+    <run name="Empty">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Empty"/>
+    </run>
+    <run name="NoSnaps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnaps"/>
+    </run>
+    <run name="Snaps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Snaps"/>
+    </run>
+    <run name="SnapDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapDiscard"/>
+    </run>
+    <run name="CloneDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneDiscard"/>
+    </run>
+    <run name="CloneShrink">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneShrink"/>
+    </run>
+    <run name="CloneExpand">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneExpand"/>
+    </run>
+    <run name="CloneHideParent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneHideParent"/>
+    </run>
+    <run name="Clone">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Clone"/>
+    </run>
+    <run name="CloneFlatten">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneFlatten"/>
+    </run>
+    <run name="Stress">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Stress"/>
+    </run>
+    <run name="NoSnaps_LargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnaps_LargerDstObjSize"/>
+    </run>
+    <run name="Snaps_LargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Snaps_LargerDstObjSize"/>
+    </run>
+    <run name="Clone_LargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Clone_LargerDstObjSize"/>
+    </run>
+    <run name="CloneFlatten_LargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneFlatten_LargerDstObjSize"/>
+    </run>
+    <run name="Stress_LargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Stress_LargerDstObjSize"/>
+    </run>
+    <run name="NoSnaps_SmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnaps_SmallerDstObjSize"/>
+    </run>
+    <run name="Snaps_SmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Snaps_SmallerDstObjSize"/>
+    </run>
+    <run name="Clone_SmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Clone_SmallerDstObjSize"/>
+    </run>
+    <run name="CloneFlatten_SmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneFlatten_SmallerDstObjSize"/>
+    </run>
+    <run name="Stress_SmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Stress_SmallerDstObjSize"/>
+    </run>
+    <run name="NoSnaps_StrippingLargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnaps_StrippingLargerDstObjSize"/>
+    </run>
+    <run name="Snaps_StrippingLargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Snaps_StrippingLargerDstObjSize"/>
+    </run>
+    <run name="Clone_StrippingLargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Clone_StrippingLargerDstObjSize"/>
+    </run>
+    <run name="CloneFlatten_StrippingLargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneFlatten_StrippingLargerDstObjSize"/>
+    </run>
+    <run name="Stress_StrippingLargerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Stress_StrippingLargerDstObjSize"/>
+    </run>
+    <run name="NoSnaps_StrippingSmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnaps_StrippingSmallerDstObjSize"/>
+    </run>
+    <run name="Snaps_StrippingSmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Snaps_StrippingSmallerDstObjSize"/>
+    </run>
+    <run name="Clone_StrippingSmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Clone_StrippingSmallerDstObjSize"/>
+    </run>
+    <run name="CloneFlatten_StrippingSmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneFlatten_StrippingSmallerDstObjSize"/>
+    </run>
+    <run name="Stress_StrippingSmallerDstObjSize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Stress_StrippingSmallerDstObjSize"/>
+    </run>
+  </session>
+</package>

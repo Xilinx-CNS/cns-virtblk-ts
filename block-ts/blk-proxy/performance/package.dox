@@ -1,0 +1,11 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy-performance Basic performance tests
+@ingroup virtblk-blk-proxy
+@{
+    Basic performance tests.
+@}
+
+*/

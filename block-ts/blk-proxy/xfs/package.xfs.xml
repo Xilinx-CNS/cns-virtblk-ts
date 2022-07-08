@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>XFS group test</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+    <session>
+        <arg name="group" value="xfs"/>
+        <run>
+            <script name="xfs">
+                <req id="MULTI_BLOCK"/>
+            </script>
+            <arg name="name">
+                <value>001</value>
+                <value>002</value>
+                <value>003</value>
+                <value>004</value>
+                <value>005</value>
+                <value>008</value>
+                <value>009</value>
+                <value>010</value>
+                <value>012</value>
+                <value>017</value>
+                <value>019</value>
+                <value>021</value>
+                <value>029</value>
+                <value>031</value>
+                <value>034</value>
+                <value>045</value>
+                <value>048</value>
+                <value>049</value>
+                <value>053</value>
+                <value>054</value>
+                <value>062</value>
+                <value>067</value>
+                <value>069</value>
+                <value>092</value>
+                <value>103</value>
+                <!-- See VIRTBLK-1257 -->
+                <value reqs="BROKEN">115</value>
+                <value>118</value>
+                <value>121</value>
+                <value>135</value>
+                <value>166</value>
+                <value>170</value>
+                <value>181</value>
+                <value>183</value>
+                <value>190</value>
+                <value>199</value>
+                <value>201</value>
+                <value>238</value>
+                <value>269</value>
+                <value>270</value>
+                <value>298</value>
+                <value>303</value>
+                <value>306</value>
+                <value>439</value>
+                <value>451</value>
+                <!-- See VIRTBLK-1348 -->
+                <value reqs="BROKEN">490</value>
+            </arg>
+        </run>
+    </session>
+</package>

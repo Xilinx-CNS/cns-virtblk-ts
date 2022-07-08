@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockImageDetachParentRequest"/>
+    <run name="ParentDetachSuccess">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ParentDetachSuccess"/>
+    </run>
+    <run name="RemoveParentSuccess">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveParentSuccess"/>
+    </run>
+    <run name="ParentDNE">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ParentDNE"/>
+    </run>
+    <run name="ParentDetachError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ParentDetachError"/>
+    </run>
+    <run name="RemoveParentError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveParentError"/>
+    </run>
+  </session>
+</package>

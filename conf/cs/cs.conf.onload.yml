@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+- cond:
+    if: ${TE_DUT_TST1_TA_NAME} != ""
+    then:
+      - add:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/rsrc:module_onload"
+          value: "/agent:${TE_DUT_TST1_TA_NAME}/module:onload"
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:onload"
+      - set:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:onload/loaded:"
+          value: "1"
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:onload/parameter:phys_mode_gid"
+          value: "-1"

@@ -1,0 +1,187 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockImageRefreshRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="SuccessV1" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessV1"/>
+        <arg name="features" value="UNSET_FEATURES"/>
+      </iter>
+    </test>
+    <test name="SuccessSnapshotV1" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessSnapshotV1"/>
+        <arg name="features" value="UNSET_FEATURES"/>
+      </iter>
+    </test>
+    <test name="SuccessV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessV2"/>
+      </iter>
+    </test>
+    <test name="SuccessSnapshotV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessSnapshotV2"/>
+      </iter>
+    </test>
+    <test name="SuccessLegacySnapshotV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessLegacySnapshotV2"/>
+      </iter>
+    </test>
+    <test name="SuccessLegacySnapshotNoTimestampV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessLegacySnapshotNoTimestampV2"/>
+      </iter>
+    </test>
+    <test name="SuccessSetSnapshotV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessSetSnapshotV2"/>
+      </iter>
+    </test>
+    <test name="SuccessChild" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessChild"/>
+      </iter>
+    </test>
+    <test name="SuccessChildDontOpenParent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessChildDontOpenParent"/>
+      </iter>
+    </test>
+    <test name="SuccessOpFeatures" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessOpFeatures"/>
+      </iter>
+    </test>
+    <test name="DisableExclusiveLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableExclusiveLock"/>
+      </iter>
+    </test>
+    <test name="DisableExclusiveLockWhileAcquiringLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableExclusiveLockWhileAcquiringLock"/>
+      </iter>
+    </test>
+    <test name="JournalDisabledByPolicy" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="JournalDisabledByPolicy"/>
+      </iter>
+    </test>
+    <test name="EnableJournalWithExclusiveLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableJournalWithExclusiveLock"/>
+      </iter>
+    </test>
+    <test name="EnableJournalWithoutExclusiveLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableJournalWithoutExclusiveLock"/>
+      </iter>
+    </test>
+    <test name="DisableJournal" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableJournal"/>
+      </iter>
+    </test>
+    <test name="EnableObjectMapWithExclusiveLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableObjectMapWithExclusiveLock"/>
+      </iter>
+    </test>
+    <test name="EnableObjectMapWithoutExclusiveLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableObjectMapWithoutExclusiveLock"/>
+      </iter>
+    </test>
+    <test name="DisableObjectMap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableObjectMap"/>
+      </iter>
+    </test>
+    <test name="OpenObjectMapError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpenObjectMapError"/>
+      </iter>
+    </test>
+    <test name="OpenObjectMapTooLarge" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpenObjectMapTooLarge"/>
+      </iter>
+    </test>
+    <test name="ApplyMetadataError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ApplyMetadataError"/>
+      </iter>
+    </test>
+  </iter>
+</test>

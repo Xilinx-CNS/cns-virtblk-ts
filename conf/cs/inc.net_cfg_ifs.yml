@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+- cond:
+    if: ${TE_ARM_SFC_IF} != ""
+    then:
+        - add:
+            - oid: "/net:net1"
+            - oid: "/net:net1/node:A"
+              value: "/agent:${TE_DUT_TST1_TA_NAME}/interface:${TE_ARM_SFC_IF}"
+        - set:
+            - oid: "/net:net1/node:A/type:"
+              value: "1"
+
+- cond:
+    if: ${TE_DISK_SFC_IF} != "" & ${TE_CEPH_SRV_IF} = ""
+    then:
+        - add:
+            - oid: "/net:net1/node:B"
+              value: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_DISK_SFC_IF}"
+        - set:
+            - oid: "/net:net1/node:B/type:"
+              value: "0"
+
+- cond:
+    if: ${TE_CEPH_SRV_IF} != ""
+    then:
+        - add:
+            - oid: "/net:net1/node:B"
+              value: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_CEPH_SRV_IF}"
+        - set:
+            - oid: "/net:net1/node:B/type:"
+              value: "0"

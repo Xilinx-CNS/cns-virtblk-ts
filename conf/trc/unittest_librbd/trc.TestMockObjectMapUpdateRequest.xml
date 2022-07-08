@@ -1,0 +1,65 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockObjectMapUpdateRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="UpdateInMemory" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateInMemory"/>
+      </iter>
+    </test>
+    <test name="UpdateHeadOnDisk" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateHeadOnDisk"/>
+      </iter>
+    </test>
+    <test name="UpdateSnapOnDisk" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateSnapOnDisk"/>
+      </iter>
+    </test>
+    <test name="UpdateOnDiskError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateOnDiskError"/>
+      </iter>
+    </test>
+    <test name="RebuildSnapOnDisk" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RebuildSnapOnDisk"/>
+      </iter>
+    </test>
+    <test name="BatchUpdate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="BatchUpdate"/>
+      </iter>
+    </test>
+    <test name="IgnoreMissingObjectMap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="IgnoreMissingObjectMap"/>
+      </iter>
+    </test>
+  </iter>
+</test>

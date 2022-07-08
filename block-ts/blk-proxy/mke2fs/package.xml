@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Testing of calling mke2fs on virtio block devices</description>
+    <author mailto="Andrey.Izrailev@oktetlabs.ru"/>
+
+    <session track_conf="nohistory">
+        <enum name="fs_type.ext3-ext4">
+            <value>ext3</value>
+            <value>ext4</value>
+        </enum>
+        <enum name="block_size">
+            <value>1024</value>
+            <value>2048</value>
+            <value>4096</value>
+        </enum>
+
+        <run name="mke2fs_ext2">
+            <script name="mke2fs"/>
+
+            <arg name="fs_type" value="ext2"/>
+            <arg name="use_journal" value="FALSE"/>
+            <arg name="block_size" type="block_size"/>
+        </run>
+
+        <run name="mke2fs_ext34">
+            <script name="mke2fs"/>
+
+            <arg name="fs_type" type="fs_type.ext3-ext4"/>
+            <arg name="use_journal" type="boolean"/>
+            <arg name="block_size" type="block_size"/>
+        </run>
+    </session>
+
+</package>

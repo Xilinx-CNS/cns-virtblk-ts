@@ -1,0 +1,105 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockOperationResizeRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="NoOpSuccess" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoOpSuccess"/>
+      </iter>
+    </test>
+    <test name="GrowSuccess" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GrowSuccess"/>
+      </iter>
+    </test>
+    <test name="ShrinkSuccess" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ShrinkSuccess"/>
+      </iter>
+    </test>
+    <test name="ShrinkError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ShrinkError"/>
+      </iter>
+    </test>
+    <test name="PreBlockWritesError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="PreBlockWritesError"/>
+      </iter>
+    </test>
+    <test name="TrimError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrimError"/>
+      </iter>
+    </test>
+    <test name="FlushCacheError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlushCacheError"/>
+      </iter>
+    </test>
+    <test name="InvalidateCacheError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="InvalidateCacheError"/>
+      </iter>
+    </test>
+    <test name="PostBlockWritesError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="PostBlockWritesError"/>
+      </iter>
+    </test>
+    <test name="UpdateHeaderError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateHeaderError"/>
+      </iter>
+    </test>
+    <test name="JournalAppendError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="JournalAppendError"/>
+      </iter>
+    </test>
+    <test name="JournalDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="JournalDisabled"/>
+      </iter>
+    </test>
+  </iter>
+</test>

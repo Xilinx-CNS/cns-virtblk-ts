@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockExclusiveLock"/>
+    <run name="StateTransitions">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="StateTransitions"/>
+    </run>
+    <run name="TryLockAlreadyLocked">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TryLockAlreadyLocked"/>
+    </run>
+    <run name="TryLockError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TryLockError"/>
+    </run>
+    <run name="AcquireLockAlreadyLocked">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockAlreadyLocked"/>
+    </run>
+    <run name="AcquireLockBusy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockBusy"/>
+    </run>
+    <run name="AcquireLockError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockError"/>
+    </run>
+    <run name="PostAcquireLockError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PostAcquireLockError"/>
+    </run>
+    <run name="PreReleaseLockError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PreReleaseLockError"/>
+    </run>
+    <run name="ReacquireLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReacquireLock"/>
+    </run>
+    <run name="BlockRequests">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="BlockRequests"/>
+    </run>
+  </session>
+</package>

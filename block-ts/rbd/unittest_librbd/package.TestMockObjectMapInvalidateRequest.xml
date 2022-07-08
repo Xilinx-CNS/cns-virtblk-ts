@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockObjectMapInvalidateRequest"/>
+    <run name="UpdatesInMemoryFlag">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdatesInMemoryFlag"/>
+    </run>
+    <run name="UpdatesHeadOnDiskFlag">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdatesHeadOnDiskFlag"/>
+    </run>
+    <run name="UpdatesSnapOnDiskFlag">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdatesSnapOnDiskFlag"/>
+    </run>
+    <run name="SkipOnDiskUpdateWithoutLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SkipOnDiskUpdateWithoutLock"/>
+    </run>
+    <run name="IgnoresOnDiskUpdateFailure">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="IgnoresOnDiskUpdateFailure"/>
+    </run>
+  </session>
+</package>

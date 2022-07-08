@@ -1,0 +1,69 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+#
+# Common preparing
+#
+- add:
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/env:NEED_QEMU"
+    value: 1
+  - if: ${COSIM_TLP_LOG0} != ""
+    oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/env:COSIM_TLP_LOG0"
+    value: "${COSIM_TLP_LOG0}"
+  - if: ${COSIM_TLP_LOG1} != ""
+    oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/env:COSIM_TLP_LOG1"
+    value: "${COSIM_TLP_LOG1}"
+  - if: ${SDNET_INSTALL} != ""
+    oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/env:SDNET_INSTALL"
+    value: "${SDNET_INSTALL}"
+
+#
+# Apply multihost/singlehost specific
+#
+- cond:
+    if: ${MULTIHOST} = true
+    then:
+      - include: cs.conf.rhsim.multihost.yml
+    else:
+      - include: cs.conf.rhsim.singlehost.yml
+
+- add:
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:10"
+    value: "--mac${RHSIM_MAC:-25}G"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:11"
+    value: "--mac-addr"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:12"
+    value: "00:0e:ad:be:ef:03/2"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:13"
+    value: "--vio-cfgcaps"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:16"
+    value: "--pciid"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:17"
+    value: "${MC_FW_PCIID}"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:20"
+    value: "--vfsperpf"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:21"
+    value: 1
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:40"
+    value: "--ddr"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:41"
+    value: "0x2000000@0x00000050"
+  - if: ${RHSIM_NO_XACCEL} = true
+    oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:44"
+    value: "--no-xaccel"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:100"
+    value: "--flash"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:101"
+    value: "${MC_FW_FLASH}"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:120"
+    value: "--isa-opts"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:121"
+    value: "BPD"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/arg:140"
+    value: "${MCFW_ELF}"
+
+- set:
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/exe:"
+    value: "${RHSIM_EXE}"
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:rhsim/status:"
+    value: 1

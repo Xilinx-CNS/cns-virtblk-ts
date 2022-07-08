@@ -1,0 +1,14 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy-mke2fs mke2fs tool tests
+@ingroup virtblk-blk-proxy
+@{
+    How we can create FS on top of block device.
+
+    Historically this has found a number of problems when done by hands. So
+it was decided that it's worth automating.
+@}
+
+*/

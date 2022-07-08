@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockMirrorDisableRequest"/>
+    <run name="Success">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Success"/>
+    </run>
+    <run name="SuccessNoRemove">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessNoRemove"/>
+    </run>
+    <run name="SuccessNonPrimary">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessNonPrimary"/>
+    </run>
+    <run name="NonPrimaryError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NonPrimaryError"/>
+    </run>
+    <run name="MirrorImageGetError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorImageGetError"/>
+    </run>
+    <run name="IsTagOwnerError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="IsTagOwnerError"/>
+    </run>
+    <run name="MirrorImageSetError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorImageSetError"/>
+    </run>
+    <run name="JournalPromoteError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="JournalPromoteError"/>
+    </run>
+    <run name="JournalClientListError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="JournalClientListError"/>
+    </run>
+    <run name="SnapRemoveError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRemoveError"/>
+    </run>
+    <run name="JournalClientUnregisterError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="JournalClientUnregisterError"/>
+    </run>
+    <run name="MirrorImageRemoveError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorImageRemoveError"/>
+    </run>
+  </session>
+</package>

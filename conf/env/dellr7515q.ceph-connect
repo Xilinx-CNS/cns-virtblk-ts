@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Prepare environment to connect to Ceph server.
+
+export TE_CEPH_EXEC=true
+export TE_DUT_TST3_TA_NAME=Agt_disk
+
+# Define build hosts and agent types.
+export TE_DUT_TST3_BUILD_HOST=dellr7515q
+export TE_DUT_TST3=intel-cap4
+
+# Define interfaces to setup Ceph network.
+export TE_NEED_LOAD_SFC=yes
+export TE_ARM_SFC_IF=enp1s0f0
+export TE_CEPH_SRV_IF=ens785f0
+
+export TE_IP4_POOL=10.27.1

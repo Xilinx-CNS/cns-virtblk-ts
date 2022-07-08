@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+tests = [
+    'prologue',
+    'epilogue',
+]
+
+foreach test : tests
+    test_exe = test
+    test_c = test + '.c'
+    package_tests_c += [ test_c ]
+    executable(test_exe, test_c, install: true, install_dir: package_dir,
+               dependencies: test_deps)
+endforeach
+
+tests_info_xml = custom_target(package_dir.underscorify() + 'tests-info-xml',
+                               install: true, install_dir: package_dir,
+                               input: package_tests_c,
+                               output: 'tests-info.xml', capture: true,
+                               command: [ te_tests_info_sh,
+                                          meson.current_source_dir() ])
+
+install_data(['package.xml',], install_dir: package_dir)
+
+packages = [
+    'config',
+    'fs',
+    'mke2fs',
+    'readwrite',
+    'xfs',
+    'network_stimuli',
+    'performance',
+    'stress',
+]
+
+mydir = package_dir
+foreach package : packages
+    package_dir = join_paths(mydir, package)
+    package_tests_c = []
+    subdir(package)
+endforeach

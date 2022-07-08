@@ -1,0 +1,184 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="readwrite" type="package">
+    <objective/>
+    <iter result="PASSED">
+        <results tags="blk_dev_num=1">
+            <result value="SKIPPED"/>
+        </results>
+
+        <test name="fio" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_1req_latency" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_qd" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_base_throughput_reduced" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_threads" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_base_throughput" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_threads_mixed_throughput" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_bs_iterate" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="is_shuffle_blocksize"/>
+            </iter>
+        </test>
+        <test name="fio_bs_iterate_throughput" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+
+        <!-- FIO stability -->
+        <test name="fio_stability_stress" type="script">
+            <objective>Run FIO in parallel with stressful actions on the CPU</objective>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="stress_ta"/>
+            </iter>
+        </test>
+        <test name="fio_stability_perf" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_pattern" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+        <test name="fio_multi" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="ioengine_second"/>
+                <arg name="rwtype_second"/>
+                <arg name="rwmixread_second"/>
+                <arg name="numjobs_second"/>
+                <arg name="iodepth_second"/>
+                <arg name="blocksize_second"/>
+                <arg name="runtime_sec_second"/>
+                <results tags="blk_dev_num=1">
+                    <result value="SKIPPED">
+                        <verdict>At least 2 virtio block devices are required for the test</verdict>
+                    </result>
+                </results>
+            </iter>
+        </test>
+
+    </iter>
+</test>

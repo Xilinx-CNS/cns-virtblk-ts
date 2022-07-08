@@ -1,0 +1,49 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockObjectMapInvalidateRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="UpdatesInMemoryFlag" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdatesInMemoryFlag"/>
+      </iter>
+    </test>
+    <test name="UpdatesHeadOnDiskFlag" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdatesHeadOnDiskFlag"/>
+      </iter>
+    </test>
+    <test name="UpdatesSnapOnDiskFlag" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdatesSnapOnDiskFlag"/>
+      </iter>
+    </test>
+    <test name="SkipOnDiskUpdateWithoutLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SkipOnDiskUpdateWithoutLock"/>
+      </iter>
+    </test>
+    <test name="IgnoresOnDiskUpdateFailure" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="IgnoresOnDiskUpdateFailure"/>
+      </iter>
+    </test>
+  </iter>
+</test>

@@ -1,0 +1,49 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestObjectMap" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="RefreshInvalidatesWhenCorrupt" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RefreshInvalidatesWhenCorrupt"/>
+      </iter>
+    </test>
+    <test name="RefreshInvalidatesWhenTooSmall" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RefreshInvalidatesWhenTooSmall"/>
+      </iter>
+    </test>
+    <test name="InvalidateFlagOnDisk" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="InvalidateFlagOnDisk"/>
+      </iter>
+    </test>
+    <test name="AcquireLockInvalidatesWhenTooSmall" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AcquireLockInvalidatesWhenTooSmall"/>
+      </iter>
+    </test>
+    <test name="DISABLED_StressTest" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DISABLED_StressTest"/>
+      </iter>
+    </test>
+  </iter>
+</test>

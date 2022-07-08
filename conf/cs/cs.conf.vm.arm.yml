@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+- add:
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/drive:root"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/virtfs:9p"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/device:iommu"
+    value: "intel-iommu,intremap=on,device-iotlb=on,caching-mode=on"
+
+- add:
+  - if: ${TE_RHSIM_EXEC} != ""
+    oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/device:sfc"
+    value: "sfc-dut-port"
+
+- set:
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/qemu:"
+    value: "${CMOD_QEMU_EXE:-/usr/bin/qemu-system-x86_64}"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/machine:"
+    value: "${TE_DUT_TST1_MACHINE:-q35,max-ram-below-4g=128M,kernel-irqchip=split}"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/cpu:/model:"
+    value: "host"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/cpu:/num:"
+    value: 2
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/mem:/size:"
+    value: ${TE_DUT_TST1_MEM:-6144}
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/drive:root/file:"
+    value: "${CMOD_ROOT:-/local/virtual/x86_64_centos7.qcow2}"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/drive:root/cdrom:"
+    value: ${CMOD_ROOT_CDROM:-0}
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/drive:root/snapshot:"
+    value: ${CMOD_ROOT_SNAPSHOT:-1}
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/virtfs:9p/path:"
+    value: "/local"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/virtfs:9p/mount_tag:"
+    value: "wombat"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/virtfs:9p/security_model:"
+    value: "none"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/virtfs:9p/fsdriver:"
+    value: "local"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/kernel:"
+    value: "${CMOD_KERNEL}"
+  - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/kernel:/cmdline:"
+    value: "${CMOD_KERNEL_CMDLINE}"

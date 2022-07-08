@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Testing of FIO with the network problems</description>
+    <author mailto="Artemii.Morozov@oktetlabs.ru"/>
+
+    <req id="REMOTE_BACKNED" sticky="true"/>
+
+    <session track_conf="nohistory">
+        <prologue>
+            <script name="prologue"/>
+        </prologue>
+        <run>
+            <script name="fio_bpf_stimuli">
+                <req id="BROKEN"/>
+            </script>
+                <arg name="env" ref="env.network"/>
+                <arg name="ioengine" type="fio.ioengine">
+                    <value>libaio</value>
+                </arg>
+                <arg name="rwtype" type="fio.rwtype"/>
+                <arg name="rwmixread" type="fio.rwmixread.0to100">
+                    <value>0</value>
+                    <value>50</value>
+                    <value>100</value>
+                </arg>
+                <arg name="numjobs" type="fio.numjobs.1to1024">
+                    <value>nproc</value>
+                    <value reqs="NUMJOBS_GT_100">512</value>
+                </arg>
+                <arg name="iodepth" type="fio.iodepth.1to64">
+                    <value>32</value>
+                </arg>
+                <arg name="blocksize" type="fio.blocksize.512to32k"/>
+                <arg name="runtime_sec" value="120"/>
+                <arg name="stimulus">
+                    <value>drop</value>
+                    <value>duplicate</value>
+                    <value>delay</value>
+                </arg>
+                <arg name="stimulus_param">
+                    <value>1</value>
+                    <value>10</value>
+                     <!-- See VIRTBLK-1787 -->
+                    <value reqs="BROKEN">20</value>
+                </arg>
+        </run>
+        <run name="fio_netem_loss">
+            <script name="fio_netem"/>
+                <arg name="env" ref="env.network"/>
+                <arg name="ioengine" type="fio.ioengine">
+                    <value>libaio</value>
+                </arg>
+                <arg name="rwtype" type="fio.rwtype"/>
+                <arg name="rwmixread" type="fio.rwmixread.0to100">
+                    <value>0</value>
+                    <value>50</value>
+                    <value>100</value>
+                </arg>
+                <arg name="numjobs" type="fio.numjobs.1to1024">
+                    <value>nproc</value>
+                    <value reqs="NUMJOBS_GT_100">512</value>
+                </arg>
+                <arg name="iodepth" type="fio.iodepth.1to64">
+                    <value>32</value>
+                </arg>
+                <arg name="blocksize" type="fio.blocksize.512to32k"/>
+                <arg name="runtime_sec" value="120"/>
+                <arg name="action1">
+                    <value>loss</value>
+                </arg>
+                <arg name="param1">
+                    <value>0.01</value>
+                </arg>
+                <arg name="correlation1">
+                    <value>0.25</value>
+                </arg>
+                <arg name="action2">
+                    <value>none</value>
+                </arg>
+                <arg name="param2">
+                    <value>0</value>
+                </arg>
+                <arg name="correlation2">
+                    <value>0</value>
+                </arg>
+        </run>
+        <run name="fio_netem_reorder">
+            <script name="fio_netem"/>
+                <arg name="env" ref="env.network"/>
+                <arg name="ioengine" type="fio.ioengine">
+                    <value>libaio</value>
+                </arg>
+                <arg name="rwtype" type="fio.rwtype"/>
+                <arg name="rwmixread" type="fio.rwmixread.0to100">
+                    <value>0</value>
+                    <value>50</value>
+                    <value>100</value>
+                </arg>
+                <arg name="numjobs" type="fio.numjobs.1to1024">
+                    <value>nproc</value>
+                    <value reqs="NUMJOBS_GT_100">512</value>
+                </arg>
+                <arg name="iodepth" type="fio.iodepth.1to64">
+                    <value>32</value>
+                </arg>
+                <arg name="blocksize" type="fio.blocksize.512to32k"/>
+                <arg name="runtime_sec" value="120"/>
+                <arg name="action1">
+                    <value>delay</value>
+                </arg>
+                <arg name="param1">
+                    <value>10</value>
+                </arg>
+                <arg name="correlation1">
+                    <value>0</value>
+                </arg>
+                <arg name="action2">
+                    <value>reorder</value>
+                </arg>
+                <arg name="param2">
+                    <value>0.05</value>
+                </arg>
+                <arg name="correlation2">
+                    <value>0.25</value>
+                </arg>
+        </run>
+        <run name="fio_netem_corruption">
+            <script name="fio_netem"/>
+                <arg name="env" ref="env.network"/>
+                <arg name="ioengine" type="fio.ioengine">
+                    <value>libaio</value>
+                </arg>
+                <arg name="rwtype" type="fio.rwtype"/>
+                <arg name="rwmixread" type="fio.rwmixread.0to100">
+                    <value>0</value>
+                    <value>50</value>
+                    <value>100</value>
+                </arg>
+                <arg name="numjobs" type="fio.numjobs.1to1024">
+                    <value>nproc</value>
+                    <value reqs="NUMJOBS_GT_100">512</value>
+                </arg>
+                <arg name="iodepth" type="fio.iodepth.1to64">
+                    <value>32</value>
+                </arg>
+                <arg name="blocksize" type="fio.blocksize.512to32k"/>
+                <arg name="runtime_sec" value="120"/>
+                <arg name="action1">
+                    <value>corruption</value>
+                </arg>
+                <arg name="param1">
+                    <value>0.03</value>
+                </arg>
+                <arg name="correlation1">
+                    <value>0.25</value>
+                </arg>
+                <arg name="action2">
+                    <value>none</value>
+                </arg>
+                <arg name="param2">
+                    <value>0</value>
+                </arg>
+                <arg name="correlation2">
+                    <value>0</value>
+                </arg>
+        </run>
+        <run name="fio_netem_duplicate">
+            <script name="fio_netem"/>
+                <arg name="env" ref="env.network"/>
+                <arg name="ioengine" type="fio.ioengine">
+                    <value>libaio</value>
+                </arg>
+                <arg name="rwtype" type="fio.rwtype"/>
+                <arg name="rwmixread" type="fio.rwmixread.0to100">
+                    <value>0</value>
+                    <value>50</value>
+                    <value>100</value>
+                </arg>
+                <arg name="numjobs" type="fio.numjobs.1to1024">
+                    <value>nproc</value>
+                    <value reqs="NUMJOBS_GT_100">512</value>
+                </arg>
+                <arg name="iodepth" type="fio.iodepth.1to64">
+                    <value>32</value>
+                </arg>
+                <arg name="blocksize" type="fio.blocksize.512to32k"/>
+                <arg name="runtime_sec" value="120"/>
+                <arg name="action1">
+                    <value>duplicate</value>
+                </arg>
+                <arg name="param1">
+                    <value>1</value>
+                </arg>
+                <arg name="correlation1">
+                    <value>0.25</value>
+                </arg>
+                <arg name="action2">
+                    <value>none</value>
+                </arg>
+                <arg name="param2">
+                    <value>0</value>
+                </arg>
+                <arg name="correlation2">
+                    <value>0</value>
+                </arg>
+        </run>
+
+    </session>
+</package>

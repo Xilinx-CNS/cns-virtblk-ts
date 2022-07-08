@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMirroring"/>
+    <run name="EnableImageMirror_In_MirrorModeImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableImageMirror_In_MirrorModeImage"/>
+    </run>
+    <run name="EnableImageMirror_In_MirrorModePool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableImageMirror_In_MirrorModePool"/>
+    </run>
+    <run name="EnableImageMirror_In_MirrorModeDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableImageMirror_In_MirrorModeDisabled"/>
+    </run>
+    <run name="DisableImageMirror_In_MirrorModeImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableImageMirror_In_MirrorModeImage"/>
+    </run>
+    <run name="DisableImageMirror_In_MirrorModePool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableImageMirror_In_MirrorModePool"/>
+    </run>
+    <run name="DisableImageMirror_In_MirrorModeDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableImageMirror_In_MirrorModeDisabled"/>
+    </run>
+    <run name="DisableImageMirrorWithPeer">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableImageMirrorWithPeer"/>
+    </run>
+    <run name="DisableJournalingWithPeer">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableJournalingWithPeer"/>
+    </run>
+    <run name="EnableImageMirror_WithoutJournaling">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableImageMirror_WithoutJournaling"/>
+    </run>
+    <run name="CreateImage_In_MirrorModeDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateImage_In_MirrorModeDisabled"/>
+    </run>
+    <run name="CreateImage_In_MirrorModeImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateImage_In_MirrorModeImage"/>
+    </run>
+    <run name="CreateImage_In_MirrorModePool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateImage_In_MirrorModePool"/>
+    </run>
+    <run name="CreateImage_In_MirrorModePool_WithoutJournaling">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateImage_In_MirrorModePool_WithoutJournaling"/>
+    </run>
+    <run name="CreateImage_In_MirrorModeImage_WithoutJournaling">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateImage_In_MirrorModeImage_WithoutJournaling"/>
+    </run>
+    <run name="EnableJournaling_In_MirrorModeDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableJournaling_In_MirrorModeDisabled"/>
+    </run>
+    <run name="EnableJournaling_In_MirrorModeImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableJournaling_In_MirrorModeImage"/>
+    </run>
+    <run name="EnableJournaling_In_MirrorModePool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableJournaling_In_MirrorModePool"/>
+    </run>
+    <run name="DisableJournaling_In_MirrorModePool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableJournaling_In_MirrorModePool"/>
+    </run>
+    <run name="DisableJournaling_In_MirrorModeImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableJournaling_In_MirrorModeImage"/>
+    </run>
+    <run name="MirrorModeSet_DisabledMode_To_PoolMode">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorModeSet_DisabledMode_To_PoolMode"/>
+    </run>
+    <run name="MirrorModeSet_PoolMode_To_DisabledMode">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorModeSet_PoolMode_To_DisabledMode"/>
+    </run>
+    <run name="MirrorModeSet_DisabledMode_To_ImageMode">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorModeSet_DisabledMode_To_ImageMode"/>
+    </run>
+    <run name="MirrorModeSet_PoolMode_To_ImageMode">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorModeSet_PoolMode_To_ImageMode"/>
+    </run>
+    <run name="MirrorModeSet_ImageMode_To_PoolMode">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorModeSet_ImageMode_To_PoolMode"/>
+    </run>
+    <run name="MirrorModeSet_ImageMode_To_DisabledMode">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorModeSet_ImageMode_To_DisabledMode"/>
+    </run>
+    <run name="RemoveImage_With_MirrorImageEnabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveImage_With_MirrorImageEnabled"/>
+    </run>
+    <run name="RemoveImage_With_MirrorImageDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveImage_With_MirrorImageDisabled"/>
+    </run>
+    <run name="RemoveImage_With_ImageWithoutJournal">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveImage_With_ImageWithoutJournal"/>
+    </run>
+    <run name="RemoveImage_With_MirrorImageDemoted">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveImage_With_MirrorImageDemoted"/>
+    </run>
+    <run name="TrashMoveRestore_PoolMode">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashMoveRestore_PoolMode"/>
+    </run>
+    <run name="TrashMoveRestore_ImageMode_MirroringDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashMoveRestore_ImageMode_MirroringDisabled"/>
+    </run>
+    <run name="TrashMoveRestore_ImageMode_MirroringEnabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashMoveRestore_ImageMode_MirroringEnabled"/>
+    </run>
+    <run name="MirrorStatusList">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorStatusList"/>
+    </run>
+    <run name="RemoveBootstrapped">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveBootstrapped"/>
+    </run>
+    <run name="AioPromoteDemote">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioPromoteDemote"/>
+    </run>
+    <run name="AioGetInfo">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioGetInfo"/>
+    </run>
+    <run name="AioGetStatus">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioGetStatus"/>
+    </run>
+  </session>
+</package>

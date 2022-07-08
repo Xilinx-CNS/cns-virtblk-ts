@@ -1,0 +1,11 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy-lib Common API
+@ingroup virtblk
+@{
+    Here is a common library which functions are designed for using them everywhere
+@}
+
+*/

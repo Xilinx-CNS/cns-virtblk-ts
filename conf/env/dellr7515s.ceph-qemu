@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Prepare environment to run Ceph server.
+
+# Define build hosts and agent types.
+export TE_DISK_STARTER_BUILD_HOST=dellr7515s
+export TE_DISK_STARTER=dellr210g2c
+export TE_DUT_TST3_BUILD_HOST=xce-build-ub2004
+export TE_DUT_TST3=dellr210g2c
+
+# Define interfaces to setup Ceph network.
+export TE_NEED_LOAD_SFC=yes
+export TE_USER_ID=${TE_USER_ID:-$(id -u)}
+export TE_DISK_TAP_IF=tap_t2i.${TE_USER_ID}
+export TE_CEPH_BR=br_i2t.${TE_USER_ID}
+export TE_DISK_SFC_IF=enp1s0f0np0
+export TE_ARM_SFC_IF=enp1s0f0
+export TE_CEPH_SRV_IF=eth0
+
+# Define cleint and server Ceph IP.
+export TE_IP4_POOL=10.31.1
+
+# Define path to rootiso, linux kernel image and qemu tool.
+export CEPH_QEMU_EXE=/srv/ceph_tools/qemu/bin/qemu-system-x86_64
+export CEPH_VM_ROOT=/home/xce-ci-virtblk/virtblk-testing/rootfs/ubuntu2010.qcow2
+export CEPH_VM_KERNEL=/srv/ceph_tools/vmlinuz

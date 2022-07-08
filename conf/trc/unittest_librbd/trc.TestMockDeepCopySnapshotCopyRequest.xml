@@ -1,0 +1,137 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockDeepCopySnapshotCopyRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="Empty" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Empty"/>
+      </iter>
+    </test>
+    <test name="SnapCreate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreate"/>
+      </iter>
+    </test>
+    <test name="SnapCreateError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreateError"/>
+      </iter>
+    </test>
+    <test name="SnapCreateCancel" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreateCancel"/>
+      </iter>
+    </test>
+    <test name="SnapRemoveAndCreate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRemoveAndCreate"/>
+      </iter>
+    </test>
+    <test name="SnapRemoveError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRemoveError"/>
+      </iter>
+    </test>
+    <test name="SnapUnprotect" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotect"/>
+      </iter>
+    </test>
+    <test name="SnapUnprotectError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotectError"/>
+      </iter>
+    </test>
+    <test name="SnapUnprotectCancel" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotectCancel"/>
+      </iter>
+    </test>
+    <test name="SnapUnprotectRemove" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotectRemove"/>
+      </iter>
+    </test>
+    <test name="SnapCreateProtect" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreateProtect"/>
+      </iter>
+    </test>
+    <test name="SnapProtect" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapProtect"/>
+      </iter>
+    </test>
+    <test name="SnapProtectError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapProtectError"/>
+      </iter>
+    </test>
+    <test name="SnapProtectCancel" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapProtectCancel"/>
+      </iter>
+    </test>
+    <test name="SetHeadError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SetHeadError"/>
+      </iter>
+    </test>
+    <test name="NoSetHead" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSetHead"/>
+      </iter>
+    </test>
+  </iter>
+</test>

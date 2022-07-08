@@ -1,0 +1,36 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy Block proxy tests
+@ingroup virtblk
+@{
+    Check block device functionality.
+
+    Some tests assume that block proxy is running on the ARM side, but some
+    are applicable to an arbitrary block device exposed to the x86 side.
+
+    Before starting the tests the system executes @ref blk-proxy-prologue
+    that performs certain configuration. Rollback is done automatically and
+    (partially) manually in @ref blk-proxy-epilogue
+
+    Quite a few tests refer to type=fio.xxxx - see @ref virtblk-generic-fio-enums for the
+    values. Detailed package.xml syntax description can be found in TE
+    documentation. Brief:
+
+    @code
+    <arg name="ioengine" type="fio.ioengine"/>
+    @endcode
+
+    means that all values from the enum will be iterated. While:
+
+    @code
+    <arg name="ioengine" type="fio.ioengine" value="libaio"/>
+    @endcode
+
+    means that only one value will be taken.
+ @}
+
+@defgroup virtblk-blk-proxy-bootstrap Initial setup
+@ingroup virtblk-blk-proxy
+*/

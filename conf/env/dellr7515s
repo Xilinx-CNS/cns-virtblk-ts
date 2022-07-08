@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+export TE_DUT_TST1=dellr7515s-soc
+export TE_DUT_TST1_TA_NAME=Agt_ARM
+export TE_DUT_TST1_SSH_USER=root
+
+export TE_DUT_TST2=dellr7515s
+export TE_DUT_TST2_TA_NAME=Agt_host
+
+export TE_NETCONSOLE=$TE_ENGINE_HOST
+export TE_NETCONSOLE_TA_NAME=LogListener
+
+export TE_JTAG_HOST=dellr610e

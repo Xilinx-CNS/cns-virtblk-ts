@@ -1,0 +1,137 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockManagedLock" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="StateTransitions" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="StateTransitions"/>
+      </iter>
+    </test>
+    <test name="AcquireLockLockedState" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AcquireLockLockedState"/>
+      </iter>
+    </test>
+    <test name="AcquireLockAlreadyLocked" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AcquireLockAlreadyLocked"/>
+      </iter>
+    </test>
+    <test name="AcquireLockBusy" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AcquireLockBusy"/>
+      </iter>
+    </test>
+    <test name="AcquireLockError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AcquireLockError"/>
+      </iter>
+    </test>
+    <test name="AcquireLockBlacklist" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AcquireLockBlacklist"/>
+      </iter>
+    </test>
+    <test name="ReleaseLockUnlockedState" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReleaseLockUnlockedState"/>
+      </iter>
+    </test>
+    <test name="ReleaseLockBlacklist" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReleaseLockBlacklist"/>
+      </iter>
+    </test>
+    <test name="ReleaseLockError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReleaseLockError"/>
+      </iter>
+    </test>
+    <test name="ConcurrentRequests" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ConcurrentRequests"/>
+      </iter>
+    </test>
+    <test name="ReacquireLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReacquireLock"/>
+      </iter>
+    </test>
+    <test name="AttemptReacquireBlacklistedLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AttemptReacquireBlacklistedLock"/>
+      </iter>
+    </test>
+    <test name="ReacquireBlacklistedLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReacquireBlacklistedLock"/>
+      </iter>
+    </test>
+    <test name="ReacquireLockError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReacquireLockError"/>
+      </iter>
+    </test>
+    <test name="ReacquireWithSameCookie" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReacquireWithSameCookie"/>
+      </iter>
+    </test>
+    <test name="ShutDownWhileWaiting" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ShutDownWhileWaiting"/>
+      </iter>
+    </test>
+  </iter>
+</test>

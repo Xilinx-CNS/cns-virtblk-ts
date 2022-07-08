@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+#
+# Riverhead/Keystone simulator testing configuration
+#
+
+CMDLINE=
+CMDLINE+="root=/dev/sr0 ro selinux=0 noisapnp floppy=none "
+CMDLINE+="console=tty0 console=ttyS0,115200n8 ide=nodma "
+CMDLINE+="vga=normal clocksource=pit panic=1 pci=realloc,rom 2 "
+CMDLINE+="default_hugepagesz=1G hugepagesz=1G hugepages=3 nokaslr "
+
+# Enable RHSIM configurator include file
+export TE_RHSIM_EXEC=true
+
+# Mark that this configuration should include required cs.* files (see conf/cs.conf)
+export TE_QEMU_EXEC=yes
+
+export TE_DUT_TST1_TA_TYPE=cmod_linux
+export TE_DUT_TST2_TA_TYPE=cmod_linux
+
+export TE_DUT_TST1_MEM=12288
+export TE_DUT_TST2_MEM=12288
+
+export TE_DUT_TST1_SSH_KEY=${TE_SSH_KEY_DIR}/cosimroot.id_rsa
+export TE_DUT_TST2_SSH_KEY=${TE_SSH_KEY_DIR}/cosimroot.id_rsa
+
+: ${CMOD_ROOTISO_VERSION:=1.3-UBUNTU18.04.cosim.qonq.2}
+: ${CMOD_KERNEL_VERSION:=4.15.18}
+
+DEFAULT_CMOD_KERNEL_CMDLINE=$CMDLINE
+
+export CMOD_ROOTISO_VERSION
+export CMOD_KERNEL_VERSION
+export CMOD_KERNEL_CMDLINE=${CMOD_KERNEL_CMDLINE:-${DEFAULT_CMOD_KERNEL_CMDLINE}}
+
+export CMOD_ROOT_SNAPSHOT=0
+export CMOD_ROOT_CDROM=1
+
+export RTE_KERNELDIR=/tools/solarflare/firmware-tools/cosim/kernels/4.15.18/build

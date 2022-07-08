@@ -1,0 +1,13 @@
+#!/bin/bash
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+source "${TE_BASE}"/engine/builder/te_ta_ssh_helper
+
+: ${TS_TEST_AGENTS:=TE_DUT_TST1 TE_DUT_TST2 TE_DUT_TST3 TE_RHSIM_STARTER TE_ARM_STARTER TE_HOST_STARTER TE_DISK_STARTER TE_NETCONSOLE TE_UART_LOGGER}
+
+export TE_DUT_TST2_TA_TYPE=linux_host_agent
+export TE_DUT_TST3_TA_TYPE=linux_disk_agent
+export TE_UART_LOGGER_TA_TYPE=linux_uart_logger_agent
+export TE_POWER_CTL_TA_TYPE=linux_power_ctl_agent
+
+te_ta_list_detect_type_with_signature ${TS_TEST_AGENTS}

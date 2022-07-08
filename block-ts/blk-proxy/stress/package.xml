@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Stress testing</description>
+    <author mailto="Artemii.Morozov@arknetworks.am"/>
+
+    <session track_conf="nohistory">
+
+
+        <arg name="blocksize" value="4096"/>
+        <arg name="rwmixread" value="50"/>
+        <arg name="ioengine" value="sync"/>
+        <arg name="numjobs" value="16"/>
+        <arg name="rwtype" value="rand"/>
+        <arg name="iodepth" value="16"/>
+        <arg name="runtime_sec" value="60"/>
+
+        <run name="unbind_driver">
+            <script name="stress"/>
+            <arg name="env" ref="env.network"/>
+            <arg name="action">
+                <value>unbind</value>
+            </arg>
+            <arg name="reverse">
+                <value>TRUE</value>
+                <value>FALSE</value>
+            </arg>
+        </run>
+
+        <run name="drop_link">
+            <script name="stress">
+                <req id="REMOTE_BACKNED"/>
+                <req id="BROKEN"/>
+            </script>
+            <arg name="env" ref="env.network"/>
+            <arg name="action">
+                <value>drop_link_arm</value>
+                <value>drop_link_partner</value>
+            </arg>
+            <arg name="reverse">
+                <value>TRUE</value>
+                <value>FALSE</value>
+            </arg>>
+        </run>
+
+        <run name="unload_sfc">
+            <script name="stress">
+                <req id="REMOTE_BACKNED"/>
+                <req id="BROKEN"/>
+            </script>
+            <arg name="env" ref="env.network"/>
+            <arg name="action">
+                <value>unload_sfc</value>
+            </arg>
+            <arg name="reverse">
+                <value>TRUE</value>
+                <value>FALSE</value>
+            </arg>
+        </run>
+
+    </session>
+</package>

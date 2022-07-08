@@ -1,0 +1,305 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMirroring" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="EnableImageMirror_In_MirrorModeImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableImageMirror_In_MirrorModeImage"/>
+      </iter>
+    </test>
+    <test name="EnableImageMirror_In_MirrorModePool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableImageMirror_In_MirrorModePool"/>
+      </iter>
+    </test>
+    <test name="EnableImageMirror_In_MirrorModeDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableImageMirror_In_MirrorModeDisabled"/>
+      </iter>
+    </test>
+    <test name="DisableImageMirror_In_MirrorModeImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableImageMirror_In_MirrorModeImage"/>
+      </iter>
+    </test>
+    <test name="DisableImageMirror_In_MirrorModePool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableImageMirror_In_MirrorModePool"/>
+      </iter>
+    </test>
+    <test name="DisableImageMirror_In_MirrorModeDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableImageMirror_In_MirrorModeDisabled"/>
+      </iter>
+    </test>
+    <test name="DisableImageMirrorWithPeer" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableImageMirrorWithPeer"/>
+      </iter>
+    </test>
+    <test name="DisableJournalingWithPeer" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableJournalingWithPeer"/>
+      </iter>
+    </test>
+    <test name="EnableImageMirror_WithoutJournaling" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableImageMirror_WithoutJournaling"/>
+      </iter>
+    </test>
+    <test name="CreateImage_In_MirrorModeDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CreateImage_In_MirrorModeDisabled"/>
+      </iter>
+    </test>
+    <test name="CreateImage_In_MirrorModeImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CreateImage_In_MirrorModeImage"/>
+      </iter>
+    </test>
+    <test name="CreateImage_In_MirrorModePool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CreateImage_In_MirrorModePool"/>
+      </iter>
+    </test>
+    <test name="CreateImage_In_MirrorModePool_WithoutJournaling" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CreateImage_In_MirrorModePool_WithoutJournaling"/>
+      </iter>
+    </test>
+    <test name="CreateImage_In_MirrorModeImage_WithoutJournaling" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CreateImage_In_MirrorModeImage_WithoutJournaling"/>
+      </iter>
+    </test>
+    <test name="EnableJournaling_In_MirrorModeDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableJournaling_In_MirrorModeDisabled"/>
+      </iter>
+    </test>
+    <test name="EnableJournaling_In_MirrorModeImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableJournaling_In_MirrorModeImage"/>
+      </iter>
+    </test>
+    <test name="EnableJournaling_In_MirrorModePool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EnableJournaling_In_MirrorModePool"/>
+      </iter>
+    </test>
+    <test name="DisableJournaling_In_MirrorModePool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableJournaling_In_MirrorModePool"/>
+      </iter>
+    </test>
+    <test name="DisableJournaling_In_MirrorModeImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DisableJournaling_In_MirrorModeImage"/>
+      </iter>
+    </test>
+    <test name="MirrorModeSet_DisabledMode_To_PoolMode" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirrorModeSet_DisabledMode_To_PoolMode"/>
+      </iter>
+    </test>
+    <test name="MirrorModeSet_PoolMode_To_DisabledMode" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirrorModeSet_PoolMode_To_DisabledMode"/>
+      </iter>
+    </test>
+    <test name="MirrorModeSet_DisabledMode_To_ImageMode" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirrorModeSet_DisabledMode_To_ImageMode"/>
+      </iter>
+    </test>
+    <test name="MirrorModeSet_PoolMode_To_ImageMode" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirrorModeSet_PoolMode_To_ImageMode"/>
+      </iter>
+    </test>
+    <test name="MirrorModeSet_ImageMode_To_PoolMode" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirrorModeSet_ImageMode_To_PoolMode"/>
+      </iter>
+    </test>
+    <test name="MirrorModeSet_ImageMode_To_DisabledMode" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirrorModeSet_ImageMode_To_DisabledMode"/>
+      </iter>
+    </test>
+    <test name="RemoveImage_With_MirrorImageEnabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveImage_With_MirrorImageEnabled"/>
+      </iter>
+    </test>
+    <test name="RemoveImage_With_MirrorImageDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveImage_With_MirrorImageDisabled"/>
+      </iter>
+    </test>
+    <test name="RemoveImage_With_ImageWithoutJournal" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveImage_With_ImageWithoutJournal"/>
+      </iter>
+    </test>
+    <test name="RemoveImage_With_MirrorImageDemoted" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveImage_With_MirrorImageDemoted"/>
+      </iter>
+    </test>
+    <test name="TrashMoveRestore_PoolMode" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashMoveRestore_PoolMode"/>
+      </iter>
+    </test>
+    <test name="TrashMoveRestore_ImageMode_MirroringDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashMoveRestore_ImageMode_MirroringDisabled"/>
+      </iter>
+    </test>
+    <test name="TrashMoveRestore_ImageMode_MirroringEnabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashMoveRestore_ImageMode_MirroringEnabled"/>
+      </iter>
+    </test>
+    <test name="MirrorStatusList" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirrorStatusList"/>
+      </iter>
+    </test>
+    <test name="RemoveBootstrapped" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveBootstrapped"/>
+      </iter>
+    </test>
+    <test name="AioPromoteDemote" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioPromoteDemote"/>
+      </iter>
+    </test>
+    <test name="AioGetInfo" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioGetInfo"/>
+      </iter>
+    </test>
+    <test name="AioGetStatus" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioGetStatus"/>
+      </iter>
+    </test>
+  </iter>
+</test>

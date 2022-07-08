@@ -1,0 +1,23 @@
+#! /bin/bash
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+#
+# Auxiliary functions and definitions which can be used in run.sh.
+#
+
+SSH="ssh -qxTn -o BatchMode=yes"
+
+make_te_workspace_dirs()
+{
+    hosts=$(cat ${1} | egrep "(TE_JTAG_HOST|TE_DUT_TST[0-9]*=)" | sed "s/.*=//")
+    # Create dir on all hosts from configuration if TE_WORKSPACE_DIR is exported
+    if test -n "${TE_WORKSPACE_DIR}" ; then
+        for h in $hosts ; do
+            if test "x${h}" != "x${h/soc/}" ; then
+                $SSH root@$h mkdir -p $TE_WORKSPACE_DIR
+            else
+                $SSH $h mkdir -p $TE_WORKSPACE_DIR
+            fi
+        done
+    fi
+}

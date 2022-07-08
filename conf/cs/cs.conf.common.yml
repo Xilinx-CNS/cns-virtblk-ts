@@ -1,0 +1,151 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+- register:
+  - oid: "/local/agent"
+    access: read_create
+  - oid: "/local/agent/block"
+    access: read_create
+    type: string
+  - oid: "/local/agent/ifname"
+    access: read_create
+    type: string
+  - oid: "/local/agent/mount_dir_prefix"
+    access: read_create
+    type: string
+
+  - oid: "/local/backend"
+    access: read_create
+    type: string
+  - oid: "/local/backend/params"
+    access: read_create
+    type: string
+  - oid: "/local/backend/inventory"
+    access: read_create
+    type: string
+  - oid: "/local/backend/type"
+    access: read_create
+    type: string
+
+    # Using onload only makes sense with ceph
+    # or with another backend over the network.
+  - oid: "/local/use_onload"
+    access: read_write
+    type: string
+  - oid: "/local/onload_path"
+    access: read_write
+    type: string
+
+  - oid: "/local/plugin"
+    access: read_only
+    type: none
+  - oid: "/local/plugin/use_plugin"
+    access: read_write
+    type: string
+  - oid: "/local/plugin/name"
+    access: read_write
+    type: string
+
+  - oid: "/local/blk_proxy"
+    access: read_only
+    type: none
+  - oid: "/local/blk_proxy/logflags"
+    access: read_write
+    type: string
+  - oid: "/local/blk_proxy/onload_env"
+    access: read_create
+    type: string
+
+- add:
+  - if: ${TE_DUT_TST1_TA_NAME} != ""
+    oid: "/local:/agent:${TE_DUT_TST1_TA_NAME}"
+  - if: ${TE_DUT_TST2_TA_NAME} != ""
+    oid: "/local:/agent:${TE_DUT_TST2_TA_NAME}"
+  - if: ${TE_DUT_TST3_TA_NAME} != ""
+    oid: "/local:/agent:${TE_DUT_TST3_TA_NAME}"
+
+- add:
+  - if: ${TE_DUT_TST1_IF} != ""
+    oid: "/local:/agent:${TE_DUT_TST1_TA_NAME}/ifname:"
+    value: ${TE_DUT_TST1_IF}
+  - if: ${TE_DUT_TST2_IF} != ""
+    oid: "/local:/agent:${TE_DUT_TST2_TA_NAME}/ifname:"
+    value: ${TE_DUT_TST2_IF}
+
+- add:
+  - if: ${TE_DUT_TST1_TA_NAME} != ""
+    oid: "/local:/agent:${TE_DUT_TST1_TA_NAME}/mount_dir_prefix:"
+    value: "${TE_MOUNT_DIR_PREFIX:-/tmp/disk}"
+  - if: ${TE_DUT_TST2_TA_NAME} != ""
+    oid: "/local:/agent:${TE_DUT_TST2_TA_NAME}/mount_dir_prefix:"
+    value: "${TE_MOUNT_DIR_PREFIX:-/tmp/disk}"
+
+- add:
+  - oid: "/local:/backend:${BACKEND_MODE}"
+  - oid: "/local:/backend:${BACKEND_MODE}/type:"
+    value: ${TE_BACKEND_SRV_TYPE}
+
+- cond:
+    if: ${BACKEND_MODE} = "ceph"
+    then:
+      - add:
+        - if: ${TE_DUT_TST3} != ""
+          oid: "/local:/backend:ceph/params:host_name"
+          value: ${TE_DUT_TST3}
+        - oid: "/local:/backend:ceph/params:osd_num"
+          value: ${TE_CEPH_OSD_NUM}
+        - oid: "/local:/backend:ceph/params:stor_size_gb"
+          value: ${TE_CEPH_STOR_SIZE_GB}
+        - oid: "/local:/backend:ceph/params:enable_logging"
+          value: "${TE_ENABLE_CEPH_LOGGING:-false}"
+
+- cond:
+    if: ${BACKEND_MODE} = "nvme"
+    then:
+      - add:
+        - if: ${TE_DUT_TST3} != ""
+          oid: "/local:/backend:nvme/params:host_name"
+          value: ${TE_DUT_TST3}
+        - oid: "/local:/backend:nvme/params:stor_size_gb"
+          value: ${TE_NVME_STOR_SIZE_GB}
+        - oid: "/local:/backend:nvme/params:port"
+          value: ${TE_NVME_PORT:-11345}
+
+- set:
+# Do not use onload by default.
+  - oid: "/local:/use_onload:"
+    value:  ${TE_USE_ONLOAD:-false}
+  - if: ${TE_USE_ONLOAD} != ""
+    oid: "/local:/onload_path:"
+    value: ${TE_ONLOAD_TOOL_PATH}
+
+# Do not use plugins by default.
+  - oid: "/local:/plugin:/use_plugin:"
+    value: "${TE_ENABLE_PLUGIN:-false}"
+  - if: ${TE_ENABLE_PLUGIN} != ""
+    oid: "/local:/plugin:/name:"
+    value: "${TE_PLUGIN_NAME}"
+
+  - if: ${TE_BP_LOGFLAGS} != ""
+    oid: "/local:/blk_proxy:/logflags:"
+    value: "${TE_BP_LOGFLAGS}"
+
+- cond:
+    if: ${TE_USE_ONLOAD} != ""
+    then:
+      - add:
+        - if: ${TE_ARM_SFC_IF} != ""
+          oid: "/local:/blk_proxy:/onload_env:EF_INTERFACE_WHITELIST"
+          value: "${TE_ARM_SFC_IF}"
+        - oid: "/local:/blk_proxy:/onload_env:EF_PACKET_BUFFER_MODE"
+          value: "${EF_PACKET_BUFFER_MODE:-2}"
+        - oid: "/local:/blk_proxy:/onload_env:EF_USE_HUGE_PAGES"
+          value: "${EF_USE_HUGE_PAGES:-1}"
+        - oid: "/local:/blk_proxy:/onload_env:EF_SPIN_USEC"
+          value: "${EF_SPIN_USEC:--1}"
+        - oid: "/local:/blk_proxy:/onload_env:EF_UL_EPOLL"
+          value: "${EF_UL_EPOLL:-3}"
+        - if: ${TE_ENABLE_PLUGIN} != ""
+          oid: "/local:/blk_proxy:/onload_env:EF_TCP_OFFLOAD"
+          value: "${EF_TCP_OFFLOAD:-ceph}"

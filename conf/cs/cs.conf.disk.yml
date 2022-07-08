@@ -1,0 +1,65 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+#
+# Prepare disk agent if needed
+#
+- cond:
+    if: ${TE_DUT_TST3_TA_NAME} != ""
+    then:
+      - add:
+        - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}"
+          value: "${TE_DUT_TST3_TA_TYPE}"
+
+      - cond:
+          if: ${TE_CEPH_SRV_QEMU} = true
+          then:
+
+            - include: cs.conf.vm.disk.yml
+
+            - get:
+              - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/ssh_port:/host:"
+                value: VM3_IUT_SSH_PORT
+              - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/rcf_port:"
+                value: VM3_IUT_RCF_PORT
+
+            - add:
+              - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/conf:port"
+                value: "${VM3_IUT_RCF_PORT}"
+              - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/conf:ssh_port"
+                value: "${VM3_IUT_SSH_PORT}"
+              - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/conf:ssh_proxy"
+                value: "${TE_DISK_STARTER}"
+              - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/conf:host"
+                value: "localhost"
+              - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/conf:user"
+                value: "root"
+              - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/conf:key"
+                value: "${TE_DUT_TST3_SSH_KEY}"
+              - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/conf:copy_tries"
+                value: 3
+
+      - set:
+        - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/rcflib:"
+          value: "rcfunix"
+        - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/rebootable:"
+          value: 1
+        - oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/synch_time:"
+          value: 0
+
+#
+# Just start VM on if needed
+#
+- set:
+  - if: ${TE_DISK_STARTER_TA_NAME} != "" & ${TE_CEPH_SRV_QEMU} = true
+    oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/status:"
+    value: 1
+
+#
+# Just start agents on VM if needed
+#
+- set:
+  - if: ${TE_DUT_TST3_TA_NAME} != "" & ${TE_CEPH_SRV_QEMU} = true
+    oid: "/rcf:/agent:${TE_DUT_TST3_TA_NAME}/status:"
+    value: 1

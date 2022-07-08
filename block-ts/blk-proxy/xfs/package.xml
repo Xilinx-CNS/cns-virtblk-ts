@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Wrapper for XFS test suite</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+
+    <session track_conf="nohistory">
+        <prologue>
+            <script name="prologue">
+                 <req id="MULTI_BLOCK"/>
+            </script>
+
+        </prologue>
+        <epilogue>
+            <script name="epilogue">
+                <req id="MULTI_BLOCK"/>
+            </script>
+        </epilogue>
+        <run>
+            <package name="xfs-group" src="package.generic.xml"/>
+        </run>
+        <run>
+            <package name="xfs-group" src="package.xfs.xml"/>
+        </run>
+    </session>
+</package>

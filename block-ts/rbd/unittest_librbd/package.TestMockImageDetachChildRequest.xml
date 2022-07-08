@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockImageDetachChildRequest"/>
+    <run name="SuccessV1">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessV1"/>
+    </run>
+    <run name="SuccessV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessV2"/>
+    </run>
+    <run name="TrashedSnapshotSuccess">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashedSnapshotSuccess"/>
+    </run>
+    <run name="TrashedSnapshotInUse">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashedSnapshotInUse"/>
+    </run>
+    <run name="TrashedSnapshotSnapshotGetError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashedSnapshotSnapshotGetError"/>
+    </run>
+    <run name="TrashedSnapshotOpenParentError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashedSnapshotOpenParentError"/>
+    </run>
+    <run name="TrashedSnapshotRemoveError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TrashedSnapshotRemoveError"/>
+    </run>
+    <run name="ParentDNE">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ParentDNE"/>
+    </run>
+    <run name="ChildDetachError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ChildDetachError"/>
+    </run>
+    <run name="RemoveChildError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RemoveChildError"/>
+    </run>
+  </session>
+</package>

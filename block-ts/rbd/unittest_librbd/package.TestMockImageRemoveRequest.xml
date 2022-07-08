@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockImageRemoveRequest"/>
+    <run name="SuccessV1">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessV1"/>
+      <arg name="features" value="UNSET_FEATURES"/>
+    </run>
+    <run name="OpenFailV1">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenFailV1"/>
+      <arg name="features" value="UNSET_FEATURES"/>
+    </run>
+    <run name="SuccessV2CloneV1">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessV2CloneV1"/>
+    </run>
+    <run name="SuccessV2CloneV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessV2CloneV2"/>
+    </run>
+    <run name="NotExistsV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotExistsV2"/>
+    </run>
+  </session>
+</package>

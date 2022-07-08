@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Config of virtio-blk</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+
+    <session track_conf="nohistory">
+
+        <run name="driver_rebind">
+            <script name="driver_rebind"/>
+            <arg name="vendor_id">
+                <value>1bf4</value>
+            </arg>
+            <arg name="device_id">
+                <value>1001</value>
+            </arg>
+            <arg name="rebind_count">
+                <value>3</value>
+            </arg>
+        </run>
+
+         <run>
+            <script name="restart_blk_proxy"/>
+            <arg name="vendor_id">
+                <value>1bf4</value>
+            </arg>
+            <arg name="device_id">
+                <value>1001</value>
+            </arg>
+            <arg name="with_rebind">
+                <value>TRUE</value>
+                <value>FALSE</value>
+            </arg>
+            <arg name="iter_num">
+                <value>1</value>
+                <value>100</value>
+            </arg>
+        </run>
+
+        <run>
+            <script name="reboot_arm"/>
+            <arg name="reboot_after_fio" list="">
+                <value>TRUE</value>
+                <value>FALSE</value>
+            </arg>
+            <arg name="count_iter" list="">
+                <value>3</value>
+                <value>1</value>
+            </arg>
+            <arg name="blocksize" value="512"/>
+            <arg name="rwmixread" value="50"/>
+            <arg name="ioengine" value="sync"/>
+            <arg name="numjobs" value="1"/>
+            <arg name="rwtype" value="rand"/>
+            <arg name="iodepth" value="1"/>
+            <arg name="runtime_sec" list="">
+                <value>10</value>
+                <value>240</value>
+            </arg>
+        </run>
+
+    </session>
+</package>

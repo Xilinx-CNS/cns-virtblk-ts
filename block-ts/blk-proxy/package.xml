@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Testing of bridging application</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+
+    <!-- Don't roll back configuration changes using history after general
+         epilogue. Configurator can fail to apply changes using history
+         when it reverts a tricky configuration for example with ceph testing.
+         Some necessary cleanup activity is done in the epilogue and it should
+         not be repeated by Configurator. -->
+    <session track_conf="nohistory">
+
+       <var name="env.network" global="true">
+            <value>'net':IUT{'iut_host'{{'pco':IUT},addr:'clt_addr':inet:unicast,if:'clt_if'},'tst_host'{{'pco':tester},addr:'srv_addr':inet:unicast,if:'srv_if'}}</value>
+        </var>
+
+        <prologue>
+            <script name="prologue"/>
+            <arg name="env" ref="env.network"/>
+            <arg name="bp-Ceph-Ceph" list="ceph-dev">
+                <value reqs="CEPH,1BLK">rampool ramdev0 512</value>
+                <value reqs="CEPH,2BLK">rampool ramdev0 512</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Ceph-Ceph" list="ceph-dev">
+                <value reqs="CEPH,1BLK">none</value>
+                <value reqs="CEPH,2BLK">rampool ramdev1 512</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Nvme-TransportID">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">trtype:TCP traddr:#{NVME_ADDR} trsvcid:#{NVME_PORT} subnqn:ramdisk adrfam:IPv4 Nvme0</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK">none</value>
+             </arg>
+            <arg name="bp-Malloc-NumberOfLuns" list="malloc-dev">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC,1BLK">1</value>
+                <value reqs="MALLOC,2BLK">2</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Malloc-LunSizeInMB" list="malloc-dev">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">256</value>
+                <value reqs="MALLOC">256</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Malloc-BlockSize" list="malloc-dev">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">512</value>
+                <value reqs="MALLOC">512</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Null-Dev" list="null-dev">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK,1BLK">Null0 600 512</value>
+                <value reqs="NULLBLOCK,2BLK">Null0 600 512</value>
+            </arg>
+            <arg name="bp-Null-Dev" list="null-dev">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK,1BLK">none</value>
+                <value reqs="NULLBLOCK,2BLK">Null1 600 512</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-Name">
+                <value>virtio-blk1</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-Dev">
+                <value reqs="CEPH">Ceph0</value>
+                <value reqs="NVME">Nvme0n1</value>
+                <value reqs="MALLOC">Malloc0</value>
+                <value reqs="NULLBLOCK">Null0</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-Cpumask">
+                <value>0x4</value>
+            </arg>
+
+            <arg name="bp-MapVirtioBlk1-FastPath">
+                <value reqs="ONLOAD">Both</value>
+                <value reqs="NO_ONLOAD">none</value>
+            </arg>
+
+            <arg name="bp-MapVirtioBlk1-R_Cpumask" list="masks">
+                <value reqs="1BLK,CEPH">0x30</value>
+                <value reqs="1BLK,NVME">0x30</value>
+                <value reqs="1BLK,MALLOC">0x30</value>
+                <value reqs="NULLBLOCK">none</value>
+                <value reqs="2BLK,CEPH">0x30</value>
+                <value reqs="2BLK,NVME">0x30</value>
+                <value reqs="2BLK,MALLOC">0x30</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-W_Cpumask" list="masks">
+                <value reqs="1BLK,CEPH">0x30</value>
+                <value reqs="1BLK,NVME">0x30</value>
+                <value reqs="1BLK,MALLOC">0x30</value>
+                <value reqs="NULLBLOCK">none</value>
+                <value reqs="2BLK,CEPH">0x30</value>
+                <value reqs="2BLK,NVME">0x30</value>
+                <value reqs="2BLK,MALLOC">0x30</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk2-Name" list="list2">
+                <value reqs="1BLK">none</value>
+                <value reqs="2BLK">virtio-blk2</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk2-Dev">
+                <value reqs="1BLK">none</value>
+                <value reqs="CEPH,2BLK">Ceph1</value>
+                <value reqs="NVME,2BLK">Nvme0n2</value>
+                <value reqs="MALLOC,2BLK">Malloc1</value>
+                <value reqs="NULLBLOCK,2BLK">Null1</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk2-FastPath">
+                <value reqs="1BLK">none</value>
+                <value reqs="2BLK,NO_ONLOAD">none</value>
+                <value reqs="2BLK,ONLOAD">Both</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk2-Cpumask" list="list2">
+                <value reqs="1BLK">none</value>
+                <value reqs="2BLK">0x8</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk2-R_Cpumask" list="masks">
+                <value reqs="1BLK,CEPH">none</value>
+                <value reqs="1BLK,NVME">none</value>
+                <value reqs="1BLK,MALLOC">none</value>
+                <value reqs="NULLBLOCK">none</value>
+                <value reqs="2BLK,CEPH">0x30</value>
+                <value reqs="2BLK,NVME">0x30</value>
+                <value reqs="2BLK,MALLOC">0x30</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk2-W_Cpumask" list="masks">
+                <value reqs="1BLK,CEPH">none</value>
+                <value reqs="1BLK,NVME">none</value>
+                <value reqs="1BLK,MALLOC">none</value>
+                <value reqs="NULLBLOCK">none</value>
+                <value reqs="2BLK,CEPH">0x30</value>
+                <value reqs="2BLK,NVME">0x30</value>
+                <value reqs="2BLK,MALLOC">0x30</value>
+            </arg>
+        </prologue>
+
+        <epilogue>
+            <script name="epilogue"/>
+            <arg name="env" ref="env.network"/>
+        </epilogue>
+
+        <run>
+            <package name="readwrite"/>
+        </run>
+        <run>
+            <package name="performance"/>
+        </run>
+        <run>
+            <package name="mke2fs"/>
+        </run>
+        <run>
+            <package name="config"/>
+        </run>
+        <run>
+            <package name="xfs"/>
+        </run>
+        <run>
+            <package name="fs"/>
+        </run>
+
+        <run>
+            <package name="network_stimuli"/>
+        </run>
+
+        <run>
+            <package name="stress"/>
+        </run>
+
+    </session>
+</package>

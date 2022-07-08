@@ -1,0 +1,89 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockImageDetachChildRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="SuccessV1" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessV1"/>
+      </iter>
+    </test>
+    <test name="SuccessV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessV2"/>
+      </iter>
+    </test>
+    <test name="TrashedSnapshotSuccess" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashedSnapshotSuccess"/>
+      </iter>
+    </test>
+    <test name="TrashedSnapshotInUse" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashedSnapshotInUse"/>
+      </iter>
+    </test>
+    <test name="TrashedSnapshotSnapshotGetError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashedSnapshotSnapshotGetError"/>
+      </iter>
+    </test>
+    <test name="TrashedSnapshotOpenParentError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashedSnapshotOpenParentError"/>
+      </iter>
+    </test>
+    <test name="TrashedSnapshotRemoveError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashedSnapshotRemoveError"/>
+      </iter>
+    </test>
+    <test name="ParentDNE" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ParentDNE"/>
+      </iter>
+    </test>
+    <test name="ChildDetachError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ChildDetachError"/>
+      </iter>
+    </test>
+    <test name="RemoveChildError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveChildError"/>
+      </iter>
+    </test>
+  </iter>
+</test>

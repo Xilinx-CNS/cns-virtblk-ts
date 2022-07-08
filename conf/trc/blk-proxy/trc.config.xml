@@ -1,0 +1,42 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="config" type="package">
+    <objective/>
+    <iter result="PASSED">
+
+        <test name="driver_rebind" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="vendor_id"/>
+                <arg name="device_id"/>
+                <arg name="rebind_count"/>
+            </iter>
+        </test>
+
+        <test name="restart_blk_proxy" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="vendor_id"/>
+                <arg name="device_id"/>
+                <arg name="with_rebind"/>
+                <arg name="iter_num"/>
+            </iter>
+        </test>
+
+        <test name="reboot_arm" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="reboot_after_fio"/>
+                <arg name="count_iter"/>
+                <arg name="blocksize"/>
+                <arg name="rwmixread"/>
+                <arg name="ioengine"/>
+                <arg name="numjobs"/>
+                <arg name="rwtype"/>
+                <arg name="iodepth"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+
+    </iter>
+</test>

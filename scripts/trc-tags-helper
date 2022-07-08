@@ -1,0 +1,123 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Useful functions for build TRC tags based on keys and environment
+
+TS_TRC_TAG_CFG=
+TS_TRC_TAG_CMOD=
+TS_TRC_TAG_RUN_MODE=u26z
+TS_TRC_TAG_BACKEND_MODE=malloc
+TS_TRC_TAG_USE_ONLOAD=false
+TS_TRC_TAG_TS_LIBRBD_TYPE=false
+TS_TRC_TAG_TS_VIRTIO_TYPE=false
+TS_TRC_TAG_PACKAGE=
+TS_TRC_TAG_CEPH_RUN_TYPE=
+TS_TRC_TAG_PLUGIN=
+TS_TRC_TAG_ARM_MTU=1500
+
+##
+# Detect tag by options for run.sh
+#
+# @param option     current option of run.sh
+#
+function ts_trc_tags_opt()
+{
+    local option=$1
+
+    case "${option}" in
+        --cfg=*)
+            TS_TRC_TAG_CFG=${option#--cfg=}
+            ;;
+        --tester-run=*)
+            TS_TRC_TAG_PACKAGE=${option#--tester-run=block-ts/}
+            ;;
+        --ceph-build=*)
+            TS_TRC_TAG_TS_LIBRBD_TYPE="true"
+            ;;
+        --cmod-singlehost)
+            TS_TRC_TAG_TS_VIRTIO_TYPE="true"
+            TS_TRC_TAG_CMOD="true"
+            TS_TRC_TAG_RUN_MODE=singlehost
+            ;;
+        --cmod-multihost)
+            TS_TRC_TAG_TS_VIRTIO_TYPE="true"
+            TS_TRC_TAG_CMOD="true"
+            TS_TRC_TAG_RUN_MODE=multihost
+            ;;
+        --ceph-container)
+            TS_TRC_TAG_BACKEND_MODE=ceph
+            TS_TRC_TAG_CEPH_RUN_TYPE=ceph-container
+            ;;
+        --ceph-qemu)
+            TS_TRC_TAG_BACKEND_MODE=ceph
+            TS_TRC_TAG_CEPH_RUN_TYPE=ceph-qemu
+            ;;
+        --nvme)
+            TS_TRC_TAG_BACKEND_MODE=nvme
+            ;;
+        --ceph-onload)
+            TS_TRC_TAG_USE_ONLOAD=true
+            ;;
+        --spdk-dir=*)
+            pushd ${option#--spdk-dir=} > /dev/null
+            TS_TRC_TAG_SPDK_REV=`git describe --tags --exact-match 2> /dev/null || \
+                                 git symbolic-ref -q --short HEAD || \
+                                 git rev-parse --short HEAD`
+            popd > /dev/null
+            ;;
+        --enable-plugin)
+            TS_TRC_TAG_PLUGIN=with-plugin
+            ;;
+        --arm-mtu=*)
+            TS_TRC_TAG_ARM_MTU=${option#--arm-mtu=}
+            ;;
+        *)
+            ;;
+    esac
+}
+
+# Build TRC tags by environment and run.sh options
+function ts_trc_tags_build()
+{
+    local tags_options=""
+
+    [[ -n "$TS_TRC_TAG_CFG" ]] &&
+        tags_options+="--trc-tag=$TS_TRC_TAG_CFG "
+    [[ "$TS_TRC_TAG_CMOD" == "true" ]] &&
+        tags_options+="--trc-tag=cmod " &&
+        tags_options+="--trc-tag=ef100 "
+
+    [[ "$TS_TRC_TAG_TS_LIBRBD_TYPE" == "true" ]] &&
+        tags_options+="--trc-tag=librbd " &&
+        tags_options+="--trc-tag=non-mocking "
+    [[ "$TS_TRC_TAG_TS_VIRTIO_TYPE" == "true" ]] &&
+        tags_options+="--trc-tag=virtio-blk "
+
+    [[ -n "$TS_TRC_TAG_SPDK_REV" ]] &&
+        tags_options+="--trc-tag=spdk-branch:$TS_TRC_TAG_SPDK_REV "
+
+    [[ -n $FW_BRANCH ]] &&
+        tags_options+="--trc-tag=fw-branch:$FW_BRANCH "
+    [[ -n $CMOD_BRANCH ]] &&
+        tags_options+="--trc-tag=cmod-branch:$CMOD_BRANCH "
+
+    [[ -n $MC_FW_FLASH_NAME ]] &&
+        tags_options+="--trc-tag=mc-fw-flash:$(basename $MC_FW_FLASH_NAME) "
+
+    [[ -n $MC_FW_PCIID_TYPE ]] &&
+        tags_options+="--trc-tag=pciid-type:$MC_FW_PCIID_TYPE "
+
+    [[ "$TS_TRC_TAG_USE_ONLOAD" == "true" ]] &&
+        tags_options+="--trc-tag=onload "
+
+    tags_options+="--trc-tag=$TS_TRC_TAG_RUN_MODE "
+    tags_options+="--trc-tag=$TS_TRC_TAG_BACKEND_MODE "
+
+    [[ -n $TS_TRC_TAG_CEPH_RUN_TYPE ]] &&
+        tags_options+="--trc-tag=$TS_TRC_TAG_CEPH_RUN_TYPE "
+
+    tags_options+="--trc-tag=$TS_TRC_TAG_PACKAGE "
+    tags_options+="--trc-tag=$TS_TRC_TAG_PLUGIN "
+    tags_options+="--trc-tag=arm-mtu:$TS_TRC_TAG_ARM_MTU "
+
+    echo $tags_options
+}

@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+# Setup network to communicate with a backend
+
+# Load SFC module if it's needed
+- cond:
+    if: ${TE_NEED_LOAD_SFC} != ""
+    then:
+      - add:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/rsrc:module_sfc"
+          value: "/agent:${TE_DUT_TST1_TA_NAME}/module:sfc"
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:sfc"
+      - set:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:sfc/loaded:"
+          value: "1"
+
+- cond:
+    if: ${TE_NEED_LOAD_SFC} != "" & ${TE_ENABLE_PLUGIN} = "true"
+    then:
+      # Unload SFC module that is loaded before to be sure that it
+      # will be successful loaded with rss_cpus parameter.
+      - set:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:sfc/loaded:"
+          value: "0"
+      - add:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:sfc/parameter:rss_cpus"
+          value: "1"
+      - set:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/module:sfc/loaded:"
+          value: "1"
+
+- cond:
+    if: ${TE_CEPH_SRV_QEMU} != ""
+    then:
+      - include: inc.ceph_net.qemu.yml
+
+- include:
+    - inc.net_ifs.yml

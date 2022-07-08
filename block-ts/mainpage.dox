@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/** @mainpage
+
+@tableofcontents
+
+@section virtblk_intro Introduction
+
+@defgroup virtblk Test Suite
+
+*/
+
+/** @defgroup virtblk-generic Generic parameters/info
+ *  @ingroup virtblk
+ */

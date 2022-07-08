@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+export TE_POWER_CTL=$TE_ENGINE_HOST
+export TE_POWER_CTL_TA_NAME=Agt_power
+
+export TE_COLD_REBOOT_CMD='/home/xce-ci-virtblk/virtblk-testing/scripts/cold_reboot.sh %s'

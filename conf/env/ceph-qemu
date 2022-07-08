@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+export TE_CEPH_EXEC=true
+export TE_CEPH_SRV_QEMU=true
+
+# Define agent that start qemu for Agt_disk
+export TE_DISK_STARTER_TA_NAME=Agt_run_disk
+
+# Define RSA key to connect to qemu with Ceph server.
+export TE_DUT_TST3_SSH_KEY=${TE_SSH_KEY_DIR}/cosimroot.id_rsa
+
+# Prepare and define kernel command line.
+CMDLINE=
+CMDLINE+="root=/dev/sda2 ro selinux=0 noisapnp floppy=none "
+CMDLINE+="console=tty0 console=ttyS0,115200n8 ide=nodma "
+CMDLINE+="vga=normal clocksource=pit panic=1 pci=realloc,rom 2 "
+CMDLINE+="default_hugepagesz=1G hugepagesz=1G hugepages=3 nokaslr "
+CMDLINE+="ramdisk_size=8388608 "
+
+export CEPH_VM_KERNEL_CMDLINE=${CMDLINE}
+
+export TE_DUT_TST3_TA_NAME=Agt_disk

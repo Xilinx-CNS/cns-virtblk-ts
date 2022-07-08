@@ -1,0 +1,37 @@
+#! /bin/bash
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+
+test -d "$SNAPPER_SRC" ||
+    { echo "SNAPPER_SRC=${SNAPPER_SRC} is not a directory" >&2 ; exit 1; }
+
+XILINXTOOL_SRC=$TE_BUILD/xilinxtool_src
+mkdir -p $XILINXTOOL_SRC
+
+$SNAPPER_SRC/scripts/snap --setupall 2>/dev/null 1>/dev/null
+
+SSH_WITH_OPTS=( ssh -qxT -o BatchMode=yes -o StrictHostKeyChecking=no )
+HOST="${TE_JTAG_HOST}"
+
+SSH=( "${SSH_WITH_OPTS[@]}" "${HOST}" )
+
+os_cmd="$SNAPPER_SRC/scripts/mmaketool --userbuild"
+os=$(${SSH[@]} ${os_cmd}) 2>/dev/null
+
+components=(
+     scripts/eftool
+     scripts/item
+     scripts/item_config
+     scripts/mmaketool
+     scripts/sh
+     scripts/xilinxtool
+     src/tools/cosim/functions
+     build/inst/tools/mc_tools/${os}/xncmdclient
+)
+
+for f in ${components[@]} ; do
+    mkdir -p $XILINXTOOL_SRC/$(dirname $f)
+    cp -r $SNAPPER_SRC/$f $XILINXTOOL_SRC/$f
+done
+
+export XILINXTOOL_SRC

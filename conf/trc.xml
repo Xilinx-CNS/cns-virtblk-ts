@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<trc_db>
+    <test name="block-ts" type="package">
+        <objective>Block test suite</objective>
+        <notes/>
+        <iter result="PASSED">
+            <notes/>
+            <test name="rbd" type="package">
+                <objective/>
+                <iter result="PASSED">
+                    <test name="prologue" type="script">
+                        <objective>Initial setup of testing environment</objective>
+                        <notes/>
+                        <iter result="PASSED">
+                            <notes/>
+                        </iter>
+                    </test>
+                    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+                                href="trc/unittest_librbd/trc.xml" parse="xml"/>
+                    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+                                href="trc/ceph_test_librbd/trc.xml" parse="xml"/>
+                </iter>
+            </test>
+            <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+                        href="trc/trc.blk-proxy.xml" parse="xml"/>
+        </iter>
+    </test>
+</trc_db>

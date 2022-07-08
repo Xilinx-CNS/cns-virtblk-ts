@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockIoCopyupRequest"/>
+    <run name="Standard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Standard"/>
+    </run>
+    <run name="StandardWithSnaps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="StandardWithSnaps"/>
+    </run>
+    <run name="CopyOnRead">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CopyOnRead"/>
+    </run>
+    <run name="CopyOnReadWithSnaps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CopyOnReadWithSnaps"/>
+    </run>
+    <run name="DeepCopy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DeepCopy"/>
+    </run>
+    <run name="DeepCopyOnRead">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DeepCopyOnRead"/>
+    </run>
+    <run name="DeepCopyWithSnaps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DeepCopyWithSnaps"/>
+    </run>
+    <run name="ZeroedCopyup">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ZeroedCopyup"/>
+    </run>
+    <run name="ZeroedCopyOnRead">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ZeroedCopyOnRead"/>
+    </run>
+    <run name="NoOpCopyup">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoOpCopyup"/>
+    </run>
+    <run name="RestartWrite">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RestartWrite"/>
+    </run>
+    <run name="ReadFromParentError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReadFromParentError"/>
+    </run>
+    <run name="DeepCopyError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DeepCopyError"/>
+    </run>
+    <run name="UpdateObjectMapError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdateObjectMapError"/>
+    </run>
+    <run name="CopyupError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CopyupError"/>
+    </run>
+  </session>
+</package>

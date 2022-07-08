@@ -1,0 +1,48 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestJournalEntries" type="package">
+  <objective/>
+  <notes/>
+  <iter result="SKIPPED">
+    <arg name="gtest_bin"/>
+    <test name="AioWrite" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWrite"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="AioDiscard" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioDiscard"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="AioFlush" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioFlush"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+  </iter>
+</test>

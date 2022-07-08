@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+--script=scripts/mc-fw-flash
+--script=scripts/cmod
+--script=scripts/cmod-rhsim

@@ -1,0 +1,35 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMirroringWatcher" type="package">
+  <objective/>
+  <notes/>
+  <iter result="SKIPPED">
+    <arg name="gtest_bin"/>
+    <test name="ModeUpdated" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ModeUpdated"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="ImageStatusUpdated" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ImageStatusUpdated"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+  </iter>
+</test>

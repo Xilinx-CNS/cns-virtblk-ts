@@ -1,0 +1,82 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="unittest_librbd" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockDeepCopyRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockExclusiveLock.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockJournal.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockManagedLock.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMap.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestTrashWatcher.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockWatcher.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockDeepCopyImageCopyRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockDeepCopyMetadataCopyRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockDeepCopyObjectCopyRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockDeepCopySetHeadRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockDeepCopySnapshotCopyRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockDeepCopySnapshotCreateRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockExclusiveLockPreAcquireRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockExclusiveLockPostAcquireRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockExclusiveLockPreReleaseRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageAttachChildRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageAttachParentRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageCloneRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageDetachChildRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageDetachParentRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockListWatchersRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImagePreRemoveRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageRefreshRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageRemoveRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockImageValidatePoolRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockIoCopyupRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockIoImageRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockIoImageRequestWQ.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockIoObjectRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockJournalOpenRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockJournalPromoteRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockJournalReplay.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockJournalResetRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockManagedLockAcquireRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockManagedLockBreakRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockManagedLockGetLockerRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockManagedLockReacquireRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockManagedLockReleaseRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockMirrorDisableRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapInvalidateRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapLockRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapRefreshRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapResizeRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapSnapshotCreateRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapSnapshotRemoveRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapSnapshotRollbackRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapUnlockRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockObjectMapUpdateRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationDisableFeaturesRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationEnableFeaturesRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationResizeRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationSnapshotCreateRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationSnapshotProtectRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationSnapshotRemoveRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationSnapshotRollbackRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationSnapshotUnprotectRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockOperationTrimRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockTrashMoveRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMockWatcherRewatchRequest.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestLibRBD.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestImageWatcher.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestInternal.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMirroring.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestDeepCopy.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestGroup.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMigration.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMirroringWatcher.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestObjectMap.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestOperations.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestTrash.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestJournalEntries.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestJournalReplay.xml" parse="xml"/>
+  </iter>
+</test>

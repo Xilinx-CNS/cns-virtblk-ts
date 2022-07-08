@@ -1,0 +1,3 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+TE_EXTRA_OPTS="$(${TS_TOPDIR}/scripts/xce-trc-tags.sh)"

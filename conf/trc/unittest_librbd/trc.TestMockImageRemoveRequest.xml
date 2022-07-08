@@ -1,0 +1,51 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockImageRemoveRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="SuccessV1" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessV1"/>
+        <arg name="features" value="UNSET_FEATURES"/>
+      </iter>
+    </test>
+    <test name="OpenFailV1" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpenFailV1"/>
+        <arg name="features" value="UNSET_FEATURES"/>
+      </iter>
+    </test>
+    <test name="SuccessV2CloneV1" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessV2CloneV1"/>
+      </iter>
+    </test>
+    <test name="SuccessV2CloneV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessV2CloneV2"/>
+      </iter>
+    </test>
+    <test name="NotExistsV2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotExistsV2"/>
+      </iter>
+    </test>
+  </iter>
+</test>

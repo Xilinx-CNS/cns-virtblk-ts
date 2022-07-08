@@ -1,0 +1,89 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockExclusiveLockPostAcquireRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="Success" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Success"/>
+      </iter>
+    </test>
+    <test name="SuccessRefresh" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessRefresh"/>
+      </iter>
+    </test>
+    <test name="SuccessJournalDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessJournalDisabled"/>
+      </iter>
+    </test>
+    <test name="SuccessObjectMapDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessObjectMapDisabled"/>
+      </iter>
+    </test>
+    <test name="RefreshError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RefreshError"/>
+      </iter>
+    </test>
+    <test name="RefreshLockDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RefreshLockDisabled"/>
+      </iter>
+    </test>
+    <test name="JournalError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="JournalError"/>
+      </iter>
+    </test>
+    <test name="AllocateJournalTagError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AllocateJournalTagError"/>
+      </iter>
+    </test>
+    <test name="OpenObjectMapError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpenObjectMapError"/>
+      </iter>
+    </test>
+    <test name="OpenObjectMapTooBig" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpenObjectMapTooBig"/>
+      </iter>
+    </test>
+  </iter>
+</test>

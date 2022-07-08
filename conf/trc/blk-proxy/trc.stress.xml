@@ -1,0 +1,56 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="stress" type="package">
+    <objective/>
+    <iter result="PASSED">
+
+        <test name="unbind_driver" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="action"/>
+                <arg name="reverse"/>
+                <arg name="blocksize"/>
+                <arg name="rwmixread"/>
+                <arg name="ioengine"/>
+                <arg name="numjobs"/>
+                <arg name="rwtype"/>
+                <arg name="iodepth"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+
+        <test name="drop_link" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="action"/>
+                <arg name="reverse"/>
+                <arg name="blocksize"/>
+                <arg name="rwmixread"/>
+                <arg name="ioengine"/>
+                <arg name="numjobs"/>
+                <arg name="rwtype"/>
+                <arg name="iodepth"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+
+        <test name="unload_sfc" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="action"/>
+                <arg name="reverse"/>
+                <arg name="blocksize"/>
+                <arg name="rwmixread"/>
+                <arg name="ioengine"/>
+                <arg name="numjobs"/>
+                <arg name="rwtype"/>
+                <arg name="iodepth"/>
+                <arg name="runtime_sec"/>
+            </iter>
+        </test>
+
+    </iter>
+</test>

@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+ceph_servers:
+  hosts:
+    ${CEPH_SERVER_HOST}:
+  vars:
+    ceph_bootstrap_server: ${CEPH_SERVER_HOST}
+    ansible_ssh_user: root
+    ansible_ssh_private_key_file: /root/.ssh/id_rsa
+    ceph_ssh_private_key_file: /root/.ssh/id_rsa
+    ceph_ssh_public_key_file: /root/.ssh/id_rsa.pub
+    ceph_bootstrap_ssh_user: root
+    disk_num: ${CEPH_OSD_NUM}
+    disk_size_gb: ${CEPH_OSD_SIZE}
+    ceph_bootstrap_pool_min_osds: 1
+    ceph_failure_domain: osd
+    ceph_bootstrap_dashboard: false
+    ceph_bootstrap_monitoring_stack: false
+    ceph_monitor_addresses: "[v1:${CEPH_MON_IP}:6789]"
+    ceph_storage_devs: "{{ ['vg'] | product(range(0,disk_num)) | map('join') \
+                        | product(['lv-ceph']) | map('join', '/') \
+                        | zip(range(0,disk_num)) | map('join')}}"
+    ceph_pools:
+      - name: rampool
+        devs:
+          ${CEPH_DEV0_NAME}
+          ${CEPH_DEV0_SIZE}
+          ${CEPH_DEV1_NAME}
+          ${CEPH_DEV1_SIZE}
+          ${CEPH_DEV2_NAME}
+          ${CEPH_DEV2_SIZE}

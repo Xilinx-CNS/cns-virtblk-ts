@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Testing of blk-proxy performance</description>
+    <author mailto="Denis.Pryazhennikov@oktetlabs.ru"/>
+
+    <session track_conf="nohistory">
+        <prologue>
+            <script name="prologue"/>
+        </prologue>
+
+        <epilogue>
+            <script name="epilogue"/>
+        </epilogue>
+
+        <run name="fio_performance">
+            <session track_conf="nohistory">
+
+                <arg name="bp-Ceph-Ceph"/>
+                <arg name="bp-Nvme-TransportID"/>
+                <arg name="bp-Malloc-NumberOfLuns"/>
+                <arg name="bp-Malloc-LunSizeInMB"/>
+                <arg name="bp-Malloc-BlockSize"/>
+                <arg name="bp-Null-Dev"/>
+                <arg name="bp-MapVirtioBlk1-Name"/>
+                <arg name="bp-MapVirtioBlk1-Dev"/>
+                <arg name="bp-MapVirtioBlk1-Cpumask"/>
+                <arg name="bp-MapVirtioBlk1-R_Cpumask"/>
+                <arg name="bp-MapVirtioBlk1-W_Cpumask"/>
+                <arg name="bp-MapVirtioBlk1-FastPath"/>
+
+                <arg name="ioengine" value="libaio"/>
+                <arg name="runtime_sec" value="10"/>
+                <arg name="rwtype" value="rand"/>
+
+                <prologue>
+                    <script name="fio_prologue"/>
+                </prologue>
+
+                <epilogue>
+                    <script name="fio_epilogue"/>
+                </epilogue>
+
+                <run name="fio_perf_latency">
+                    <script name="fio_perf">
+                        <req id="PERF_FULL"/>
+                    </script>
+                    <arg name="numjobs" list="fio_opts">
+                        <value>4</value>
+                        <value>4</value>
+                        <value>4</value>
+                        <value>4</value>
+                        <value>4</value>
+                        <value>4</value>
+                        <value>4</value>
+                        <value>2</value>
+                        <value>3</value>
+                        <value>4</value>
+                        <value>5</value>
+                        <value>6</value>
+                        <value>7</value>
+                        <value>8</value>
+                        <value>9</value>
+                        <value>10</value>
+                        <value>11</value>
+                        <value>12</value>
+                        <value>13</value>
+                        <value>14</value>
+                        <value>15</value>
+                        <value>16</value>
+                    </arg>
+                    <arg name="iodepth" list="fio_opts">
+                        <value>1</value>
+                        <value>2</value>
+                        <value>4</value>
+                        <value>8</value>
+                        <value>16</value>
+                        <value>32</value>
+                        <value>64</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                        <value>1</value>
+                    </arg>
+                    <arg name="blocksize">
+                        <value reqs="BLOCK_4k">4096</value>
+                    </arg>
+                    <arg name="rwmixread" type="fio.rwmixread.rw_only">
+                        <value>100</value>
+                    </arg>
+                </run>
+
+                <!-- The most important iterations that should be run all time -->
+                <run name="fio_perf_latency">
+                    <script name="fio_perf"/>
+                    <arg name="numjobs">
+                        <value>1</value>
+                    </arg>
+                    <arg name="iodepth">
+                        <value>1</value>
+                    </arg>
+                    <arg name="blocksize">
+                        <value reqs="BLOCK_4k">4096</value>
+                    </arg>
+                    <arg name="rwmixread" type="fio.rwmixread.rw_only">
+                        <value>100</value>
+                    </arg>
+                </run>
+
+                <run name="fio_perf_iops_bw">
+                    <script name="fio_perf">
+                        <req id="PERF_FULL"/>
+                    </script>
+                    <arg name="numjobs" list="fio_opts">
+                        <value>8</value>
+                        <value>16</value>
+                        <value>1</value>
+                        <value>2</value>
+                        <value>3</value>
+                        <value>4</value>
+                        <value>5</value>
+                        <value>6</value>
+                        <value>7</value>
+                        <value>8</value>
+                        <value>9</value>
+                        <value>10</value>
+                        <value>11</value>
+                        <value>12</value>
+                        <value>13</value>
+                        <value>14</value>
+                        <value>15</value>
+                        <value>16</value>
+                    </arg>
+                    <arg name="iodepth" list="fio_opts">
+                        <value>32</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                        <value>16</value>
+                    </arg>
+                    <arg name="blocksize" list="">
+                        <value reqs="BLOCK_4k">4096</value>
+                        <value reqs="BLOCK_4k">4096</value>
+                        <value reqs="BLOCK_1m">1048576</value>
+                        <value reqs="BLOCK_1m">1048576</value>
+                    </arg>
+                    <arg name="rwmixread" type="fio.rwmixread.rw_only" list="">
+                        <value>100</value>
+                        <value>0</value>
+                        <value>100</value>
+                        <value>0</value>
+                    </arg>
+                </run>
+
+                <!-- The most important iterations that should be run all time -->
+                <run name="fio_perf_iops_bw">
+                    <script name="fio_perf"/>
+                    <arg name="numjobs" list="fio_opts">
+                        <value>16</value>
+                    </arg>
+                    <arg name="iodepth" list="fio_opts">
+                        <value>16</value>
+                    </arg>
+                    <arg name="blocksize" list="">
+                        <value reqs="BLOCK_4k">4096</value>
+                        <value reqs="BLOCK_4k">4096</value>
+                        <value reqs="BLOCK_1m">1048576</value>
+                        <value reqs="BLOCK_1m">1048576</value>
+                    </arg>
+                    <arg name="rwmixread" type="fio.rwmixread.rw_only" list="">
+                        <value>100</value>
+                        <value>0</value>
+                        <value>100</value>
+                        <value>0</value>
+                    </arg>
+                </run>
+            </session>
+
+            <arg name="bp-Ceph-Ceph" list="list1">
+                <value reqs="CEPH">rampool ramdev0 512</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Nvme-TransportID">
+                <value reqs="CEPH">none</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK">none</value>
+                <value reqs="NVME">trtype:TCP traddr:#{NVME_ADDR} trsvcid:#{NVME_PORT} subnqn:ramdisk adrfam:IPv4 Nvme0</value>
+            </arg>
+            <arg name="bp-Malloc-NumberOfLuns" list="list1">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">1</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Malloc-LunSizeInMB" list="list1">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">256</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Malloc-BlockSize" list="list1">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">512</value>
+                <value reqs="NULLBLOCK">none</value>
+            </arg>
+            <arg name="bp-Null-Dev" list="list1">
+                <value reqs="CEPH">none</value>
+                <value reqs="NVME">none</value>
+                <value reqs="MALLOC">none</value>
+                <value reqs="NULLBLOCK">Null0 600 512</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-Name">
+                <value>virtio-blk1</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-Dev" list="list1">
+                <value reqs="CEPH">Ceph0</value>
+                <value reqs="NVME">Nvme0n1</value>
+                <value reqs="MALLOC">Malloc0</value>
+                <value reqs="NULLBLOCK">Null0</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-Cpumask">
+                <value>0x2</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-R_Cpumask" list="masks">
+                <value reqs="PERF_FULL">0x4</value>
+                <value>0xC</value>
+                <value reqs="PERF_FULL">0x1C</value>
+                <value>0x3C</value>
+                <value>0x7C</value>
+                <value reqs="PERF_FULL">0xFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x1FC</value>
+                <value reqs="ARM_CPU_16">0x3FC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x7FC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0xFFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x1FFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x3FFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x7FFC</value>
+                <value reqs="ARM_CPU_16">0xFFFC</value>
+                <value reqs="THREADS_CROSSED">0x2</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x6</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0xE</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x1E</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x3E</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x7E</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0xFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x1FE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x3FE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x7FE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0xFFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x1FFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x3FFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x7FFE</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-W_Cpumask" list="masks">
+                <value reqs="PERF_FULL">0x4</value>
+                <value>0xC</value>
+                <value reqs="PERF_FULL">0x1C</value>
+                <value>0x3C</value>
+                <value>0x7C</value>
+                <value reqs="PERF_FULL">0xFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x1FC</value>
+                <value reqs="ARM_CPU_16">0x3FC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x7FC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0xFFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x1FFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x3FFC</value>
+                <value reqs="ARM_CPU_16,PERF_FULL">0x7FFC</value>
+                <value reqs="ARM_CPU_16">0xFFFC</value>
+                <value reqs="THREADS_CROSSED">0x2</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x6</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0xE</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x1E</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x3E</value>
+                <value reqs="THREADS_CROSSED,PERF_FULL">0x7E</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0xFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x1FE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x3FE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x7FE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0xFFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x1FFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x3FFE</value>
+                <value reqs="THREADS_CROSSED,ARM_CPU_16,PERF_FULL">0x7FFE</value>
+            </arg>
+            <arg name="bp-MapVirtioBlk1-FastPath">
+                <value reqs="ONLOAD">Both</value>
+                <value reqs="NO_ONLOAD">none</value>
+            </arg>
+
+        </run>
+
+    </session>
+</package>

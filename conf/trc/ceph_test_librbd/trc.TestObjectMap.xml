@@ -1,0 +1,74 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestObjectMap" type="package">
+  <objective/>
+  <notes/>
+  <iter result="SKIPPED">
+    <arg name="gtest_bin"/>
+    <test name="RefreshInvalidatesWhenCorrupt" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RefreshInvalidatesWhenCorrupt"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="RefreshInvalidatesWhenTooSmall" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RefreshInvalidatesWhenTooSmall"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="InvalidateFlagOnDisk" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="InvalidateFlagOnDisk"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="AcquireLockInvalidatesWhenTooSmall" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AcquireLockInvalidatesWhenTooSmall"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="DISABLED_StressTest" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DISABLED_StressTest"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+  </iter>
+</test>

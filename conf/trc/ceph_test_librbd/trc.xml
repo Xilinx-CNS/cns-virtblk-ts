@@ -1,0 +1,22 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="ceph_test_librbd" type="package">
+  <objective/>
+  <notes/>
+  <iter result="SKIPPED">
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestDeepCopy.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestGroup.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestImageWatcher.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestInternal.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestJournalEntries.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestLibRBD.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMigration.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMirroring.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestMirroringWatcher.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestOperations.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestTrash.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestTrash.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestObjectMap.xml" parse="xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="trc.TestJournalReplay.xml" parse="xml"/>
+  </iter>
+</test>

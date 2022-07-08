@@ -1,0 +1,187 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+#
+# Console logs support
+#
+# Key control variables:
+#   TE_NETCONSOLE                       Host to run log listener TA on
+#   TE_DUT_TST1                         TA on the ARM host
+#   TE_DUT_TST2                         TA on the x86 host
+#   TE_DUT_TST3                         TA on the partner host
+#
+# Misc settings:
+#   TE_LOG_LISTENER_LOG_LEVEL           Log level to use
+#   TE_LOG_LISTENER_PARSER_INTERVAL     Log messages batching interval
+#
+
+#
+# ARM serial console via either netconsole
+#
+- cond:
+    if: ${TE_DUT_TST1} != ""
+    then:
+      # netconsole
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm"
+            value: "netconsole:"
+      # Allocate UDP port to be used as netconsole listener port
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/next:/type:"
+            value: 2
+      - get:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/next:"
+            value: TE_LOG_LISTENER_NETCONSOLE_PORT_ARM
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/allocated:${TE_LOG_LISTENER_NETCONSOLE_PORT_ARM}"
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/port:"
+            value: "${TE_LOG_LISTENER_NETCONSOLE_PORT_ARM}"
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/interval:"
+            value: "${TE_LOG_LISTENER_PARSER_INTERVAL:-10}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/logging:"
+            value: "1"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/logging:/level:"
+            value: "${TE_LOG_LISTENER_LOG_LEVEL:-INFO}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/logging:/user:"
+            value: "${TE_DUT_TST1}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/enable:"
+            value: "1"
+
+#
+# x86 host serial console via either netconsole
+#
+- cond:
+    if: ${TE_DUT_TST2} != ""
+    then:
+      # netconsole
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host"
+            value: "netconsole:"
+      # Allocate UDP port to be used as netconsole listener port
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/next:/type:"
+            value: 2
+      - get:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/next:"
+            value: TE_LOG_LISTENER_NETCONSOLE_PORT_X86_HOST
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/allocated:${TE_LOG_LISTENER_NETCONSOLE_PORT_X86_HOST}"
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/port:"
+            value: "${TE_LOG_LISTENER_NETCONSOLE_PORT_X86_HOST}"
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/interval:"
+            value: "${TE_LOG_LISTENER_PARSER_INTERVAL:-10}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/logging:"
+            value: "1"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/logging:/level:"
+            value: "${TE_LOG_LISTENER_LOG_LEVEL:-INFO}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/logging:/user:"
+            value: "${TE_DUT_TST2}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/enable:"
+            value: "1"
+
+#
+# Partner host serial console via either netconsole
+#
+- cond:
+    if: ${TE_DUT_TST3} != ""
+    then:
+      # netconsole
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner"
+            value: "netconsole:"
+      # Allocate UDP port to be used as netconsole listener port
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/next:/type:"
+            value: 2
+      - get:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/next:"
+            value: TE_LOG_LISTENER_NETCONSOLE_PORT_PARTNER
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/l4_port:/alloc:/allocated:${TE_LOG_LISTENER_NETCONSOLE_PORT_PARTNER}"
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/port:"
+            value: "${TE_LOG_LISTENER_NETCONSOLE_PORT_PARTNER}"
+      - set:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/interval:"
+            value: "${TE_LOG_LISTENER_PARSER_INTERVAL:-10}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/logging:"
+            value: "1"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/logging:/level:"
+            value: "${TE_LOG_LISTENER_LOG_LEVEL:-INFO}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/logging:/user:"
+            value: "${TE_DUT_TST3}"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/enable:"
+            value: "1"
+
+#
+# Listener is ready, configure netconsole on TE_DUT_TST1 to send logs
+#
+- cond:
+    if: ${TE_DUT_TST1} != ""
+    then:
+      # Allocate UDP port to be used as netconsole local port
+      - set:
+          - oid: "/agent:${TE_DUT_TST1_TA_NAME}/l4_port:/alloc:/next:/type:"
+            value: 2
+      - get:
+          - oid: "/agent:${TE_DUT_TST1_TA_NAME}/l4_port:/alloc:/next:"
+            value: TE_ARM_NETCONSOLE_PORT
+      - add:
+          - oid: "/agent:${TE_DUT_TST1_TA_NAME}/l4_port:/alloc:/allocated:${TE_ARM_NETCONSOLE_PORT}"
+      - add:
+          - oid: "/agent:${TE_DUT_TST1_TA_NAME}/netconsole:log_listener"
+            value: "${TE_ARM_NETCONSOLE_PORT}:${TE_NETCONSOLE}:${TE_LOG_LISTENER_NETCONSOLE_PORT_ARM}"
+
+#
+# Listener is ready, configure netconsole on TE_DUT_TST2 to send logs
+#
+- cond:
+    if: ${TE_DUT_TST2} != ""
+    then:
+      # Allocate UDP port to be used as netconsole local port
+      - set:
+          - oid: "/agent:${TE_DUT_TST2_TA_NAME}/l4_port:/alloc:/next:/type:"
+            value: 2
+      - get:
+          - oid: "/agent:${TE_DUT_TST2_TA_NAME}/l4_port:/alloc:/next:"
+            value: TE_X86_HOST_NETCONSOLE_PORT
+      - add:
+          - oid: "/agent:${TE_DUT_TST2_TA_NAME}/l4_port:/alloc:/allocated:${TE_X86_HOST_NETCONSOLE_PORT}"
+      - add:
+          - oid: "/agent:${TE_DUT_TST2_TA_NAME}/netconsole:log_listener"
+            value: "${TE_X86_HOST_NETCONSOLE_PORT}:${TE_NETCONSOLE}:${TE_LOG_LISTENER_NETCONSOLE_PORT_X86_HOST}"
+
+#
+# Listener is ready, configure netconsole on TE_DUT_TST3 to send logs
+#
+- cond:
+    if: ${TE_DUT_TST3} != ""
+    then:
+      # Allocate UDP port to be used as netconsole local port
+      - set:
+          - oid: "/agent:${TE_DUT_TST3_TA_NAME}/l4_port:/alloc:/next:/type:"
+            value: 2
+      - get:
+          - oid: "/agent:${TE_DUT_TST3_TA_NAME}/l4_port:/alloc:/next:"
+            value: TE_PARTNER_NETCONSOLE_PORT
+      - add:
+          - oid: "/agent:${TE_DUT_TST3_TA_NAME}/l4_port:/alloc:/allocated:${TE_PARTNER_NETCONSOLE_PORT}"
+      - add:
+          - oid: "/agent:${TE_DUT_TST3_TA_NAME}/netconsole:log_listener"
+            value: "${TE_PARTNER_NETCONSOLE_PORT}:${TE_NETCONSOLE}:${TE_LOG_LISTENER_NETCONSOLE_PORT_PARTNER}"

@@ -1,0 +1,124 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+
+#
+# Prepare host agent if needed
+#
+- cond:
+    if: ${TE_DUT_TST2_TA_NAME} != ""
+    then:
+      - add:
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}"
+          value: "${TE_DUT_TST2_TA_TYPE}"
+
+      - include: cs.conf.vm.host.yml
+
+      - get:
+        - oid: "/agent:${TE_HOST_STARTER_TA_NAME}/vm:${TE_DUT_TST2_TA_NAME}/ssh_port:/host:"
+          value: VM2_IUT_SSH_PORT
+        - oid: "/agent:${TE_HOST_STARTER_TA_NAME}/vm:${TE_DUT_TST2_TA_NAME}/rcf_port:"
+          value: VM2_IUT_RCF_PORT
+
+      - set:
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/rcflib:"
+          value: "rcfunix"
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/rebootable:"
+          value: 1
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/synch_time:"
+          value: 0
+
+      - add:
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/conf:port"
+          value: "${VM2_IUT_RCF_PORT}"
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/conf:ssh_port"
+          value: "${VM2_IUT_SSH_PORT}"
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/conf:ssh_proxy"
+          value: "${TE_HOST_STARTER}"
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/conf:host"
+          value: "localhost"
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/conf:user"
+          value: "root"
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/conf:key"
+          value: "${TE_DUT_TST2_SSH_KEY}"
+        - oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/conf:copy_tries"
+          value: 3
+
+#
+# Prepare ARM agent if needed
+#
+- cond:
+    if: ${TE_DUT_TST1_TA_NAME} != ""
+    then:
+      - add:
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}"
+          value: "${TE_DUT_TST1_TA_TYPE}"
+
+      # In multihost case we should allocate ports and use them, in
+      # singlehost we should set same as Agt_ARM.
+      - cond:
+          if: ${MULTIHOST} = true
+          then:
+            - include: cs.conf.vm.arm.yml
+
+            - get:
+              - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/ssh_port:/host:"
+                value: VM1_IUT_SSH_PORT
+              - oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/rcf_port:"
+                value: VM1_IUT_RCF_PORT
+
+            - add:
+              - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:port"
+                value: "${VM1_IUT_RCF_PORT}"
+              - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:ssh_port"
+                value: "${VM1_IUT_SSH_PORT}"
+          else:
+            - add:
+              - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:port"
+                value: "${VM2_IUT_RCF_PORT}"
+              - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:ssh_port"
+                value: "${VM2_IUT_SSH_PORT}"
+
+
+      - set:
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/rcflib:"
+          value: "rcfunix"
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/rebootable:"
+          value: 1
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/synch_time:"
+          value: 0
+
+      - add:
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:ssh_proxy"
+          value: "${TE_ARM_STARTER}"
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:host"
+          value: "localhost"
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:user"
+          value: "root"
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:key"
+          value: "${TE_DUT_TST1_SSH_KEY}"
+        - oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/conf:copy_tries"
+          value: 3
+
+#
+# Just start VM on if needed
+#
+- set:
+  - if: ${TE_ARM_STARTER_TA_NAME} != "" & ${MULTIHOST} = true
+    oid: "/agent:${TE_ARM_STARTER_TA_NAME}/vm:${TE_DUT_TST1_TA_NAME}/status:"
+    value: 1
+  - if: ${TE_HOST_STARTER_TA_NAME} != ""
+    oid: "/agent:${TE_HOST_STARTER_TA_NAME}/vm:${TE_DUT_TST2_TA_NAME}/status:"
+    value: 1
+
+#
+# Just start agents on VM if needed
+#
+- set:
+  - if: ${TE_DUT_TST1_TA_NAME} != ""
+    oid: "/rcf:/agent:${TE_DUT_TST1_TA_NAME}/status:"
+    value: 1
+  - if: ${TE_DUT_TST2_TA_NAME} != ""
+    oid: "/rcf:/agent:${TE_DUT_TST2_TA_NAME}/status:"
+    value: 1

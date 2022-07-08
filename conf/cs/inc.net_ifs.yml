@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Prepare SFC interfaces to manage Network connection
+
+- add:
+    - if: ${TE_DISK_SFC_IF} != ""
+      oid: "/agent:${TE_DUT_TST3_TA_NAME}/rsrc:${TE_DISK_SFC_IF}"
+      value: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_DISK_SFC_IF}"
+    - if: ${TE_CEPH_SRV_IF} != "" & ${TE_CEPH_SRV_IF} != ${TE_DISK_SFC_IF}
+      oid: "/agent:${TE_DUT_TST3_TA_NAME}/rsrc:${TE_CEPH_SRV_IF}"
+      value: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_CEPH_SRV_IF}"
+    - if: ${TE_ARM_SFC_IF} != ""
+      oid: "/agent:${TE_DUT_TST1_TA_NAME}/rsrc:${TE_ARM_SFC_IF}"
+      value: "/agent:${TE_DUT_TST1_TA_NAME}/interface:${TE_ARM_SFC_IF}"
+
+- cond:
+    if: ${TE_DISK_SFC_IF} != ""
+    then:
+      - set:
+        - oid: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_DISK_SFC_IF}/mtu:"
+          value: "9200"
+        - oid: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_DISK_SFC_IF}/status:"
+          value: 1
+
+- cond:
+    if: ${TE_ARM_SFC_IF} != ""
+    then:
+      - set:
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/interface:${TE_ARM_SFC_IF}/mtu:"
+          value: ${TE_ARM_MTU:-1500}
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/sys:/net:/ipv6:/conf:${TE_ARM_SFC_IF}/disable_ipv6:"
+          value: 1
+        - oid: "/agent:${TE_DUT_TST1_TA_NAME}/interface:${TE_ARM_SFC_IF}/status:"
+          value: 1
+
+# Ceph-related section
+- cond:
+    if: ${TE_CEPH_SRV_IF} != "" & ${TE_CEPH_SRV_IF} != ${TE_DISK_SFC_IF}
+    then:
+      - set:
+        - oid: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_CEPH_SRV_IF}/mtu:"
+          value: "9200"
+        - oid: "/agent:${TE_DUT_TST3_TA_NAME}/interface:${TE_CEPH_SRV_IF}/status:"
+          value: 1

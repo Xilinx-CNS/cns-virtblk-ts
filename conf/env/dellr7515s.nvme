@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Prepare environment to run NVME server.
+
+export TE_NVME_EXEC=true
+export TE_DUT_TST3_TA_NAME=Agt_disk
+
+# Define build hosts and agent types.
+export TE_DUT_TST3_BUILD_HOST=dellr7515s
+export TE_DUT_TST3=dellr210g2c
+
+# Define interfaces to setup NVME network.
+export TE_NEED_LOAD_SFC=yes
+export TE_DISK_SFC_IF=enp1s0f0np0
+export TE_ARM_SFC_IF=enp1s0f0
+
+# Total size of the NVME storage
+export TE_NVME_STOR_SIZE_GB=${TE_NVME_STOR_SIZE_GB:-24}
+
+# NVME listening port
+export TE_NVME_PORT=${TE_NVME_PORT:-11345}
+
+export TE_IP4_POOL=10.31.1

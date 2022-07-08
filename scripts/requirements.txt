@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+matplotlib==3.3.4
+pytablewriter==0.64.1
+xlsxwriter==3.0.2

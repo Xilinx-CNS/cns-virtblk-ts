@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestInternal"/>
+    <run name="OpenByID">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenByID"/>
+    </run>
+    <run name="OpenSnapDNE">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenSnapDNE"/>
+    </run>
+    <run name="IsExclusiveLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="IsExclusiveLockOwner"/>
+    </run>
+    <run name="ResizeLocksImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResizeLocksImage"/>
+    </run>
+    <run name="ResizeFailsToLockImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResizeFailsToLockImage"/>
+    </run>
+    <run name="SnapCreateLocksImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapCreateLocksImage"/>
+    </run>
+    <run name="SnapCreateFailsToLockImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapCreateFailsToLockImage"/>
+    </run>
+    <run name="SnapRollbackLocksImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRollbackLocksImage"/>
+    </run>
+    <run name="SnapRollbackFailsToLockImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRollbackFailsToLockImage"/>
+    </run>
+    <run name="SnapSetReleasesLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapSetReleasesLock"/>
+    </run>
+    <run name="FlattenLocksImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlattenLocksImage"/>
+    </run>
+    <run name="FlattenFailsToLockImage">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlattenFailsToLockImage"/>
+    </run>
+    <run name="AioWriteRequestsLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioWriteRequestsLock"/>
+    </run>
+    <run name="AioDiscardRequestsLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioDiscardRequestsLock"/>
+    </run>
+    <run name="CancelAsyncResize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CancelAsyncResize"/>
+    </run>
+    <run name="MultipleResize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MultipleResize"/>
+    </run>
+    <run name="Metadata">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Metadata"/>
+    </run>
+    <run name="MetadataConfApply">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MetadataConfApply"/>
+    </run>
+    <run name="SnapshotCopyup">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapshotCopyup"/>
+    </run>
+    <run name="ResizeCopyup">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResizeCopyup"/>
+    </run>
+    <run name="DiscardCopyup">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiscardCopyup"/>
+    </run>
+    <run name="ShrinkFlushesCache">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ShrinkFlushesCache"/>
+    </run>
+    <run name="ImageOptions">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ImageOptions"/>
+    </run>
+    <run name="WriteFullCopyup">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="WriteFullCopyup"/>
+    </run>
+    <run name="DiffIterateCloneOverwrite">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateCloneOverwrite"/>
+    </run>
+    <run name="TestCoR">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCoR"/>
+    </run>
+    <run name="FlattenNoEmptyObjects">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlattenNoEmptyObjects"/>
+    </run>
+    <run name="PoolMetadataConfApply">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PoolMetadataConfApply"/>
+    </run>
+    <run name="Sparsify">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Sparsify"/>
+    </run>
+    <run name="SparsifyClone">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SparsifyClone"/>
+    </run>
+  </session>
+</package>

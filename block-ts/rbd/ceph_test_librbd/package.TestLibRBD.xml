@@ -1,0 +1,767 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestLibRBD"/>
+    <run name="CreateAndStat">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateAndStat"/>
+    </run>
+    <run name="CreateWithSameDataPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateWithSameDataPool"/>
+    </run>
+    <run name="CreateAndStatPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CreateAndStatPP"/>
+    </run>
+    <run name="GetId">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GetId"/>
+    </run>
+    <run name="GetIdPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GetIdPP"/>
+    </run>
+    <run name="GetBlockNamePrefix">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GetBlockNamePrefix"/>
+    </run>
+    <run name="GetBlockNamePrefixPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GetBlockNamePrefixPP"/>
+    </run>
+    <run name="TestGetCreateTimestamp">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestGetCreateTimestamp"/>
+    </run>
+    <run name="GetCreateTimestampPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GetCreateTimestampPP"/>
+    </run>
+    <run name="OpenAio">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenAio"/>
+    </run>
+    <run name="OpenAioFail">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenAioFail"/>
+    </run>
+    <run name="OpenAioPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenAioPP"/>
+    </run>
+    <run name="OpenAioFailPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenAioFailPP"/>
+    </run>
+    <run name="ResizeAndStat">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResizeAndStat"/>
+    </run>
+    <run name="ResizeAndStatPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResizeAndStatPP"/>
+    </run>
+    <run name="UpdateWatchAndResize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdateWatchAndResize"/>
+    </run>
+    <run name="UpdateWatchAndResizePP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdateWatchAndResizePP"/>
+    </run>
+    <run name="TestCreateLsDelete">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCreateLsDelete"/>
+    </run>
+    <run name="TestCreateLsDeletePP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCreateLsDeletePP"/>
+    </run>
+    <run name="TestCopy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCopy"/>
+    </run>
+    <run name="TestCopyPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCopyPP"/>
+    </run>
+    <run name="TestDeepCopy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestDeepCopy"/>
+    </run>
+    <run name="TestDeepCopyPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestDeepCopyPP"/>
+    </run>
+    <run name="TestCreateLsDeleteSnap">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCreateLsDeleteSnap"/>
+    </run>
+    <run name="TestGetSnapShotTimeStamp">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestGetSnapShotTimeStamp"/>
+    </run>
+    <run name="TestCreateLsDeleteSnapPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCreateLsDeleteSnapPP"/>
+    </run>
+    <run name="TestCreateLsRenameSnapPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestCreateLsRenameSnapPP"/>
+    </run>
+    <run name="TestIO">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestIO"/>
+    </run>
+    <run name="TestIOWithIOHint">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestIOWithIOHint"/>
+    </run>
+    <run name="TestDataPoolIO">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestDataPoolIO"/>
+    </run>
+    <run name="TestScatterGatherIO">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestScatterGatherIO"/>
+    </run>
+    <run name="TestEmptyDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestEmptyDiscard"/>
+    </run>
+    <run name="TestFUA">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestFUA"/>
+    </run>
+    <run name="TestIOPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestIOPP"/>
+    </run>
+    <run name="TestIOPPWithIOHint">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestIOPPWithIOHint"/>
+    </run>
+    <run name="TestIOToSnapshot">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestIOToSnapshot"/>
+    </run>
+    <run name="TestClone">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestClone"/>
+    </run>
+    <run name="TestClone2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestClone2"/>
+    </run>
+    <run name="ListChildren">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ListChildren"/>
+    </run>
+    <run name="ListChildrenTiered">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ListChildrenTiered"/>
+    </run>
+    <run name="LockingPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="LockingPP"/>
+    </run>
+    <run name="FlushAio">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushAio"/>
+    </run>
+    <run name="FlushAioPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushAioPP"/>
+    </run>
+    <run name="ZeroLengthWrite">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ZeroLengthWrite"/>
+    </run>
+    <run name="ZeroLengthDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ZeroLengthDiscard"/>
+    </run>
+    <run name="ZeroLengthRead">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ZeroLengthRead"/>
+    </run>
+    <run name="LargeCacheRead">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="LargeCacheRead"/>
+    </run>
+    <run name="TestPendingAio">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestPendingAio"/>
+    </run>
+    <run name="CompareAndWriteCopyup">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CompareAndWriteCopyup"/>
+    </run>
+    <run name="CompareAndWriteCopyupMismatch">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CompareAndWriteCopyupMismatch"/>
+    </run>
+    <run name="Flatten">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Flatten"/>
+    </run>
+    <run name="Sparsify">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Sparsify"/>
+    </run>
+    <run name="SparsifyPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SparsifyPP"/>
+    </run>
+    <run name="SnapshotLimit">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapshotLimit"/>
+    </run>
+    <run name="SnapshotLimitPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapshotLimitPP"/>
+    </run>
+    <run name="RebuildObjectMapViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RebuildObjectMapViaLockOwner"/>
+    </run>
+    <run name="RenameViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RenameViaLockOwner"/>
+    </run>
+    <run name="SnapCreateViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapCreateViaLockOwner"/>
+    </run>
+    <run name="SnapRemoveViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRemoveViaLockOwner"/>
+    </run>
+    <run name="EnableJournalingViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableJournalingViaLockOwner"/>
+    </run>
+    <run name="SnapRemove2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRemove2"/>
+    </run>
+    <run name="SnapRenameViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRenameViaLockOwner"/>
+    </run>
+    <run name="SnapProtectViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapProtectViaLockOwner"/>
+    </run>
+    <run name="SnapUnprotectViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapUnprotectViaLockOwner"/>
+    </run>
+    <run name="FlattenViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlattenViaLockOwner"/>
+    </run>
+    <run name="ResizeViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResizeViaLockOwner"/>
+    </run>
+    <run name="SparsifyViaLockOwner">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SparsifyViaLockOwner"/>
+    </run>
+    <run name="ObjectMapConsistentSnap">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ObjectMapConsistentSnap"/>
+    </run>
+    <run name="Metadata">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Metadata"/>
+    </run>
+    <run name="MetadataPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MetadataPP"/>
+    </run>
+    <run name="UpdateFeatures">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdateFeatures"/>
+    </run>
+    <run name="RebuildObjectMap">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RebuildObjectMap"/>
+    </run>
+    <run name="RebuildNewObjectMap">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RebuildNewObjectMap"/>
+    </run>
+    <run name="CheckObjectMap">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CheckObjectMap"/>
+    </run>
+    <run name="BlockingAIO">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="BlockingAIO"/>
+    </run>
+    <run name="ExclusiveLockTransition">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ExclusiveLockTransition"/>
+    </run>
+    <run name="ExclusiveLockReadTransition">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ExclusiveLockReadTransition"/>
+    </run>
+    <run name="CacheMayCopyOnWrite">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CacheMayCopyOnWrite"/>
+    </run>
+    <run name="FlushEmptyOpsOnExternalSnapshot">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushEmptyOpsOnExternalSnapshot"/>
+    </run>
+    <run name="TestImageOptions">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestImageOptions"/>
+    </run>
+    <run name="TestImageOptionsPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestImageOptionsPP"/>
+    </run>
+    <run name="EventSocketPipe">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EventSocketPipe"/>
+    </run>
+    <run name="EventSocketEventfd">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EventSocketEventfd"/>
+    </run>
+    <run name="ImagePollIO">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ImagePollIO"/>
+    </run>
+    <run name="Mirror">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Mirror"/>
+    </run>
+    <run name="MirrorPeerAttributes">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirrorPeerAttributes"/>
+    </run>
+    <run name="FlushCacheWithCopyupOnExternalSnapshot">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushCacheWithCopyupOnExternalSnapshot"/>
+    </run>
+    <run name="ExclusiveLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ExclusiveLock"/>
+    </run>
+    <run name="BreakLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="BreakLock"/>
+    </run>
+    <run name="DiscardAfterWrite">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiscardAfterWrite"/>
+    </run>
+    <run name="DefaultFeatures">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DefaultFeatures"/>
+    </run>
+    <run name="TestTrashMoveAndPurge">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestTrashMoveAndPurge"/>
+    </run>
+    <run name="TestTrashMoveAndPurgeNonExpiredDelay">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestTrashMoveAndPurgeNonExpiredDelay"/>
+    </run>
+    <run name="TestTrashPurge">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestTrashPurge"/>
+    </run>
+    <run name="TestTrashMoveAndRestore">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestTrashMoveAndRestore"/>
+    </run>
+    <run name="TestListWatchers">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestListWatchers"/>
+    </run>
+    <run name="TestSetSnapById">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestSetSnapById"/>
+    </run>
+    <run name="Namespaces">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Namespaces"/>
+    </run>
+    <run name="NamespacesPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NamespacesPP"/>
+    </run>
+    <run name="Migration">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Migration"/>
+    </run>
+    <run name="MigrationPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MigrationPP"/>
+    </run>
+    <run name="TestGetAccessTimestamp">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestGetAccessTimestamp"/>
+    </run>
+    <run name="TestGetModifyTimestamp">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TestGetModifyTimestamp"/>
+    </run>
+    <run name="ZeroOverlapFlatten">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ZeroOverlapFlatten"/>
+    </run>
+    <run name="PoolMetadata">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PoolMetadata"/>
+    </run>
+    <run name="PoolMetadataPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PoolMetadataPP"/>
+    </run>
+    <run name="Config">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Config"/>
+    </run>
+    <run name="ConfigPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ConfigPP"/>
+    </run>
+    <run name="PoolStatsPP">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PoolStatsPP"/>
+    </run>
+    <run name="ImageSpec">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ImageSpec"/>
+    </run>
+    <run name="DiffIterateTest/0">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateTest/0"/>
+    </run>
+    <run name="DiffIterate">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterate"/>
+    </run>
+    <run name="DiffIterateDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateDiscard"/>
+    </run>
+    <run name="DiffIterateStress">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateStress"/>
+    </run>
+    <run name="DiffIterateRegression6926">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateRegression6926"/>
+    </run>
+    <run name="DiffIterateIgnoreParent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateIgnoreParent"/>
+    </run>
+    <run name="DiffIterateCallbackError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateCallbackError"/>
+    </run>
+    <run name="DiffIterateParentDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateParentDiscard"/>
+    </run>
+    <run name="DiffIterateTest/1">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateTest/1"/>
+    </run>
+    <run name="DiffIterate">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterate"/>
+    </run>
+    <run name="DiffIterateDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateDiscard"/>
+    </run>
+    <run name="DiffIterateStress">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateStress"/>
+    </run>
+    <run name="DiffIterateRegression6926">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateRegression6926"/>
+    </run>
+    <run name="DiffIterateIgnoreParent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateIgnoreParent"/>
+    </run>
+    <run name="DiffIterateCallbackError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateCallbackError"/>
+    </run>
+    <run name="DiffIterateParentDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiffIterateParentDiscard"/>
+    </run>
+  </session>
+</package>

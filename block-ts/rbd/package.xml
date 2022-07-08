@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Block Test Suite</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+
+    <session track_conf="silent">
+        <prologue>
+            <script name="prologue"/>
+        </prologue>
+        <run>
+            <script name="stap"/>
+        </run>
+        <run>
+             <package name="unittest_librbd" src="unittest_librbd/package.xml"/>
+        </run>
+        <run>
+            <package name="ceph_test_librbd" src="ceph_test_librbd/package.xml"/>
+        </run>
+    </session>
+</package>

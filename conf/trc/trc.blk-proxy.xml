@@ -1,0 +1,51 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="blk-proxy" type="package">
+    <objective/>
+    <iter result="PASSED">
+        <test name="prologue" type="script">
+            <objective>Setup of blk-proxy</objective>
+            <notes/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="bp-Ceph-Ceph"/>
+                <arg name="bp-Ceph-Ceph"/>
+                <arg name="bp-Nvme-TransportID"/>
+                <arg name="bp-Malloc-NumberOfLuns"/>
+                <arg name="bp-Malloc-LunSizeInMB"/>
+                <arg name="bp-Malloc-BlockSize"/>
+                <arg name="bp-Null-Dev"/>
+                <arg name="bp-Null-Dev"/>
+                <arg name="bp-MapVirtioBlk1-Name"/>
+                <arg name="bp-MapVirtioBlk1-Dev"/>
+                <arg name="bp-MapVirtioBlk1-Cpumask"/>
+                <arg name="bp-MapVirtioBlk1-R_Cpumask"/>
+                <arg name="bp-MapVirtioBlk1-W_Cpumask"/>
+                <arg name="bp-MapVirtioBlk1-FastPath"/>
+                <arg name="bp-MapVirtioBlk2-Name"/>
+                <arg name="bp-MapVirtioBlk2-Dev"/>
+                <arg name="bp-MapVirtioBlk2-Cpumask"/>
+                <arg name="bp-MapVirtioBlk2-R_Cpumask"/>
+                <arg name="bp-MapVirtioBlk2-W_Cpumask"/>
+                <arg name="bp-MapVirtioBlk2-FastPath"/>
+                <notes/>
+            </iter>
+        </test>
+        <test name="epilogue" type="script">
+            <objective>Unload brd module</objective>
+            <iter result="PASSED">
+                <arg name="env"/>
+            </iter>
+        </test>
+
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.xfs.xml" parse="xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.readwrite.xml" parse="xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.config.xml" parse="xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.mke2fs.xml" parse="xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.fs.xml" parse="xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.network_stimuli.xml" parse="xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.performance.xml" parse="xml"/>
+        <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="blk-proxy/trc.stress.xml" parse="xml"/>
+
+    </iter>
+</test>

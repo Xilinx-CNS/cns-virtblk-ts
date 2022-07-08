@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockManagedLock"/>
+    <run name="StateTransitions">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="StateTransitions"/>
+    </run>
+    <run name="AcquireLockLockedState">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockLockedState"/>
+    </run>
+    <run name="AcquireLockAlreadyLocked">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockAlreadyLocked"/>
+    </run>
+    <run name="AcquireLockBusy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockBusy"/>
+    </run>
+    <run name="AcquireLockError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockError"/>
+    </run>
+    <run name="AcquireLockBlacklist">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockBlacklist"/>
+    </run>
+    <run name="ReleaseLockUnlockedState">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReleaseLockUnlockedState"/>
+    </run>
+    <run name="ReleaseLockBlacklist">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReleaseLockBlacklist"/>
+    </run>
+    <run name="ReleaseLockError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReleaseLockError"/>
+    </run>
+    <run name="ConcurrentRequests">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ConcurrentRequests"/>
+    </run>
+    <run name="ReacquireLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReacquireLock"/>
+    </run>
+    <run name="AttemptReacquireBlacklistedLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AttemptReacquireBlacklistedLock"/>
+    </run>
+    <run name="ReacquireBlacklistedLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReacquireBlacklistedLock"/>
+    </run>
+    <run name="ReacquireLockError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReacquireLockError"/>
+    </run>
+    <run name="ReacquireWithSameCookie">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReacquireWithSameCookie"/>
+    </run>
+    <run name="ShutDownWhileWaiting">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ShutDownWhileWaiting"/>
+    </run>
+  </session>
+</package>

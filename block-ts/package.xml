@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Block Test Suite</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+
+    <session track_conf="silent">
+        <!--- @defgroup virtblk-generic-fio-enums FIO Parameter Enumerations
+              @ingroup virtblk-generic
+              @{
+        -->
+        <enum name="fio.blocksize.512to32k">
+            <value reqs="BLOCK_512,SMALL_BLOCK">512</value>
+            <value reqs="BLOCK_4k">4096</value>
+            <value reqs="BLOCK_32k">32768</value>
+        </enum>
+        <enum name="fio.ioengine">
+            <value reqs="IO_SYNC">sync</value>
+            <value reqs="IO_LIBAIO">libaio</value>
+            <value reqs="IO_PSYNC">psync</value>
+            <value reqs="IO_POSIXAIO">posixaio</value>
+        </enum>
+        <enum name="fio.numjobs.1to1024">
+            <value>1</value>
+            <value>2</value>
+            <value>3</value>
+            <value>4</value>
+            <value>8</value>
+            <value>16</value>
+            <value>32</value>
+            <value>nproc</value>
+            <value>2nproc</value>
+            <value reqs="NUMJOBS_GT_100">128</value>
+            <value reqs="NUMJOBS_GT_100">256</value>
+            <value reqs="NUMJOBS_GT_100">512</value>
+            <value reqs="NUMJOBS_GT_100">1000</value>
+        </enum>
+        <enum name="fio.numjobs.reduced.1to32">
+            <value>1</value>
+            <value>16</value>
+            <value>32</value>
+        </enum>
+        <enum name="fio.numjobs.1to32_n_2n">
+            <value>1</value>
+            <value>2</value>
+            <value>3</value>
+            <value>4</value>
+            <value>8</value>
+            <value>16</value>
+            <value>32</value>
+            <value>nproc</value>
+            <value>2nproc</value>
+        </enum>
+        <enum name="fio.rwtype">
+            <value reqs="FIO_RW_SEQ">seq</value>
+            <value reqs="FIO_RW_RAND">rand</value>
+        </enum>
+        <enum name="fio.iodepth.1to64">
+            <value>1</value>
+            <value>2</value>
+            <value>4</value>
+            <value>32</value>
+            <value>64</value>
+        </enum>
+        <enum name="fio.rwmixread.0to100">
+            <value reqs="FIO_WRITE">0</value>
+            <value reqs="FIO_READ,FIO_WRITE">10</value>
+            <value reqs="FIO_READ,FIO_WRITE">20</value>
+            <value reqs="FIO_READ,FIO_WRITE">30</value>
+            <value reqs="FIO_READ,FIO_WRITE">40</value>
+            <value reqs="FIO_READ,FIO_WRITE">50</value>
+            <value reqs="FIO_READ,FIO_WRITE">60</value>
+            <value reqs="FIO_READ,FIO_WRITE">70</value>
+            <value reqs="FIO_READ,FIO_WRITE">80</value>
+            <value reqs="FIO_READ,FIO_WRITE">90</value>
+            <value reqs="FIO_READ">100</value>
+        </enum>
+        <enum name="fio.rwmixread.rw_only">
+            <value reqs="FIO_WRITE">0</value>
+            <value reqs="FIO_READ">100</value>
+        </enum>
+        <enum name="fio.rwmixread.mixed">
+            <value reqs="FIO_READ,FIO_WRITE">10</value>
+            <value reqs="FIO_READ,FIO_WRITE">30</value>
+            <value reqs="FIO_READ,FIO_WRITE">50</value>
+            <value reqs="FIO_READ,FIO_WRITE">70</value>
+            <value reqs="FIO_READ,FIO_WRITE">90</value>
+        </enum>
+        <!--- @} -->
+
+        <run>
+            <package name="rbd"/>
+        </run>
+
+        <run>
+            <package name="blk-proxy"/>
+        </run>
+    </session>
+</package>

@@ -1,0 +1,12 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy-config Configuration and reconfiguration
+@ingroup virtblk-blk-proxy
+@{
+    The package includes tests for configuration, reconfiguration as well as
+    management interfaces provided by the block proxy.
+@}
+
+*/

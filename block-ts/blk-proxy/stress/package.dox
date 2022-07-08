@@ -1,0 +1,11 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy-stress Stress testing
+@ingroup virtblk-blk-proxy
+@{
+    The package includes tests for different stress situations
+@}
+
+*/

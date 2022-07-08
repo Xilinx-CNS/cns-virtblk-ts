@@ -1,0 +1,43 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="xfs" type="package">
+    <objective/>
+    <iter result="PASSED">
+
+        <test name="prologue" type="script">
+            <objective/>
+            <iter result="PASSED">
+            </iter>
+        </test>
+
+        <test name="epilogue" type="script">
+            <objective/>
+            <iter result="PASSED">
+            </iter>
+        </test>
+
+        <test name="xfs-group" type="package">
+            <objective/>
+            <iter result="PASSED">
+                <results tags="blk_dev_num=1">
+                    <result value="SKIPPED"/>
+                </results>
+
+                <test name="xfs" type="script">
+                    <objective/>
+                    <iter result="PASSED">
+                        <arg name="group"/>
+                        <arg name="name"/>
+                        <results tags="blk_dev_num=1">
+                            <result value="SKIPPED">
+                                <verdict>At least 2 block devices are required for this test</verdict>
+                            </result>
+                        </results>
+
+                    </iter>
+                </test>
+            </iter>
+        </test>
+
+    </iter>
+</test>

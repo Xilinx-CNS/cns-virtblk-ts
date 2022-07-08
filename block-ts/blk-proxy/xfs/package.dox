@@ -1,0 +1,12 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-blk-proxy-xfs XFS Tests
+@ingroup virtblk-blk-proxy
+@{
+    The XFS test package is using XFS tests that are not TE-based, but TE is
+    conveniently wrapping them to utilize the same interface and all the reporting.
+@}
+
+*/

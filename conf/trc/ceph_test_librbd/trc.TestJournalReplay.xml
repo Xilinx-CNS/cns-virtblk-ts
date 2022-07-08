@@ -1,0 +1,217 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestJournalReplay" type="package">
+  <objective/>
+  <notes/>
+  <iter result="SKIPPED">
+    <arg name="gtest_bin"/>
+    <test name="AioDiscardEvent" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioDiscardEvent"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="AioWriteEvent" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWriteEvent"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="AioFlushEvent" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioFlushEvent"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="SnapCreate" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreate"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="SnapProtect" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapProtect"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="SnapUnprotect" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotect"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="SnapRename" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRename"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="SnapRollback" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRollback"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="SnapRemove" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRemove"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="Rename" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Rename"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="Resize" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Resize"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="Flatten" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Flatten"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="UpdateFeatures" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateFeatures"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="MetadataSet" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MetadataSet"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="MetadataRemove" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MetadataRemove"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="ObjectPosition" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ObjectPosition"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+            <verdict>Non-mocking testing turned off</verdict>
+          </result>
+        </results>
+      </iter>
+    </test>
+  </iter>
+</test>

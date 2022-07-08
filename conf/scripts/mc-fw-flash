@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+export RHSIM_NO_XACCEL=false
+
+function mc_fw_pciid_modern() {
+    case $MC_FW_FLASH_NAME in
+        *cmod_ef100p0_3x_vblk.mcs)
+            export RHSIM_NO_XACCEL=true
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1042,${VIRTIO_PCI_VENDOR_ID}:1042,${VIRTIO_PCI_VENDOR_ID}:1042";;
+        *cmod_ef100p0_vnetp0_2x_vblk.mcs)
+            export RHSIM_NO_XACCEL=true
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1041,${VIRTIO_PCI_VENDOR_ID}:1042,${VIRTIO_PCI_VENDOR_ID}:1042";;
+        *cmod_ef100p0_ef100p0_vnetp0_vblk.mcs)
+            export RHSIM_NO_XACCEL=true
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1041,${VIRTIO_PCI_VENDOR_ID}:1042";;
+        *)
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1042"
+            echo "We cannot guess pciid by flash, so failback to '$MC_FW_PCIID'"
+            ;;
+    esac
+}
+
+function mc_fw_pciid_transitional() {
+    case $MC_FW_FLASH_NAME in
+        *cmod_ef100p0_3x_vblk.mcs)
+            export RHSIM_NO_XACCEL=true
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1001/${VIRTIO_PCI_VENDOR_ID}:0002,${VIRTIO_PCI_VENDOR_ID}:1001/${VIRTIO_PCI_VENDOR_ID}:0002,${VIRTIO_PCI_VENDOR_ID}:1001/${VIRTIO_PCI_VENDOR_ID}:0002"
+            ;;
+         *cmod_ef100p0_vnetp0_2x_vblk.mcs)
+            export RHSIM_NO_XACCEL=true
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1000/${VIRTIO_PCI_VENDOR_ID}:0001,${VIRTIO_PCI_VENDOR_ID}:1001/${VIRTIO_PCI_VENDOR_ID}:0002,${VIRTIO_PCI_VENDOR_ID}:1001/${VIRTIO_PCI_VENDOR_ID}:0002"
+            ;;
+        *cmod_ef100p0_ef100p0_vnetp0_vblk.mcs)
+            export RHSIM_NO_XACCEL=true
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1000/${VIRTIO_PCI_VENDOR_ID}:0001,${VIRTIO_PCI_VENDOR_ID}:1001/${VIRTIO_PCI_VENDOR_ID}:0002"
+            ;;
+        *)
+            export MC_FW_PCIID="${EF100_PCI_VENDOR_ID}:0100,${VIRTIO_PCI_VENDOR_ID}:1001/${VIRTIO_PCI_VENDOR_ID}:0002"
+            echo "We cannot guess pciid by flash, so failback to '$MC_FW_PCIID'"
+            ;;
+    esac
+}
+
+if [[ -z $MC_FW_PCIID ]]; then
+    export VIRTIO_PCI_VENDOR_ID=1bf4
+    export EF100_PCI_VENDOR_ID=10ee
+
+    case $MC_FW_PCIID_TYPE in
+    transitional)
+        mc_fw_pciid_transitional;;
+    *)
+        mc_fw_pciid_modern;;
+    esac
+fi
+

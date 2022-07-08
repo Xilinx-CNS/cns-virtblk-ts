@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockJournal"/>
+    <run name="StateTransitions">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="StateTransitions"/>
+    </run>
+    <run name="InitError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="InitError"/>
+    </run>
+    <run name="ReplayCompleteError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReplayCompleteError"/>
+    </run>
+    <run name="FlushReplayError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushReplayError"/>
+    </run>
+    <run name="CorruptEntry">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CorruptEntry"/>
+    </run>
+    <run name="StopError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="StopError"/>
+    </run>
+    <run name="ReplayOnDiskPreFlushError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReplayOnDiskPreFlushError"/>
+    </run>
+    <run name="ReplayOnDiskPostFlushError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ReplayOnDiskPostFlushError"/>
+    </run>
+    <run name="EventAndIOCommitOrder">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EventAndIOCommitOrder"/>
+    </run>
+    <run name="AppendWriteEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AppendWriteEvent"/>
+    </run>
+    <run name="EventCommitError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EventCommitError"/>
+    </run>
+    <run name="EventCommitErrorWithPendingWriteback">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EventCommitErrorWithPendingWriteback"/>
+    </run>
+    <run name="IOCommitError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="IOCommitError"/>
+    </run>
+    <run name="IOCommitErrorFiltered">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="IOCommitErrorFiltered"/>
+    </run>
+    <run name="FlushCommitPosition">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushCommitPosition"/>
+    </run>
+    <run name="ExternalReplay">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ExternalReplay"/>
+    </run>
+    <run name="ExternalReplayFailure">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ExternalReplayFailure"/>
+    </run>
+    <run name="AppendDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AppendDisabled"/>
+    </run>
+    <run name="CloseListenerEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloseListenerEvent"/>
+    </run>
+    <run name="ResyncRequested">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResyncRequested"/>
+    </run>
+    <run name="ForcePromoted">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ForcePromoted"/>
+    </run>
+  </session>
+</package>

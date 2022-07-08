@@ -1,0 +1,115 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockOperationSnapshotRemoveRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="Success" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Success"/>
+      </iter>
+    </test>
+    <test name="SuccessCloneParent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessCloneParent"/>
+      </iter>
+    </test>
+    <test name="SuccessTrash" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SuccessTrash"/>
+      </iter>
+    </test>
+    <test name="FlattenedCloneRemovesChild" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlattenedCloneRemovesChild"/>
+        <arg name="features" value="-DEEP_FLATTEN"/>
+      </iter>
+    </test>
+    <test name="TrashCloneParent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TrashCloneParent"/>
+      </iter>
+    </test>
+    <test name="SnapshotTrashAddNotSupported" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapshotTrashAddNotSupported"/>
+      </iter>
+    </test>
+    <test name="SnapshotTrashAddError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapshotTrashAddError"/>
+      </iter>
+    </test>
+    <test name="SnapshotGetError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapshotGetError"/>
+      </iter>
+    </test>
+    <test name="ObjectMapSnapRemoveError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ObjectMapSnapRemoveError"/>
+      </iter>
+    </test>
+    <test name="RemoveChildParentError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveChildParentError"/>
+      </iter>
+    </test>
+    <test name="RemoveChildError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveChildError"/>
+        <arg name="features" value="-DEEP_FLATTEN"/>
+      </iter>
+    </test>
+    <test name="RemoveSnapError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RemoveSnapError"/>
+      </iter>
+    </test>
+    <test name="MissingSnap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MissingSnap"/>
+      </iter>
+    </test>
+  </iter>
+</test>

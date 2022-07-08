@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Testing of a filesystem on virtio block device</description>
+    <author mailto="Andrey.Izrailev@oktetlabs.ru"/>
+
+    <session track_conf="nohistory">
+
+        <prologue>
+            <script name="prologue"/>
+        </prologue>
+
+        <epilogue>
+            <script name="epilogue"/>
+        </epilogue>
+
+        <run name="compilebench">
+            <script name="compilebench">
+            <!-- This tool needs more memory than is available with malloc
+                 backend. -->
+                <req id="BIG_DISK"/>
+            </script>
+
+            <arg name="initial_dirs">
+                <value>1</value>
+                <value reqs="MORE_THAN_8GB">10</value>
+            </arg>
+            <arg name="runs">
+                <value>1</value>
+                <value>25</value>
+            </arg>
+            <arg name="makej" type="boolean"/>
+        </run>
+
+        <!-- Iterations with makej=TRUE and initial_dirs=30,70 take too much
+             memory, more than 30GB. So they are disabled. -->
+        <run name="compilebench">
+            <script name="compilebench">
+            <!-- This tool needs more memory than is available with malloc
+                 backend. -->
+                <req id="BIG_DISK"/>
+            </script>
+
+            <arg name="initial_dirs" list="">
+                <value reqs="MORE_THAN_8GB">30</value>
+                <value reqs="MORE_THAN_8GB">30</value>
+                <value reqs="MORE_THAN_32GB">70</value>
+            </arg>
+            <arg name="runs" list="">
+                <value>1</value>
+                <value>25</value>
+                <value>1</value>
+            </arg>
+            <arg name="makej" type="boolean">
+                <value>FALSE</value>
+            </arg>
+        </run>
+
+        <run name="dbench">
+            <script name="dbench">
+               <!-- This tool needs more memory than is available with malloc
+                    backend. -->
+                <req id="BIG_DISK"/>
+            </script>
+
+            <arg name="numclients">
+                <value>1</value>
+                <value>6</value>
+                <value>48</value>
+                <value>128</value>
+                <value>256</value>
+            </arg>
+        </run>
+
+        <run name="fsmark">
+            <script name="fsmark">
+                <req id="BIG_DISK"/>
+            </script>
+
+            <arg name="numfiles">
+                <value>100</value>
+                <value>1000</value>
+                <value>5000</value>
+            </arg>
+            <arg name="file_size">
+                <value>1024</value>
+                <value>102400</value>
+                <value>1024000</value>
+            </arg>
+        </run>
+
+        <run name="iozone">
+            <script name="iozone">
+                <req id="BIG_DISK"/>
+            </script>
+
+            <arg name="record_size">
+                <!-- VIRTBLK-1341: Iterations with record_size=4k
+                     take a lot of time -->
+                <value reqs="TIME_CONSUMING">4k</value>
+                <value>64k</value>
+                <value>512k</value>
+                <value>1m</value>
+            </arg>
+            <arg name="file_size">
+                <value>2m</value>
+                <value>64m</value>
+                <value>512m</value>
+                <value>1g</value>
+            </arg>
+        </run>
+
+    </session>
+</package>

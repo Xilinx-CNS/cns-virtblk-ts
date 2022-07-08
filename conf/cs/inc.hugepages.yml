@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+- add:
+  - oid: "/agent:${TE_DUT_TST1_TA_NAME}/rsrc:hugepage-2048"
+    value: /agent:${TE_DUT_TST1_TA_NAME}/mem:/hugepages:2048
+
+- set:
+  - oid: "/agent:${TE_DUT_TST1_TA_NAME}/mem:/hugepages:2048"
+    value: 768
+
+- add:
+  - oid: "/agent:${TE_DUT_TST1_TA_NAME}/rsrc:mountpoint"
+    value: /agent:${TE_DUT_TST1_TA_NAME}/mem:/hugepages:2048/mountpoint:$dev$hugepages-2M
+
+- add:
+  - oid: "/agent:${TE_DUT_TST1_TA_NAME}/mem:/hugepages:2048/mountpoint:$dev$hugepages-2M"

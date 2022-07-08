@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestImageWatcher"/>
+    <run name="NotifyHeaderUpdate">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyHeaderUpdate"/>
+    </run>
+    <run name="NotifyFlatten">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyFlatten"/>
+    </run>
+    <run name="NotifyResize">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyResize"/>
+    </run>
+    <run name="NotifyRebuildObjectMap">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyRebuildObjectMap"/>
+    </run>
+    <run name="NotifySnapCreate">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifySnapCreate"/>
+    </run>
+    <run name="NotifySnapCreateError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifySnapCreateError"/>
+    </run>
+    <run name="NotifySnapRename">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifySnapRename"/>
+    </run>
+    <run name="NotifySnapRenameError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifySnapRenameError"/>
+    </run>
+    <run name="NotifySnapRemove">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifySnapRemove"/>
+    </run>
+    <run name="NotifySnapProtect">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifySnapProtect"/>
+    </run>
+    <run name="NotifySnapUnprotect">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifySnapUnprotect"/>
+    </run>
+    <run name="NotifyRename">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyRename"/>
+    </run>
+    <run name="NotifyAsyncTimedOut">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyAsyncTimedOut"/>
+    </run>
+    <run name="NotifyAsyncError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyAsyncError"/>
+    </run>
+    <run name="NotifyAsyncCompleteError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyAsyncCompleteError"/>
+    </run>
+    <run name="NotifyAsyncRequestTimedOut">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NotifyAsyncRequestTimedOut"/>
+    </run>
+  </session>
+</package>

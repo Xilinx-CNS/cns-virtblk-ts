@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Set the CPU affinity for agents to avoid affecting the blk-proxy
+export TE_DUT_TST1_TASKSET="taskset -a -c 0"

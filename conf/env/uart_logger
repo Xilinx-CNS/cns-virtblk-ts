@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Export variables to collect uart logs
+export TE_UART_LOGGER=${TE_JTAG_HOST}
+export TE_UART_LOGGER_TA_NAME=Agt_UART
+export TE_UART_LOGGER_EXEC=true
+export TE_UART_DUT_HOST=${TE_DUT_TST2}

@@ -1,0 +1,89 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockDeepCopyImageCopyRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="SimpleImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SimpleImage"/>
+      </iter>
+    </test>
+    <test name="OutOfOrder" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OutOfOrder"/>
+      </iter>
+    </test>
+    <test name="SnapshotSubset" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapshotSubset"/>
+      </iter>
+    </test>
+    <test name="RestartPartialSync" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RestartPartialSync"/>
+      </iter>
+    </test>
+    <test name="Cancel" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Cancel"/>
+      </iter>
+    </test>
+    <test name="Cancel_Inflight_Sync" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Cancel_Inflight_Sync"/>
+      </iter>
+    </test>
+    <test name="MissingSnap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MissingSnap"/>
+      </iter>
+    </test>
+    <test name="MissingFromSnap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MissingFromSnap"/>
+      </iter>
+    </test>
+    <test name="EmptySnapMap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EmptySnapMap"/>
+      </iter>
+    </test>
+    <test name="EmptySnapSeqs" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EmptySnapSeqs"/>
+      </iter>
+    </test>
+  </iter>
+</test>

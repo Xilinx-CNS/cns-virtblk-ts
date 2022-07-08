@@ -1,0 +1,113 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockManagedLockBreakRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="DeadLockOwner" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DeadLockOwner"/>
+      </iter>
+    </test>
+    <test name="ForceBreak" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ForceBreak"/>
+      </iter>
+    </test>
+    <test name="GetWatchersError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GetWatchersError"/>
+      </iter>
+    </test>
+    <test name="GetWatchersAlive" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GetWatchersAlive"/>
+      </iter>
+    </test>
+    <test name="GetLockerUpdated" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GetLockerUpdated"/>
+      </iter>
+    </test>
+    <test name="GetLockerBusy" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GetLockerBusy"/>
+      </iter>
+    </test>
+    <test name="GetLockerMissing" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GetLockerMissing"/>
+      </iter>
+    </test>
+    <test name="GetLockerError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GetLockerError"/>
+      </iter>
+    </test>
+    <test name="BlacklistDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="BlacklistDisabled"/>
+      </iter>
+    </test>
+    <test name="BlacklistSelf" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="BlacklistSelf"/>
+      </iter>
+    </test>
+    <test name="BlacklistError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="BlacklistError"/>
+      </iter>
+    </test>
+    <test name="BreakLockMissing" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="BreakLockMissing"/>
+      </iter>
+    </test>
+    <test name="BreakLockError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="BreakLockError"/>
+      </iter>
+    </test>
+  </iter>
+</test>

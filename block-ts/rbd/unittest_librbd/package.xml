@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session track_conf="silent">
+    <arg name="gtest_bin" value="unittest_librbd"/>
+    <run>
+      <package name="TestMockImageValidatePoolRequest" src="package.TestMockImageValidatePoolRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapRefreshRequest" src="package.TestMockObjectMapRefreshRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockIoCopyupRequest" src="package.TestMockIoCopyupRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImageRefreshRequest" src="package.TestMockImageRefreshRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImageRemoveRequest" src="package.TestMockImageRemoveRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestDeepCopy" src="package.TestDeepCopy.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapUnlockRequest" src="package.TestMockObjectMapUnlockRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockExclusiveLock" src="package.TestMockExclusiveLock.xml"/>
+    </run>
+    <run>
+      <package name="TestOperations" src="package.TestOperations.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImageDetachChildRequest" src="package.TestMockImageDetachChildRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockJournalOpenRequest" src="package.TestMockJournalOpenRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockDeepCopyMetadataCopyRequest" src="package.TestMockDeepCopyMetadataCopyRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestJournalEntries" src="package.TestJournalEntries.xml"/>
+    </run>
+    <run>
+      <package name="TestInternal" src="package.TestInternal.xml"/>
+    </run>
+    <run>
+      <package name="TestMockDeepCopyRequest" src="package.TestMockDeepCopyRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockDeepCopySnapshotCreateRequest" src="package.TestMockDeepCopySnapshotCreateRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImageAttachChildRequest" src="package.TestMockImageAttachChildRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationDisableFeaturesRequest" src="package.TestMockOperationDisableFeaturesRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockManagedLockGetLockerRequest" src="package.TestMockManagedLockGetLockerRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationSnapshotRemoveRequest" src="package.TestMockOperationSnapshotRemoveRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImageDetachParentRequest" src="package.TestMockImageDetachParentRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestGroup" src="package.TestGroup.xml"/>
+    </run>
+    <run>
+      <package name="TestMockExclusiveLockPostAcquireRequest" src="package.TestMockExclusiveLockPostAcquireRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImageCloneRequest" src="package.TestMockImageCloneRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockManagedLockReleaseRequest" src="package.TestMockManagedLockReleaseRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockIoImageRequestWQ" src="package.TestMockIoImageRequestWQ.xml"/>
+    </run>
+    <run>
+      <package name="TestMockDeepCopySnapshotCopyRequest" src="package.TestMockDeepCopySnapshotCopyRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationResizeRequest" src="package.TestMockOperationResizeRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapResizeRequest" src="package.TestMockObjectMapResizeRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestTrash" src="package.TestTrash.xml"/>
+    </run>
+    <run>
+      <package name="TestMockIoObjectRequest" src="package.TestMockIoObjectRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockManagedLockAcquireRequest" src="package.TestMockManagedLockAcquireRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapLockRequest" src="package.TestMockObjectMapLockRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockJournal" src="package.TestMockJournal.xml"/>
+    </run>
+    <run>
+      <package name="TestImageWatcher" src="package.TestImageWatcher.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationSnapshotProtectRequest" src="package.TestMockOperationSnapshotProtectRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockTrashMoveRequest" src="package.TestMockTrashMoveRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockDeepCopyImageCopyRequest" src="package.TestMockDeepCopyImageCopyRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMirroring" src="package.TestMirroring.xml"/>
+    </run>
+    <run>
+      <package name="TestMockJournalPromoteRequest" src="package.TestMockJournalPromoteRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapInvalidateRequest" src="package.TestMockObjectMapInvalidateRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestObjectMap" src="package.TestObjectMap.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImageAttachParentRequest" src="package.TestMockImageAttachParentRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapSnapshotRemoveRequest" src="package.TestMockObjectMapSnapshotRemoveRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockJournalResetRequest" src="package.TestMockJournalResetRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockMirrorDisableRequest" src="package.TestMockMirrorDisableRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockJournalReplay" src="package.TestMockJournalReplay.xml"/>
+    </run>
+    <run>
+      <package name="TestMockWatcherRewatchRequest" src="package.TestMockWatcherRewatchRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationSnapshotCreateRequest" src="package.TestMockOperationSnapshotCreateRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMap" src="package.TestMockObjectMap.xml"/>
+    </run>
+    <run>
+      <package name="TestMockWatcher" src="package.TestMockWatcher.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationTrimRequest" src="package.TestMockOperationTrimRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestLibRBD" src="package.TestLibRBD.xml"/>
+    </run>
+    <run>
+      <package name="TestMigration" src="package.TestMigration.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapSnapshotCreateRequest" src="package.TestMockObjectMapSnapshotCreateRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockDeepCopyObjectCopyRequest" src="package.TestMockDeepCopyObjectCopyRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockListWatchersRequest" src="package.TestMockListWatchersRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationEnableFeaturesRequest" src="package.TestMockOperationEnableFeaturesRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockIoImageRequest" src="package.TestMockIoImageRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockManagedLock" src="package.TestMockManagedLock.xml"/>
+    </run>
+    <run>
+      <package name="TestMockExclusiveLockPreReleaseRequest" src="package.TestMockExclusiveLockPreReleaseRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockExclusiveLockPreAcquireRequest" src="package.TestMockExclusiveLockPreAcquireRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationRequest" src="package.TestMockOperationRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapUpdateRequest" src="package.TestMockObjectMapUpdateRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationSnapshotRollbackRequest" src="package.TestMockOperationSnapshotRollbackRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockObjectMapSnapshotRollbackRequest" src="package.TestMockObjectMapSnapshotRollbackRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockManagedLockBreakRequest" src="package.TestMockManagedLockBreakRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockOperationSnapshotUnprotectRequest" src="package.TestMockOperationSnapshotUnprotectRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestTrashWatcher" src="package.TestTrashWatcher.xml"/>
+    </run>
+    <run>
+      <package name="TestMockManagedLockReacquireRequest" src="package.TestMockManagedLockReacquireRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMockDeepCopySetHeadRequest" src="package.TestMockDeepCopySetHeadRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestMirroringWatcher" src="package.TestMirroringWatcher.xml"/>
+    </run>
+    <run>
+      <package name="TestMockImagePreRemoveRequest" src="package.TestMockImagePreRemoveRequest.xml"/>
+    </run>
+    <run>
+      <package name="TestJournalReplay" src="package.TestJournalReplay.xml"/>
+    </run>
+  </session>
+</package>

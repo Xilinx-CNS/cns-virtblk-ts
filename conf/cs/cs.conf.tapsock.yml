@@ -1,0 +1,57 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+#
+# tapsock is required for QEMU to connect to to make network interface
+# to talk to. It must be run before QEMU.
+#
+- cond:
+  if: ${QEMU_NET_TAPSOCK_0} != ""
+  then:
+    - get:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/l4_port:/alloc:/next:"
+        value: QEMU_NET_SOCKET_TCP_PORT_0
+    - add:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/l4_port:/alloc:/allocated:${QEMU_NET_SOCKET_TCP_PORT_0}"
+    - add:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock0"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock0/arg:1"
+        value: "--listen"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock0/arg:2"
+        value: "${TE_TST1_IUT_PREFIX}_${QEMU_NET_SOCKET_TCP_PORT_0}"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock0/arg:3"
+        value: "${QEMU_NET_SOCKET_TCP_PORT_0}"
+    - set:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock0/exe:"
+        value: "${TAPSOCK_EXE}"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock0/status:"
+        value: 1
+
+- cond:
+  if: ${QEMU_NET_TAPSOCK_1} != ""
+  then:
+    - get:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/l4_port:/alloc:/next:"
+          value: QEMU_NET_SOCKET_TCP_PORT_1
+    - add:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/l4_port:/alloc:/allocated:${QEMU_NET_SOCKET_TCP_PORT_1}"
+    - add:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock1"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock1/arg:1"
+        value: "--listen"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock1/arg:2"
+        value: "${TE_TST1_IUT_IUT_PREFIX}_${QEMU_NET_SOCKET_TCP_PORT_1}"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock1/arg:3"
+        value: "${QEMU_NET_SOCKET_TCP_PORT_1}"
+    - set:
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock1/exe:"
+        value: "${TAPSOCK_EXE}"
+      - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/process:tapsock1/status:"
+        value: 1
+
+- add:
+  - if: ${QEMU_NET_TAPSOCK_0} != ""
+    oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/env:QEMU_NET_SOCKET_PORT_0"
+    value: "${CMOD_QEMU_NET_SOCKET}:${QEMU_NET_SOCKET_TCP_PORT_0}"
+  - if: ${QEMU_NET_TAPSOCK_1} != ""
+    oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/env:QEMU_NET_SOCKET_PORT_1"
+    value: "${CMOD_QEMU_NET_SOCKET}:${QEMU_NET_SOCKET_TCP_PORT_1}"

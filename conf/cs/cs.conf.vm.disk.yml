@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+- add:
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/drive:root"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/net:ceph"
+
+- set:
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/qemu:"
+    value: "${CEPH_QEMU_EXE:-/usr/bin/qemu-system-x86_64}"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/machine:"
+    value: "${TE_DUT_TST3_MACHINE:-q35,max-ram-below-4g=128M,kernel-irqchip=split}"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/cpu:/model:"
+    value: "host"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/cpu:/num:"
+    value: 2
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/mem:/size:"
+    value: ${TE_DUT_TST3_MEM:-6144}
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/net:ceph/type:"
+    value: "tap"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/net:ceph/type_spec:"
+    value: "${TE_DISK_TAP_IF}"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/drive:root/file:"
+    value: "${CEPH_VM_ROOT:-/local/virtual/x86_64_centos7.qcow2}"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/drive:root/cdrom:"
+    value: ${CEPH_VM_ROOT_CDROM:-0}
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/drive:root/snapshot:"
+    value: ${CEPH_VM_ROOT_SNAPSHOT:-1}
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/kernel:"
+    value: "${CEPH_VM_KERNEL}"
+  - oid: "/agent:${TE_DISK_STARTER_TA_NAME}/vm:${TE_DUT_TST3_TA_NAME}/kernel:/cmdline:"
+    value: "${CEPH_VM_KERNEL_CMDLINE}"

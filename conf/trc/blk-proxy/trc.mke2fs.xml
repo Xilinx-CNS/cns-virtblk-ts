@@ -1,0 +1,26 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="mke2fs" type="package">
+    <objective/>
+    <iter result="PASSED">
+
+        <test name="mke2fs_ext2" type="script">
+            <objective>Test ext2 filesystem creation</objective>
+            <iter result="PASSED">
+                <arg name="block_size"/>
+                <arg name="use_journal"/>
+                <arg name="fs_type"/>
+            </iter>
+        </test>
+
+        <test name="mke2fs_ext34" type="script">
+            <objective>Test ext3 and ext4 filesystem creation</objective>
+            <iter result="PASSED">
+                <arg name="block_size"/>
+                <arg name="use_journal"/>
+                <arg name="fs_type"/>
+            </iter>
+        </test>
+
+    </iter>
+</test>

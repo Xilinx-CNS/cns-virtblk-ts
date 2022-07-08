@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockJournalReplay"/>
+    <run name="AioDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioDiscard"/>
+    </run>
+    <run name="AioWrite">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioWrite"/>
+    </run>
+    <run name="AioFlush">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioFlush"/>
+    </run>
+    <run name="AioWriteSame">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioWriteSame"/>
+    </run>
+    <run name="AioCompareAndWrite">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioCompareAndWrite"/>
+    </run>
+    <run name="IOError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="IOError"/>
+    </run>
+    <run name="SoftFlushIO">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SoftFlushIO"/>
+    </run>
+    <run name="PauseIO">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PauseIO"/>
+    </run>
+    <run name="Flush">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Flush"/>
+    </run>
+    <run name="OpFinishError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpFinishError"/>
+    </run>
+    <run name="BlockedOpFinishError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="BlockedOpFinishError"/>
+    </run>
+    <run name="MissingOpFinishEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MissingOpFinishEvent"/>
+    </run>
+    <run name="MissingOpFinishEventCancelOps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MissingOpFinishEventCancelOps"/>
+    </run>
+    <run name="UnknownOpFinishEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UnknownOpFinishEvent"/>
+    </run>
+    <run name="OpEventError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpEventError"/>
+    </run>
+    <run name="SnapCreateEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapCreateEvent"/>
+    </run>
+    <run name="SnapCreateEventExists">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapCreateEventExists"/>
+    </run>
+    <run name="SnapRemoveEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRemoveEvent"/>
+    </run>
+    <run name="SnapRemoveEventDNE">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRemoveEventDNE"/>
+    </run>
+    <run name="SnapRenameEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRenameEvent"/>
+    </run>
+    <run name="SnapRenameEventExists">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRenameEventExists"/>
+    </run>
+    <run name="SnapProtectEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapProtectEvent"/>
+    </run>
+    <run name="SnapProtectEventBusy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapProtectEventBusy"/>
+    </run>
+    <run name="SnapUnprotectEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapUnprotectEvent"/>
+    </run>
+    <run name="SnapUnprotectOpFinishBusy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapUnprotectOpFinishBusy"/>
+    </run>
+    <run name="SnapUnprotectEventInvalid">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapUnprotectEventInvalid"/>
+    </run>
+    <run name="SnapRollbackEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapRollbackEvent"/>
+    </run>
+    <run name="RenameEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RenameEvent"/>
+    </run>
+    <run name="RenameEventExists">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RenameEventExists"/>
+    </run>
+    <run name="ResizeEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ResizeEvent"/>
+    </run>
+    <run name="FlattenEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlattenEvent"/>
+    </run>
+    <run name="FlattenEventInvalid">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlattenEventInvalid"/>
+    </run>
+    <run name="UpdateFeaturesEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UpdateFeaturesEvent"/>
+    </run>
+    <run name="MetadataSetEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MetadataSetEvent"/>
+    </run>
+    <run name="MetadataRemoveEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MetadataRemoveEvent"/>
+    </run>
+    <run name="MetadataRemoveEventDNE">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MetadataRemoveEventDNE"/>
+    </run>
+    <run name="UnknownEvent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="UnknownEvent"/>
+    </run>
+    <run name="RefreshImageBeforeOpStart">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RefreshImageBeforeOpStart"/>
+    </run>
+    <run name="FlushEventAfterShutDown">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="FlushEventAfterShutDown"/>
+    </run>
+    <run name="ModifyEventAfterShutDown">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ModifyEventAfterShutDown"/>
+    </run>
+    <run name="OpEventAfterShutDown">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpEventAfterShutDown"/>
+    </run>
+    <run name="LockLostBeforeProcess">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="LockLostBeforeProcess"/>
+    </run>
+    <run name="LockLostBeforeExecuteOp">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="LockLostBeforeExecuteOp"/>
+    </run>
+    <run name="WritebackCacheDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="WritebackCacheDisabled"/>
+    </run>
+  </session>
+</package>

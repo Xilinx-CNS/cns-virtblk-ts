@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+nvme_server:
+  hosts:
+    ${NVME_SERVER_HOST}:
+  vars:
+    nvmet_listen_addr: ${NVME_ADDR}
+    nvmet_listen_port: ${NVME_PORT}
+    ansible_ssh_user: root
+    ansible_ssh_private_key_file: /root/.ssh/id_rsa
+    disk_num: ${NVME_DISK_NUM}
+    disk_size_gb: ${NVME_DISK_SIZE}

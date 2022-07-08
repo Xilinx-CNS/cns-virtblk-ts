@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockImageRefreshRequest"/>
+    <run name="SuccessV1">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessV1"/>
+      <arg name="features" value="UNSET_FEATURES"/>
+    </run>
+    <run name="SuccessSnapshotV1">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessSnapshotV1"/>
+      <arg name="features" value="UNSET_FEATURES"/>
+    </run>
+    <run name="SuccessV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessV2"/>
+    </run>
+    <run name="SuccessSnapshotV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessSnapshotV2"/>
+    </run>
+    <run name="SuccessLegacySnapshotV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessLegacySnapshotV2"/>
+    </run>
+    <run name="SuccessLegacySnapshotNoTimestampV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessLegacySnapshotNoTimestampV2"/>
+    </run>
+    <run name="SuccessSetSnapshotV2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessSetSnapshotV2"/>
+    </run>
+    <run name="SuccessChild">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessChild"/>
+    </run>
+    <run name="SuccessChildDontOpenParent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessChildDontOpenParent"/>
+    </run>
+    <run name="SuccessOpFeatures">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SuccessOpFeatures"/>
+    </run>
+    <run name="DisableExclusiveLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableExclusiveLock"/>
+    </run>
+    <run name="DisableExclusiveLockWhileAcquiringLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableExclusiveLockWhileAcquiringLock"/>
+    </run>
+    <run name="JournalDisabledByPolicy">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="JournalDisabledByPolicy"/>
+    </run>
+    <run name="EnableJournalWithExclusiveLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableJournalWithExclusiveLock"/>
+    </run>
+    <run name="EnableJournalWithoutExclusiveLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableJournalWithoutExclusiveLock"/>
+    </run>
+    <run name="DisableJournal">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableJournal"/>
+    </run>
+    <run name="EnableObjectMapWithExclusiveLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableObjectMapWithExclusiveLock"/>
+    </run>
+    <run name="EnableObjectMapWithoutExclusiveLock">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="EnableObjectMapWithoutExclusiveLock"/>
+    </run>
+    <run name="DisableObjectMap">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DisableObjectMap"/>
+    </run>
+    <run name="OpenObjectMapError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenObjectMapError"/>
+    </run>
+    <run name="OpenObjectMapTooLarge">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OpenObjectMapTooLarge"/>
+    </run>
+    <run name="ApplyMetadataError">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="ApplyMetadataError"/>
+    </run>
+  </session>
+</package>

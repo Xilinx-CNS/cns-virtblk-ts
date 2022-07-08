@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestObjectMap"/>
+    <run name="RefreshInvalidatesWhenCorrupt">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RefreshInvalidatesWhenCorrupt"/>
+    </run>
+    <run name="RefreshInvalidatesWhenTooSmall">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="RefreshInvalidatesWhenTooSmall"/>
+    </run>
+    <run name="InvalidateFlagOnDisk">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="InvalidateFlagOnDisk"/>
+    </run>
+    <run name="AcquireLockInvalidatesWhenTooSmall">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AcquireLockInvalidatesWhenTooSmall"/>
+    </run>
+    <run name="DISABLED_StressTest">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DISABLED_StressTest"/>
+    </run>
+  </session>
+</package>

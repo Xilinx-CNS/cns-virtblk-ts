@@ -1,0 +1,113 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="network_stimuli" type="package">
+    <objective/>
+    <iter result="PASSED">
+
+        <test name="prologue">
+            <objective/>
+            <iter result="PASSED"/>
+        </test>
+
+        <test name="fio_bpf_stimuli" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="action1"/>
+                <arg name="param1"/>
+                <arg name="correlation1"/>
+                <arg name="action2"/>
+                <arg name="param2"/>
+                <arg name="correlation2"/>
+            </iter>
+        </test>
+
+        <test name="fio_netem_loss" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="action1"/>
+                <arg name="param1"/>
+                <arg name="correlation1"/>
+                <arg name="action2"/>
+                <arg name="param2"/>
+                <arg name="correlation2"/>
+            </iter>
+        </test>
+
+        <test name="fio_netem_reorder" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="action1"/>
+                <arg name="param1"/>
+                <arg name="correlation1"/>
+                <arg name="action2"/>
+                <arg name="param2"/>
+                <arg name="correlation2"/>
+            </iter>
+        </test>
+
+        <test name="fio_netem_corruption" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="action1"/>
+                <arg name="param1"/>
+                <arg name="correlation1"/>
+                <arg name="action2"/>
+                <arg name="param2"/>
+                <arg name="correlation2"/>
+            </iter>
+        </test>
+
+        <test name="fio_netem_duplicate" type="script">
+            <objective/>
+            <iter result="PASSED">
+                <arg name="env"/>
+                <arg name="ioengine"/>
+                <arg name="rwtype"/>
+                <arg name="rwmixread"/>
+                <arg name="numjobs"/>
+                <arg name="iodepth"/>
+                <arg name="blocksize"/>
+                <arg name="runtime_sec"/>
+                <arg name="action1"/>
+                <arg name="param1"/>
+                <arg name="correlation1"/>
+                <arg name="action2"/>
+                <arg name="param2"/>
+                <arg name="correlation2"/>
+            </iter>
+        </test>
+
+    </iter>
+</test>

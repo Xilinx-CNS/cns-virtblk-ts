@@ -1,0 +1,89 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockIoImageRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="AioWriteModifyTimestamp" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWriteModifyTimestamp"/>
+      </iter>
+    </test>
+    <test name="AioReadAccessTimestamp" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioReadAccessTimestamp"/>
+      </iter>
+    </test>
+    <test name="PartialDiscard" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="PartialDiscard"/>
+      </iter>
+    </test>
+    <test name="TailDiscard" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TailDiscard"/>
+      </iter>
+    </test>
+    <test name="DiscardGranularity" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardGranularity"/>
+      </iter>
+    </test>
+    <test name="AioWriteJournalAppendDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWriteJournalAppendDisabled"/>
+      </iter>
+    </test>
+    <test name="AioDiscardJournalAppendDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioDiscardJournalAppendDisabled"/>
+      </iter>
+    </test>
+    <test name="AioFlushJournalAppendDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioFlushJournalAppendDisabled"/>
+      </iter>
+    </test>
+    <test name="AioWriteSameJournalAppendDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWriteSameJournalAppendDisabled"/>
+      </iter>
+    </test>
+    <test name="AioCompareAndWriteJournalAppendDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioCompareAndWriteJournalAppendDisabled"/>
+      </iter>
+    </test>
+  </iter>
+</test>

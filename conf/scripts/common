@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+#
+# We want to use --test-wof option for debug
+#
+export TE_TEST_BEHAVIOUR_LOG_TEST_FAIL_STATE=1

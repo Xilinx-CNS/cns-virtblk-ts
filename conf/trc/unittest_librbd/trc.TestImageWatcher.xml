@@ -1,0 +1,137 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestImageWatcher" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="NotifyHeaderUpdate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyHeaderUpdate"/>
+      </iter>
+    </test>
+    <test name="NotifyFlatten" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyFlatten"/>
+      </iter>
+    </test>
+    <test name="NotifyResize" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyResize"/>
+      </iter>
+    </test>
+    <test name="NotifyRebuildObjectMap" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyRebuildObjectMap"/>
+      </iter>
+    </test>
+    <test name="NotifySnapCreate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifySnapCreate"/>
+      </iter>
+    </test>
+    <test name="NotifySnapCreateError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifySnapCreateError"/>
+      </iter>
+    </test>
+    <test name="NotifySnapRename" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifySnapRename"/>
+      </iter>
+    </test>
+    <test name="NotifySnapRenameError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifySnapRenameError"/>
+      </iter>
+    </test>
+    <test name="NotifySnapRemove" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifySnapRemove"/>
+      </iter>
+    </test>
+    <test name="NotifySnapProtect" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifySnapProtect"/>
+      </iter>
+    </test>
+    <test name="NotifySnapUnprotect" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifySnapUnprotect"/>
+      </iter>
+    </test>
+    <test name="NotifyRename" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyRename"/>
+      </iter>
+    </test>
+    <test name="NotifyAsyncTimedOut" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyAsyncTimedOut"/>
+      </iter>
+    </test>
+    <test name="NotifyAsyncError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyAsyncError"/>
+      </iter>
+    </test>
+    <test name="NotifyAsyncCompleteError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyAsyncCompleteError"/>
+      </iter>
+    </test>
+    <test name="NotifyAsyncRequestTimedOut" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NotifyAsyncRequestTimedOut"/>
+      </iter>
+    </test>
+  </iter>
+</test>

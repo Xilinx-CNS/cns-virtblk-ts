@@ -1,0 +1,441 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMigration" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="Empty" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Empty"/>
+      </iter>
+    </test>
+    <test name="OtherName" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OtherName"/>
+      </iter>
+    </test>
+    <test name="OtherPool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OtherPool"/>
+      </iter>
+    </test>
+    <test name="OtherNamespace" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OtherNamespace"/>
+      </iter>
+    </test>
+    <test name="DataPool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DataPool"/>
+      </iter>
+    </test>
+    <test name="AbortAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AbortAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="AbortAfterFailedPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AbortAfterFailedPrepare"/>
+      </iter>
+    </test>
+    <test name="AbortAfterExecute" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AbortAfterExecute"/>
+      </iter>
+    </test>
+    <test name="OtherPoolAbortAfterExecute" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OtherPoolAbortAfterExecute"/>
+      </iter>
+    </test>
+    <test name="OtherNamespaceAbortAfterExecute" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OtherNamespaceAbortAfterExecute"/>
+      </iter>
+    </test>
+    <test name="MirroringSamePool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirroringSamePool"/>
+      </iter>
+    </test>
+    <test name="MirroringAbort" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirroringAbort"/>
+      </iter>
+    </test>
+    <test name="MirroringOtherPoolDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirroringOtherPoolDisabled"/>
+      </iter>
+    </test>
+    <test name="MirroringOtherPoolEnabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirroringOtherPoolEnabled"/>
+      </iter>
+    </test>
+    <test name="MirroringPool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MirroringPool"/>
+      </iter>
+    </test>
+    <test name="Group" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Group"/>
+      </iter>
+    </test>
+    <test name="GroupAbort" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="GroupAbort"/>
+      </iter>
+    </test>
+    <test name="NoSnaps" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnaps"/>
+      </iter>
+    </test>
+    <test name="NoSnapsOtherPool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnapsOtherPool"/>
+      </iter>
+    </test>
+    <test name="NoSnapsDataPool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnapsDataPool"/>
+      </iter>
+    </test>
+    <test name="NoSnapsShrinkAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnapsShrinkAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="NoSnapsShrinkToZeroBeforePrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnapsShrinkToZeroBeforePrepare"/>
+      </iter>
+    </test>
+    <test name="NoSnapsShrinkToZeroAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnapsShrinkToZeroAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="NoSnapsExpandAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnapsExpandAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="NoSnapsSnapAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoSnapsSnapAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="Snaps" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Snaps"/>
+      </iter>
+    </test>
+    <test name="SnapsOtherPool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsOtherPool"/>
+      </iter>
+    </test>
+    <test name="SnapsDataPool" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsDataPool"/>
+      </iter>
+    </test>
+    <test name="SnapsShrinkAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsShrinkAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="SnapsShrinkToZeroBeforePrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsShrinkToZeroBeforePrepare"/>
+      </iter>
+    </test>
+    <test name="SnapsShrinkToZeroAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsShrinkToZeroAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="SnapsExpandAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsExpandAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="SnapsExpandAfterPrepare2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsExpandAfterPrepare2"/>
+      </iter>
+    </test>
+    <test name="SnapsSnapAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsSnapAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="SnapsSnapExpandAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapsSnapExpandAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="Clone" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Clone"/>
+      </iter>
+    </test>
+    <test name="CloneParent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneParent"/>
+      </iter>
+    </test>
+    <test name="CloneUpdateAfterPrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneUpdateAfterPrepare"/>
+      </iter>
+    </test>
+    <test name="TriggerAssertSnapcSeq" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TriggerAssertSnapcSeq"/>
+      </iter>
+    </test>
+    <test name="SnapTrimBeforePrepare" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapTrimBeforePrepare"/>
+      </iter>
+    </test>
+    <test name="CloneV1Parent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV1Parent"/>
+      </iter>
+    </test>
+    <test name="CloneV2Parent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV2Parent"/>
+      </iter>
+    </test>
+    <test name="CloneV1ParentAbort" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV1ParentAbort"/>
+      </iter>
+    </test>
+    <test name="CloneV2ParentAbort" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV2ParentAbort"/>
+      </iter>
+    </test>
+    <test name="CloneV1ParentAbortFixIncompleteChildReattach" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV1ParentAbortFixIncompleteChildReattach"/>
+      </iter>
+    </test>
+    <test name="CloneV1ParentAbortFixParentReattach" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV1ParentAbortFixParentReattach"/>
+      </iter>
+    </test>
+    <test name="CloneV1ParentAbortRelinkNotNeeded" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV1ParentAbortRelinkNotNeeded"/>
+      </iter>
+    </test>
+    <test name="CloneV2ParentAbortFixIncompleteChildReattach" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV2ParentAbortFixIncompleteChildReattach"/>
+      </iter>
+    </test>
+    <test name="CloneV2ParentAbortFixParentReattach" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV2ParentAbortFixParentReattach"/>
+      </iter>
+    </test>
+    <test name="CloneV2ParentAbortRelinkNotNeeded" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloneV2ParentAbortRelinkNotNeeded"/>
+      </iter>
+    </test>
+    <test name="StressNoMigrate" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="StressNoMigrate"/>
+      </iter>
+    </test>
+    <test name="Stress" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Stress"/>
+      </iter>
+    </test>
+    <test name="Stress2" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Stress2"/>
+      </iter>
+    </test>
+    <test name="StressLive" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="StressLive"/>
+      </iter>
+    </test>
+  </iter>
+</test>

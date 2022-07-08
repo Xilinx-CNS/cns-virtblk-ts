@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>XFS generic test</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+    <session>
+        <arg name="group" value="generic"/>
+        <run>
+            <script name="xfs">
+                <req id="MULTI_BLOCK"/>
+            </script>
+            <arg name="name">
+                <value>001</value>
+                <value>002</value>
+                <value>003</value>
+                <value>004</value>
+                <value>005</value>
+                <value>006</value>
+                <value>007</value>
+                <value>008</value>
+                <value>009</value>
+                <value>011</value>
+                <value>012</value>
+                <value>014</value>
+                <value>015</value>
+                <value>016</value>
+                <value>017</value>
+                <value>018</value>
+                <value>020</value>
+                <value>021</value>
+                <value>022</value>
+                <value>023</value>
+                <value>024</value>
+                <value>025</value>
+                <value>026</value>
+                <value>027</value>
+                <value>028</value>
+                <value>036</value>
+                <value>037</value>
+                <value>043</value>
+                <value>044</value>
+                <value>045</value>
+                <value>046</value>
+                <value>047</value>
+                <value>049</value>
+                <value>052</value>
+                <!-- xfstests checks only for local user/group ids and
+                     selects ids which are not in use. But those ids
+                     might not be free on network. For example, xfstests
+                     picks user id 16 as free, but it belongs to flexmgr
+                     on network
+                     See VIRTBLK-1257
+                -->
+                <value reqs="BROKEN">053</value>
+                <value>054</value>
+                <value>058</value>
+                <value>060</value>
+                <value>061</value>
+                <value>062</value>
+                <value>063</value>
+                <value>064</value>
+                <value>067</value>
+                <value>068</value>
+                <value>069</value>
+                <value>070</value>
+                <value>071</value>
+                <value>072</value>
+                <value>075</value>
+                <value>076</value>
+                <value>077</value>
+                <value>078</value>
+                <value>079</value>
+                <value>080</value>
+                <value>083</value>
+                <value>084</value>
+                <value>087</value>
+                <value>088</value>
+                <value>089</value>
+                <value>092</value>
+                <value>093</value>
+                <value>094</value>
+                <!-- See VIRTBLK-1277 -->
+                <value reqs="BROKEN">095</value>
+                <value>097</value>
+                <value>098</value>
+                <!-- xfstests checks only for local user/group ids and
+                     selects ids which are not in use. But those ids
+                     might not be free on network. For example, xfstests
+                     picks user id 16 as free, but it belongs to flexmgr
+                     on network
+                     See VIRTBLK-1257
+                -->
+                <value reqs="BROKEN">099</value>
+                <value>100</value>
+                <value>103</value>
+                <value>105</value>
+                <value>109</value>
+                <value>112</value>
+                <value>113</value>
+                <value>114</value>
+                <value>117</value>
+                <value>120</value>
+                <value>122</value>
+                <value>123</value>
+                <value>124</value>
+                <value>125</value>
+                <value>126</value>
+                <value>128</value>
+                <value>130</value>
+                <value>132</value>
+                <value>135</value>
+                <value>141</value>
+                <value>142</value>
+                <value>143</value>
+                <value>145</value>
+                <value>146</value>
+                <value>147</value>
+                <value>148</value>
+                <value>149</value>
+                <value>150</value>
+                <value>151</value>
+                <value>152</value>
+                <value>153</value>
+                <value>154</value>
+                <value>155</value>
+                <value>156</value>
+                <value>159</value>
+                <value>160</value>
+                <value>169</value>
+                <value>178</value>
+                <value>179</value>
+                <value>180</value>
+                <value>181</value>
+                <value>182</value>
+                <value>184</value>
+                <value>192</value>
+                <value>193</value>
+                <value>198</value>
+                <value>204</value>
+                <value>207</value>
+                <value>208</value>
+                <value>209</value>
+                <value>210</value>
+                <value>211</value>
+                <value>212</value>
+                <value>214</value>
+                <value>215</value>
+                <value>221</value>
+                <value>225</value>
+                <value>226</value>
+                <value>228</value>
+                <value>236</value>
+                <value>237</value>
+                <value>239</value>
+                <value>240</value>
+                <!-- See VIRTBLK-1257-->
+                <value reqs="BROKEN">241</value>
+                <value>245</value>
+                <value>246</value>
+                <value>248</value>
+                <value>249</value>
+                <value>255</value>
+                <value>257</value>
+                <value>258</value>
+                <value>277</value>
+                <value>285</value>
+                <value>294</value>
+                <value>299</value>
+                <!-- See VIRTBLK-1277 -->
+                <value reqs="BROKEN">300</value>
+                <value>303</value>
+                <value>304</value>
+                <value>306</value>
+                <value>307</value>
+                <value>308</value>
+                <value>309</value>
+                <value>313</value>
+                <value>314</value>
+                <value>315</value>
+                <value>316</value>
+                <value>319</value>
+                <value>323</value>
+                <value>324</value>
+                <value>337</value>
+                <value>339</value>
+                <value>355</value>
+                <value>360</value>
+                <value>371</value>
+                <value>375</value>
+                <value>377</value>
+                <value>378</value>
+                <value>389</value>
+                <value>390</value>
+                <value>391</value>
+                <value>392</value>
+                <value>393</value>
+                <value>394</value>
+                <value>401</value>
+                <value>403</value>
+                <value>408</value>
+                <value>409</value>
+                <value>410</value>
+                <value>411</value>
+                <value>412</value>
+                <value>416</value>
+                <value>417</value>
+                <value>418</value>
+                <value>420</value>
+                <value>422</value>
+                <value>423</value>
+                <value>424</value>
+                <value>425</value>
+                <value>426</value>
+                <value>427</value>
+                <value>428</value>
+            </arg>
+        </run>
+    </session>
+</package>

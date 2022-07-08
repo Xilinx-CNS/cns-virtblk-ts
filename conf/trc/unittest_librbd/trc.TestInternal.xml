@@ -1,0 +1,253 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestInternal" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="OpenByID" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpenByID"/>
+      </iter>
+    </test>
+    <test name="OpenSnapDNE" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpenSnapDNE"/>
+      </iter>
+    </test>
+    <test name="IsExclusiveLockOwner" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="IsExclusiveLockOwner"/>
+      </iter>
+    </test>
+    <test name="ResizeLocksImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ResizeLocksImage"/>
+      </iter>
+    </test>
+    <test name="ResizeFailsToLockImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ResizeFailsToLockImage"/>
+      </iter>
+    </test>
+    <test name="SnapCreateLocksImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreateLocksImage"/>
+      </iter>
+    </test>
+    <test name="SnapCreateFailsToLockImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreateFailsToLockImage"/>
+      </iter>
+    </test>
+    <test name="SnapRollbackLocksImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRollbackLocksImage"/>
+      </iter>
+    </test>
+    <test name="SnapRollbackFailsToLockImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRollbackFailsToLockImage"/>
+      </iter>
+    </test>
+    <test name="SnapSetReleasesLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapSetReleasesLock"/>
+      </iter>
+    </test>
+    <test name="FlattenLocksImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlattenLocksImage"/>
+      </iter>
+    </test>
+    <test name="FlattenFailsToLockImage" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlattenFailsToLockImage"/>
+      </iter>
+    </test>
+    <test name="AioWriteRequestsLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWriteRequestsLock"/>
+      </iter>
+    </test>
+    <test name="AioDiscardRequestsLock" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioDiscardRequestsLock"/>
+      </iter>
+    </test>
+    <test name="CancelAsyncResize" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CancelAsyncResize"/>
+      </iter>
+    </test>
+    <test name="MultipleResize" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MultipleResize"/>
+      </iter>
+    </test>
+    <test name="Metadata" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Metadata"/>
+      </iter>
+    </test>
+    <test name="MetadataConfApply" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MetadataConfApply"/>
+      </iter>
+    </test>
+    <test name="SnapshotCopyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapshotCopyup"/>
+      </iter>
+    </test>
+    <test name="ResizeCopyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ResizeCopyup"/>
+      </iter>
+    </test>
+    <test name="DiscardCopyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiscardCopyup"/>
+      </iter>
+    </test>
+    <test name="ShrinkFlushesCache" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ShrinkFlushesCache"/>
+      </iter>
+    </test>
+    <test name="ImageOptions" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ImageOptions"/>
+      </iter>
+    </test>
+    <test name="WriteFullCopyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="WriteFullCopyup"/>
+      </iter>
+    </test>
+    <test name="DiffIterateCloneOverwrite" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DiffIterateCloneOverwrite"/>
+      </iter>
+    </test>
+    <test name="TestCoR" type="script">
+      <objective/>
+      <iter result="SKIPPED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="TestCoR"/>
+        <results tags="non-mocking" key="NVMEOF-51">
+          <result value="SKIPPED">
+          </result>
+        </results>
+      </iter>
+    </test>
+    <test name="FlattenNoEmptyObjects" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlattenNoEmptyObjects"/>
+      </iter>
+    </test>
+    <test name="PoolMetadataConfApply" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="PoolMetadataConfApply"/>
+      </iter>
+    </test>
+    <test name="Sparsify" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Sparsify"/>
+      </iter>
+    </test>
+    <test name="SparsifyClone" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SparsifyClone"/>
+      </iter>
+    </test>
+  </iter>
+</test>

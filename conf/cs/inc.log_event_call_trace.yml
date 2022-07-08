@@ -1,0 +1,48 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+#
+# Add 'Call Trace' event to TE_DUT_TST[1-3]
+#
+
+- cond:
+    if:  ${TE_DUT_TST1} != ""
+    then:
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/event:call_trace"
+            value: "call_trace"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:arm/event:call_trace/pattern:1"
+            value: "Call Trace"
+
+- cond:
+    if: ${TE_DUT_TST2} != ""
+    then:
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/event:call_trace"
+            value: "call_trace"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:x86_host/event:call_trace/pattern:1"
+            value: "Call Trace"
+
+- cond:
+    if: ${TE_DUT_TST3} != ""
+    then:
+      - add:
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/event:call_trace"
+            value: "call_trace"
+
+          - oid: "/agent:${TE_NETCONSOLE_TA_NAME}/parser:partner/event:call_trace/pattern:1"
+            value: "Call Trace"
+
+- add:
+    - oid: "/local:/tester:/event:call_trace"
+
+    - oid: "/local:/tester:/event:call_trace/handler:internal_handler"
+
+- set:
+    - oid: "/local:/tester:/event:call_trace/handler:internal_handler/internal:"
+      value: "1"
+
+    - oid: "/local:/tester:/event:call_trace/handler:internal_handler/signal:"
+      value: "SIGUSR2"

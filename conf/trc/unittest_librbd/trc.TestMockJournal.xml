@@ -1,0 +1,177 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockJournal" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="StateTransitions" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="StateTransitions"/>
+      </iter>
+    </test>
+    <test name="InitError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="InitError"/>
+      </iter>
+    </test>
+    <test name="ReplayCompleteError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReplayCompleteError"/>
+      </iter>
+    </test>
+    <test name="FlushReplayError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlushReplayError"/>
+      </iter>
+    </test>
+    <test name="CorruptEntry" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CorruptEntry"/>
+      </iter>
+    </test>
+    <test name="StopError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="StopError"/>
+      </iter>
+    </test>
+    <test name="ReplayOnDiskPreFlushError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReplayOnDiskPreFlushError"/>
+      </iter>
+    </test>
+    <test name="ReplayOnDiskPostFlushError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReplayOnDiskPostFlushError"/>
+      </iter>
+    </test>
+    <test name="EventAndIOCommitOrder" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EventAndIOCommitOrder"/>
+      </iter>
+    </test>
+    <test name="AppendWriteEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AppendWriteEvent"/>
+      </iter>
+    </test>
+    <test name="EventCommitError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EventCommitError"/>
+      </iter>
+    </test>
+    <test name="EventCommitErrorWithPendingWriteback" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="EventCommitErrorWithPendingWriteback"/>
+      </iter>
+    </test>
+    <test name="IOCommitError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="IOCommitError"/>
+      </iter>
+    </test>
+    <test name="IOCommitErrorFiltered" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="IOCommitErrorFiltered"/>
+      </iter>
+    </test>
+    <test name="FlushCommitPosition" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlushCommitPosition"/>
+      </iter>
+    </test>
+    <test name="ExternalReplay" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ExternalReplay"/>
+      </iter>
+    </test>
+    <test name="ExternalReplayFailure" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ExternalReplayFailure"/>
+      </iter>
+    </test>
+    <test name="AppendDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AppendDisabled"/>
+      </iter>
+    </test>
+    <test name="CloseListenerEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CloseListenerEvent"/>
+      </iter>
+    </test>
+    <test name="ResyncRequested" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ResyncRequested"/>
+      </iter>
+    </test>
+    <test name="ForcePromoted" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ForcePromoted"/>
+      </iter>
+    </test>
+  </iter>
+</test>

@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+---
+
+#
+# Just allocate port
+#
+- set:
+  - oid: "/agent:${TE_HOST_STARTER_TA_NAME}/l4_port:/alloc:/next:/type:"
+    value: 1
+- get:
+  - oid: "/agent:${TE_HOST_STARTER_TA_NAME}/l4_port:/alloc:/next:"
+    value: CMOD_COSIM_PORT
+- add:
+  - oid: "/agent:${TE_HOST_STARTER_TA_NAME}/l4_port:/alloc:/allocated:${CMOD_COSIM_PORT}"
+
+#
+# Prepare enviroment for rhsim starter agent and ARM vm stater side
+#
+- add:
+  - oid: "/agent:${TE_HOST_STARTER_TA_NAME}/env:COSIM_ADDRESS"
+    value: ":${CMOD_COSIM_PORT}"
+
+  - oid: "/agent:${TE_RHSIM_STARTER_TA_NAME}/env:COSIM_ADDRESS"
+    value: ":${CMOD_COSIM_PORT}"

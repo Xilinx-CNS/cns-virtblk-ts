@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMigration"/>
+    <run name="Empty">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Empty"/>
+    </run>
+    <run name="OtherName">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OtherName"/>
+    </run>
+    <run name="OtherPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OtherPool"/>
+    </run>
+    <run name="OtherNamespace">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OtherNamespace"/>
+    </run>
+    <run name="DataPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DataPool"/>
+    </run>
+    <run name="AbortAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AbortAfterPrepare"/>
+    </run>
+    <run name="AbortAfterFailedPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AbortAfterFailedPrepare"/>
+    </run>
+    <run name="AbortAfterExecute">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AbortAfterExecute"/>
+    </run>
+    <run name="OtherPoolAbortAfterExecute">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OtherPoolAbortAfterExecute"/>
+    </run>
+    <run name="OtherNamespaceAbortAfterExecute">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="OtherNamespaceAbortAfterExecute"/>
+    </run>
+    <run name="MirroringSamePool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirroringSamePool"/>
+    </run>
+    <run name="MirroringAbort">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirroringAbort"/>
+    </run>
+    <run name="MirroringOtherPoolDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirroringOtherPoolDisabled"/>
+    </run>
+    <run name="MirroringOtherPoolEnabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirroringOtherPoolEnabled"/>
+    </run>
+    <run name="MirroringPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="MirroringPool"/>
+    </run>
+    <run name="Group">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Group"/>
+    </run>
+    <run name="GroupAbort">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="GroupAbort"/>
+    </run>
+    <run name="NoSnaps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnaps"/>
+    </run>
+    <run name="NoSnapsOtherPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnapsOtherPool"/>
+    </run>
+    <run name="NoSnapsDataPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnapsDataPool"/>
+    </run>
+    <run name="NoSnapsShrinkAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnapsShrinkAfterPrepare"/>
+    </run>
+    <run name="NoSnapsShrinkToZeroBeforePrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnapsShrinkToZeroBeforePrepare"/>
+    </run>
+    <run name="NoSnapsShrinkToZeroAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnapsShrinkToZeroAfterPrepare"/>
+    </run>
+    <run name="NoSnapsExpandAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnapsExpandAfterPrepare"/>
+    </run>
+    <run name="NoSnapsSnapAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="NoSnapsSnapAfterPrepare"/>
+    </run>
+    <run name="Snaps">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Snaps"/>
+    </run>
+    <run name="SnapsOtherPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsOtherPool"/>
+    </run>
+    <run name="SnapsDataPool">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsDataPool"/>
+    </run>
+    <run name="SnapsShrinkAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsShrinkAfterPrepare"/>
+    </run>
+    <run name="SnapsShrinkToZeroBeforePrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsShrinkToZeroBeforePrepare"/>
+    </run>
+    <run name="SnapsShrinkToZeroAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsShrinkToZeroAfterPrepare"/>
+    </run>
+    <run name="SnapsExpandAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsExpandAfterPrepare"/>
+    </run>
+    <run name="SnapsExpandAfterPrepare2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsExpandAfterPrepare2"/>
+    </run>
+    <run name="SnapsSnapAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsSnapAfterPrepare"/>
+    </run>
+    <run name="SnapsSnapExpandAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapsSnapExpandAfterPrepare"/>
+    </run>
+    <run name="Clone">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Clone"/>
+    </run>
+    <run name="CloneParent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneParent"/>
+    </run>
+    <run name="CloneUpdateAfterPrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneUpdateAfterPrepare"/>
+    </run>
+    <run name="TriggerAssertSnapcSeq">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TriggerAssertSnapcSeq"/>
+    </run>
+    <run name="SnapTrimBeforePrepare">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="SnapTrimBeforePrepare"/>
+    </run>
+    <run name="CloneV1Parent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV1Parent"/>
+    </run>
+    <run name="CloneV2Parent">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV2Parent"/>
+    </run>
+    <run name="CloneV1ParentAbort">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV1ParentAbort"/>
+    </run>
+    <run name="CloneV2ParentAbort">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV2ParentAbort"/>
+    </run>
+    <run name="CloneV1ParentAbortFixIncompleteChildReattach">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV1ParentAbortFixIncompleteChildReattach"/>
+    </run>
+    <run name="CloneV1ParentAbortFixParentReattach">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV1ParentAbortFixParentReattach"/>
+    </run>
+    <run name="CloneV1ParentAbortRelinkNotNeeded">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV1ParentAbortRelinkNotNeeded"/>
+    </run>
+    <run name="CloneV2ParentAbortFixIncompleteChildReattach">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV2ParentAbortFixIncompleteChildReattach"/>
+    </run>
+    <run name="CloneV2ParentAbortFixParentReattach">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV2ParentAbortFixParentReattach"/>
+    </run>
+    <run name="CloneV2ParentAbortRelinkNotNeeded">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="CloneV2ParentAbortRelinkNotNeeded"/>
+    </run>
+    <run name="StressNoMigrate">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="StressNoMigrate"/>
+    </run>
+    <run name="Stress">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Stress"/>
+    </run>
+    <run name="Stress2">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="Stress2"/>
+    </run>
+    <run name="StressLive">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="StressLive"/>
+    </run>
+  </session>
+</package>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+  <description>CEPH librbd tests</description>
+  <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+  <session>
+    <arg name="gtest_bin"/>
+    <arg name="gtest_group" value="TestMockIoImageRequest"/>
+    <run name="AioWriteModifyTimestamp">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioWriteModifyTimestamp"/>
+    </run>
+    <run name="AioReadAccessTimestamp">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioReadAccessTimestamp"/>
+    </run>
+    <run name="PartialDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="PartialDiscard"/>
+    </run>
+    <run name="TailDiscard">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="TailDiscard"/>
+    </run>
+    <run name="DiscardGranularity">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="DiscardGranularity"/>
+    </run>
+    <run name="AioWriteJournalAppendDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioWriteJournalAppendDisabled"/>
+    </run>
+    <run name="AioDiscardJournalAppendDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioDiscardJournalAppendDisabled"/>
+    </run>
+    <run name="AioFlushJournalAppendDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioFlushJournalAppendDisabled"/>
+    </run>
+    <run name="AioWriteSameJournalAppendDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioWriteSameJournalAppendDisabled"/>
+    </run>
+    <run name="AioCompareAndWriteJournalAppendDisabled">
+      <script name="../rungtest"/>
+      <arg name="gtest_bin"/>
+      <arg name="gtest_group"/>
+      <arg name="gtest_name" value="AioCompareAndWriteJournalAppendDisabled"/>
+    </run>
+  </session>
+</package>

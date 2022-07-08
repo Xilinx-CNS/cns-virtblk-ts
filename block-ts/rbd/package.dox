@@ -1,0 +1,11 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. */
+/**
+
+@defgroup virtblk-rbd RBD tests
+@ingroup virtblk
+@{
+    Checks that librbd of ceph works. It is wrapper for ceph rbd tests.
+@}
+
+*/

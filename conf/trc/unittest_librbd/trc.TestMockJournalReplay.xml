@@ -1,0 +1,361 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockJournalReplay" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="AioDiscard" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioDiscard"/>
+      </iter>
+    </test>
+    <test name="AioWrite" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWrite"/>
+      </iter>
+    </test>
+    <test name="AioFlush" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioFlush"/>
+      </iter>
+    </test>
+    <test name="AioWriteSame" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioWriteSame"/>
+      </iter>
+    </test>
+    <test name="AioCompareAndWrite" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="AioCompareAndWrite"/>
+      </iter>
+    </test>
+    <test name="IOError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="IOError"/>
+      </iter>
+    </test>
+    <test name="SoftFlushIO" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SoftFlushIO"/>
+      </iter>
+    </test>
+    <test name="PauseIO" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="PauseIO"/>
+      </iter>
+    </test>
+    <test name="Flush" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Flush"/>
+      </iter>
+    </test>
+    <test name="OpFinishError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpFinishError"/>
+      </iter>
+    </test>
+    <test name="BlockedOpFinishError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="BlockedOpFinishError"/>
+      </iter>
+    </test>
+    <test name="MissingOpFinishEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MissingOpFinishEvent"/>
+      </iter>
+    </test>
+    <test name="MissingOpFinishEventCancelOps" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MissingOpFinishEventCancelOps"/>
+      </iter>
+    </test>
+    <test name="UnknownOpFinishEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UnknownOpFinishEvent"/>
+      </iter>
+    </test>
+    <test name="OpEventError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpEventError"/>
+      </iter>
+    </test>
+    <test name="SnapCreateEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreateEvent"/>
+      </iter>
+    </test>
+    <test name="SnapCreateEventExists" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapCreateEventExists"/>
+      </iter>
+    </test>
+    <test name="SnapRemoveEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRemoveEvent"/>
+      </iter>
+    </test>
+    <test name="SnapRemoveEventDNE" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRemoveEventDNE"/>
+      </iter>
+    </test>
+    <test name="SnapRenameEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRenameEvent"/>
+      </iter>
+    </test>
+    <test name="SnapRenameEventExists" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRenameEventExists"/>
+      </iter>
+    </test>
+    <test name="SnapProtectEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapProtectEvent"/>
+      </iter>
+    </test>
+    <test name="SnapProtectEventBusy" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapProtectEventBusy"/>
+      </iter>
+    </test>
+    <test name="SnapUnprotectEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotectEvent"/>
+      </iter>
+    </test>
+    <test name="SnapUnprotectOpFinishBusy" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotectOpFinishBusy"/>
+      </iter>
+    </test>
+    <test name="SnapUnprotectEventInvalid" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapUnprotectEventInvalid"/>
+      </iter>
+    </test>
+    <test name="SnapRollbackEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="SnapRollbackEvent"/>
+      </iter>
+    </test>
+    <test name="RenameEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RenameEvent"/>
+      </iter>
+    </test>
+    <test name="RenameEventExists" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RenameEventExists"/>
+      </iter>
+    </test>
+    <test name="ResizeEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ResizeEvent"/>
+      </iter>
+    </test>
+    <test name="FlattenEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlattenEvent"/>
+      </iter>
+    </test>
+    <test name="FlattenEventInvalid" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlattenEventInvalid"/>
+      </iter>
+    </test>
+    <test name="UpdateFeaturesEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateFeaturesEvent"/>
+      </iter>
+    </test>
+    <test name="MetadataSetEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MetadataSetEvent"/>
+      </iter>
+    </test>
+    <test name="MetadataRemoveEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MetadataRemoveEvent"/>
+      </iter>
+    </test>
+    <test name="MetadataRemoveEventDNE" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="MetadataRemoveEventDNE"/>
+      </iter>
+    </test>
+    <test name="UnknownEvent" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UnknownEvent"/>
+      </iter>
+    </test>
+    <test name="RefreshImageBeforeOpStart" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RefreshImageBeforeOpStart"/>
+      </iter>
+    </test>
+    <test name="FlushEventAfterShutDown" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="FlushEventAfterShutDown"/>
+      </iter>
+    </test>
+    <test name="ModifyEventAfterShutDown" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ModifyEventAfterShutDown"/>
+      </iter>
+    </test>
+    <test name="OpEventAfterShutDown" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="OpEventAfterShutDown"/>
+      </iter>
+    </test>
+    <test name="LockLostBeforeProcess" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="LockLostBeforeProcess"/>
+      </iter>
+    </test>
+    <test name="LockLostBeforeExecuteOp" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="LockLostBeforeExecuteOp"/>
+      </iter>
+    </test>
+    <test name="WritebackCacheDisabled" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="WritebackCacheDisabled"/>
+      </iter>
+    </test>
+  </iter>
+</test>

@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+# (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved.
+# Current defaults, should be fixed after CEPH is up and running
+export TE_NEED_LOAD_RBD=false
+
+# TODO: This path only works for xce-build-ub2004
+# Perhaps we should add this to the guess.sh and
+# also add the option to run.sh to resolve this path.
+export TE_LIBBPF_SRC="/srv/libbpf"

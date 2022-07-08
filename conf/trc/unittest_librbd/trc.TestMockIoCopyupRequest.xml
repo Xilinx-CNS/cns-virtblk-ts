@@ -1,0 +1,129 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<test name="TestMockIoCopyupRequest" type="package">
+  <objective/>
+  <notes/>
+  <iter result="PASSED">
+    <arg name="gtest_bin"/>
+    <test name="Standard" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="Standard"/>
+      </iter>
+    </test>
+    <test name="StandardWithSnaps" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="StandardWithSnaps"/>
+      </iter>
+    </test>
+    <test name="CopyOnRead" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CopyOnRead"/>
+      </iter>
+    </test>
+    <test name="CopyOnReadWithSnaps" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CopyOnReadWithSnaps"/>
+      </iter>
+    </test>
+    <test name="DeepCopy" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DeepCopy"/>
+      </iter>
+    </test>
+    <test name="DeepCopyOnRead" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DeepCopyOnRead"/>
+      </iter>
+    </test>
+    <test name="DeepCopyWithSnaps" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DeepCopyWithSnaps"/>
+      </iter>
+    </test>
+    <test name="ZeroedCopyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ZeroedCopyup"/>
+      </iter>
+    </test>
+    <test name="ZeroedCopyOnRead" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ZeroedCopyOnRead"/>
+      </iter>
+    </test>
+    <test name="NoOpCopyup" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="NoOpCopyup"/>
+      </iter>
+    </test>
+    <test name="RestartWrite" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="RestartWrite"/>
+      </iter>
+    </test>
+    <test name="ReadFromParentError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="ReadFromParentError"/>
+      </iter>
+    </test>
+    <test name="DeepCopyError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="DeepCopyError"/>
+      </iter>
+    </test>
+    <test name="UpdateObjectMapError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="UpdateObjectMapError"/>
+      </iter>
+    </test>
+    <test name="CopyupError" type="script">
+      <objective/>
+      <iter result="PASSED">
+        <arg name="gtest_bin"/>
+        <arg name="gtest_group"/>
+        <arg name="gtest_name" value="CopyupError"/>
+      </iter>
+    </test>
+  </iter>
+</test>

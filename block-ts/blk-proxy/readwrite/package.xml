@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- (c) Copyright 2019 - 2022 Xilinx, Inc. All rights reserved. -->
+<package version="1.0">
+    <description>Testing of bridging application</description>
+    <author mailto="Nikita.Somenkov@oktetlabs.ru"/>
+
+    <session track_conf="nohistory">
+
+        <!---  @addtogroup virtblk-blk-proxy-readwrite
+
+        @{
+        FIO default options: used if others are not given
+        -->
+        <arg name="blocksize" type="fio.blocksize.512to32k"/>
+        <arg name="rwmixread" type="fio.rwmixread.rw_only"/>
+        <arg name="ioengine" value="sync"/>
+        <arg name="numjobs" value="1"/>
+        <arg name="rwtype" value="rand"/>
+        <arg name="iodepth" value="1"/>
+        <arg name="runtime_sec" value="10"/>
+        <!--- @} -->
+
+        <run name="fio_multi">
+            <script name="fio_multi">
+                <req id="MULTI_BLOCK"/>
+            </script>
+            <arg name="blocksize_second" type="fio.blocksize.512to32k"/>
+            <arg name="rwmixread_second" type="fio.rwmixread.rw_only"/>
+            <arg name="ioengine_second" value="sync"/>
+            <arg name="numjobs_second" value="1"/>
+            <arg name="rwtype_second" value="rand"/>
+            <arg name="iodepth_second" value="1"/>
+            <arg name="runtime_sec_second" value="10"/>
+        </run>
+
+        <run>
+            <script name="fio">
+            <!-- This test takes a very long time. Iterations of this test
+                 are placed in separate runs. -->
+                <req id="BROKEN"/>
+            </script>
+            <arg name="ioengine" type="fio.ioengine"/>
+            <arg name="rwtype" type="fio.rwtype"/>
+            <arg name="rwmixread" type="fio.rwmixread.0to100"/>
+            <arg name="numjobs" type="fio.numjobs.1to1024"/>
+            <arg name="iodepth" type="fio.iodepth.1to64"/>
+            <arg name="blocksize" type="fio.blocksize.512to32k"/>
+            <arg name="runtime_sec" value="10"/>
+        </run>
+
+        <!--- @defgroup blk-proxy-readwrite-fio_1req_latency Check latency of one request
+              @ingroup blk-proxy-readwrite-fio
+              @{
+
+        Check request latency for a single request.
+          -->
+        <run name="fio_1req_latency">
+            <script name="fio">
+                <req id="FIO_1REQ_LAT"/>
+            </script>
+            <arg name="iodepth" value="1"/>
+            <arg name="numjobs" value="1"/>
+        </run>
+        <!--- @} -->
+
+        <!--- @defgroup blk-proxy-readwrite-fio_qd Iterations over various Q depth.
+              @ingroup blk-proxy-readwrite-fio
+              @{
+        -->
+        <run name="fio_qd">
+            <script name="fio">
+                <req id="FIO_SIMPLE_QD"/>
+            </script>
+            <arg name="iodepth" type="fio.iodepth.1to64"/>
+            <arg name="ioengine" value="libaio"/>
+        </run>
+        <!--- @} -->
+
+        <!--- @defgroup blk-proxy-readwrite-fio_base_throughput_reduced Base throughput test matrix
+              @ingroup blk-proxy-readwrite-fio
+              @{
+
+        Reduced iterations to collect matrix of possible results.
+          -->
+        <run name="fio_base_throughput_reduced">
+            <script name="fio">
+                <req id="FIO_SIMPLE_BASE_THROUGHPUT_REDUCED"/>
+            </script>
+            <arg name="ioengine" value="libaio"/>
+            <arg name="iodepth" value="64"/>
+            <arg name="numjobs" type="fio.numjobs.reduced.1to32"/>
+        </run>
+        <!--- @} -->
+
+
+        <!--- @defgroup blk-proxy-readwrite-fio_threads Different number of parallel jobs
+              @ingroup blk-proxy-readwrite-fio
+              @{
+
+        The subtest iterates over a number of parallel jobs in FIO
+          -->
+        <run name="fio_threads">
+            <script name="fio">
+                <req id="FIO_SIMPLE_THREADS"/>
+            </script>
+            <arg name="iodepth" value="1"/>
+            <arg name="numjobs" type="fio.numjobs.1to32_n_2n"/>
+        </run>
+        <!--- @} -->
+
+
+        <!--- @defgroup blk-proxy-readwrite-fio_base_throughput Basic throughput  with AIO
+              @ingroup blk-proxy-readwrite-fio
+              @{
+          -->
+        <run name="fio_base_throughput">
+            <script name="fio">
+                <req id="FIO_SIMPLE_BASE_THROUGHPUT"/>
+            </script>
+            <arg name="ioengine" value="libaio"/>
+            <arg name="numjobs" type="fio.numjobs.1to1024"/>
+            <arg name="iodepth">
+                <value>32</value>
+                <value>64</value>
+            </arg>
+        </run>
+        <!--- @} -->
+
+
+        <!--- @defgroup blk-proxy-readwrite-fio_threads_mixed_throughput Mixed read/write throughput
+              @ingroup blk-proxy-readwrite-fio
+              @{
+          -->
+        <run name="fio_threads_mixed_throughput">
+            <script name="fio">
+                <req id="FIO_SIMPLE_THREADS_MIXED_THROUGHPUT"/>
+            </script>
+            <arg name="ioengine" value="libaio"/>
+            <arg name="iodepth" value="64"/>
+            <arg name="numjobs" type="fio.numjobs.reduced.1to32"/>
+            <arg name="rwmixread" type="fio.rwmixread.mixed"/>
+        </run>
+        <!--- @} -->
+
+        <!--- @defgroup blk-proxy-readwrite-fio_bs_iterate Checking operations with various block sizes
+              @ingroup blk-proxy-readwrite-fio
+              @{
+          -->
+        <run name="fio_bs_iterate">
+            <script name="fio">
+                <req id="FIO_SIMPLE_BS_ITERATE"/>
+            </script>
+            <arg name="blocksize">
+                <value reqs="BLOCK_512">512</value>
+                <value reqs="BLOCK_4k">4096</value>
+                <value reqs="BLOCK_64k">65536</value>
+                <value reqs="BLOCK_128k">131072</value>
+                <value reqs="BLOCK_256k">262144</value>
+                <value reqs="BLOCK_512k">524288</value>
+                <value reqs="BLOCK_1m">1024000</value>
+            </arg>
+            <arg name="is_shuffle_blocksize">
+                <value>TRUE</value>
+            </arg>
+            <arg name="ioengine" value="libaio"/>
+            <arg name="numjobs" value="4"/>
+            <arg name="iodepth" value="32"/>
+        </run>
+        <!--- @} -->
+
+        <!--- @defgroup blk-proxy-readwrite-fio_bs_iterate_throughput Single job various iodepth throughput
+              @ingroup blk-proxy-readwrite-fio
+              @{
+          -->
+        <run name="fio_bs_iterate_throughput">
+            <script name="fio">
+                <req id="FIO_SIMPLE_BS_ITERATE_THROUGHPUT"/>
+            </script>
+            <arg name="blocksize">
+                <value reqs="BLOCK_512">512</value>
+                <value reqs="BLOCK_4k">4096</value>
+                <value reqs="BLOCK_64k">65536</value>
+                <value reqs="BLOCK_128k">131072</value>
+                <value reqs="BLOCK_256k">262144</value>
+                <value reqs="BLOCK_512k">524288</value>
+                <value reqs="BLOCK_1m">1024000</value>>
+            </arg>
+            <arg name="ioengine" value="libaio"/>
+            <arg name="numjobs" value="1"/>
+            <arg name="iodepth" type="fio.iodepth.1to64"/>
+        </run>
+        <!--- @} -->
+
+        <run name="fio_stability_stress">
+            <script name="fio_stability"/>
+            <arg name="ioengine" value="libaio"/>
+            <arg name="rwtype" type="fio.rwtype"/>
+            <arg name="rwmixread" type="fio.rwmixread.rw_only"/>
+            <arg name="numjobs" type="fio.numjobs.reduced.1to32"/>
+            <arg name="iodepth" value="64"/>
+            <arg name="blocksize" type="fio.blocksize.512to32k"/>
+            <arg name="runtime_sec" value="10"/>
+            <arg name="stress_ta">
+                <value>Agt_host</value>
+                <value>Agt_ARM</value>
+            </arg>
+        </run>
+
+        <run name="fio_pattern">
+            <script name="fio_pattern"/>
+            <arg name="ioengine" type="fio.ioengine"/>
+            <arg name="blocksize" type="fio.blocksize.512to32k"/>
+            <arg name="numjobs" type="fio.numjobs.1to1024">
+                <value>1</value>
+            </arg>
+            <arg name="rwmixread" type="fio.rwmixread.rw_only">
+                <value>0</value>
+            </arg>
+            <arg name="iodepth" type="fio.numjobs.reduced.1to32"/>
+        </run>
+
+        <run name="fio_stability_network">
+            <script name="fio_stability_perf">
+                <req id="BROKEN"/>
+            </script>
+            <arg name="ioengine" type="fio.ioengine"/>
+            <arg name="rwtype" type="fio.rwtype"/>
+            <arg name="rwmixread" type="fio.rwmixread.0to100"/>
+            <arg name="numjobs" type="fio.numjobs.1to1024"/>
+            <arg name="iodepth" type="fio.iodepth.1to64"/>
+            <arg name="blocksize" type="fio.blocksize.512to32k"/>
+            <arg name="runtime_sec" value="10"/>
+        </run>
+    </session>
+</package>
