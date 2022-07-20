@@ -12,6 +12,6 @@ export TE_DUT_TST3=dellr210g2c
 # Define interfaces to setup Ceph network.
 export TE_NEED_LOAD_SFC=yes
 export TE_ARM_SFC_IF=enp1s0f0
-export TE_CEPH_SRV_IF=enp1s0f0np0
+export TE_CEPH_SRV_IF=enp1s0f0
 
 export TE_IP4_POOL=10.31.1
