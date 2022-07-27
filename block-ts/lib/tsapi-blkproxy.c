@@ -51,7 +51,7 @@ tsapi_blkproxy_get_logflags(void)
 }
 
 const tsapi_blkproxy_opts tsapi_blkproxy_opts_default_opt = {
-    .mem_size = 1024,
+    .mem_size = 1200,
     .cpu_mask = TSAPI_BLKPROXY_MASK_FOR_8_CPU,
     .config = NULL,
     .pci_whitelist = TSAPI_BLKPROXY_PCI_ADDRESS,
