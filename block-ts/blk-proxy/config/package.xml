@@ -39,7 +39,10 @@
         </run>
 
         <run>
-            <script name="reboot_arm"/>
+            <script name="reboot_arm">
+                <!-- It's not supproted in SN1022. See VIRTBLK-1846 -->
+                <req id="BROKEN"/>
+            </script>
             <arg name="reboot_after_fio" list="">
                 <value>TRUE</value>
                 <value>FALSE</value>
