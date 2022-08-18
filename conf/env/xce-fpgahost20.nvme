@@ -11,7 +11,7 @@ export TE_DUT_TST3=xce-fpgaep20
 
 # Define interfaces to setup NVME network.
 export TE_NEED_LOAD_SFC=yes
-export TE_DISK_SFC_IF=enp1s0f0np0
+export TE_DISK_SFC_IF=enp1s0f0
 export TE_ARM_SFC_IF=enp1s0f0
 
 # Total size of the NVME storage

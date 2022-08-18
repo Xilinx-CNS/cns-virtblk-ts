@@ -11,9 +11,9 @@ export TE_DUT_TST3=xce-fpgaep20
 
 # Define interfaces to setup Ceph network.
 export TE_NEED_LOAD_SFC=yes
-export TE_DISK_SFC_IF=enp1s0f0np0
+export TE_DISK_SFC_IF=enp1s0f0
 export TE_ARM_SFC_IF=enp1s0f0
-export TE_CEPH_SRV_IF=enp1s0f0np0
+export TE_CEPH_SRV_IF=enp1s0f0
 
 # Total size of the ceph storage
 export TE_CEPH_STOR_SIZE_GB=${TE_CEPH_STOR_SIZE_GB:-17}
