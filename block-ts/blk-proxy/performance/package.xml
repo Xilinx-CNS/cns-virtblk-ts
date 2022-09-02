@@ -211,7 +211,7 @@
                 <value reqs="CEPH">none</value>
                 <value reqs="MALLOC">none</value>
                 <value reqs="NULLBLOCK">none</value>
-                <value reqs="NVME">trtype:TCP traddr:#{NVME_ADDR} trsvcid:#{NVME_PORT} subnqn:ramdisk adrfam:IPv4 Nvme0</value>
+                <value reqs="NVME">trtype:TCP traddr:#{NVME_ADDR} trsvcid:#{NVME_PORT} subnqn:nqn.2022-08.virtblk:ramdisk adrfam:IPv4 Nvme0</value>
             </arg>
             <arg name="bp-Malloc-NumberOfLuns" list="list1">
                 <value reqs="CEPH">none</value>
