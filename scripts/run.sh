@@ -396,7 +396,6 @@ DEFAULT_OPTS+="--trc-html=trc-full.html "
 DEFAULT_OPTS+="--log-html=html "
 
 DEFAULT_OPTS+="--build-parallel "
-DEFAULT_OPTS+="--build-meson "
 
 # Add TRC tags based on environment and run.sh options
 RUN_OPTS+="$(ts_trc_tags_build) "

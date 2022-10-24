@@ -194,7 +194,7 @@ build_blkproxy_env(te_kvpair_h *envs)
  * @return Status code
  */
 static te_errno
-create_optional_logflags(const void *value, te_vec *args)
+create_optional_logflags(const void *value, const void *priv, te_vec *args)
 {
     const char *str = *(const char *const *)value;
     const char *logflags_delim = ",";
@@ -202,6 +202,8 @@ create_optional_logflags(const void *value, te_vec *args)
     char *tmp;
     char *saveptr;
     te_errno rc;
+
+    UNUSED(priv);
 
     if (str == NULL)
     {
@@ -243,7 +245,7 @@ out:
  */
 #define CREATE_OPT_LOGFLAGS(_struct, _field) \
     {create_optional_logflags, NULL, FALSE, NULL, \
-     offsetof(_struct, _field) }
+     offsetof(_struct, _field), NULL }
 
 /**
  * Build arguments to start blk-proxy
