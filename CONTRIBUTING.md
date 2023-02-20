@@ -61,9 +61,10 @@ The summary line should:
     - `env` (for generic changes in environment files)
     - `doc`
     - `scripts`
-    - `trc`
-    - `mke2fs|readwrite|xfs|...` (for changes in tests of a specific package)
-    - `readwrite/fio` (for changes in a specific test)
+    - `mke2fs|readwrite|xfs|...` (for changes related to a specific package)
+    - `readwrite/fio` (for changes related to a specific test)
+      - **Note:** changes to TRC, package.xml and other similar files
+                  should be attributed to the relevant package/test
  - start with the imperative of a verb, for example:
 
    ```
